@@ -669,8 +669,8 @@ function showPlayers() {
   
   let p = calculatePlayerStats();
 
-  const currentTeam = document.getElementById("teamFilter")?.value || "All";
-  const currentLane = document.getElementById("laneFilter")?.value || "All";
+  const currentTeam = document.getElementById("teamFilter")?.value || "ALL TEAMS";
+  const currentLane = document.getElementById("laneFilter")?.value || "ALL ROLES";
 
   let arr = Object.keys(p).map(name => ({
     name,
@@ -699,8 +699,8 @@ function showPlayers() {
 
   // ===== APPLY FILTER =====
   arr = arr.filter(ps => {
-    const teamMatch = currentTeam === "All" || ps.team === currentTeam;
-    const laneMatch = currentLane === "All" || ps.lane === currentLane;
+    const teamMatch = currentTeam === "ALL TEAMS" || ps.team === currentTeam;
+    const laneMatch = currentLane === "ALL ROLES" || ps.lane === currentLane;
     return teamMatch && laneMatch;
   });
 
@@ -1100,8 +1100,8 @@ function showHeroPool() {
   });
 
   // Keep current filter values (same behavior as your players tab)
-  const currentTeam = document.getElementById("hpTeamFilter")?.value || "All";
-  const currentLane = document.getElementById("hpLaneFilter")?.value || "All";
+  const currentTeam = document.getElementById("hpTeamFilter")?.value || "ALL TEAMS";
+  const currentLane = document.getElementById("hpLaneFilter")?.value || "ALL ROLES";
 
   // Build filter lists
   const teams = [...new Set(arr.map(p => p.team))];
@@ -1109,8 +1109,8 @@ function showHeroPool() {
 
   // Apply filters
   arr = arr.filter(ps => {
-    const teamMatch = currentTeam === "All" || ps.team === currentTeam;
-    const laneMatch = currentLane === "All" || ps.lane === currentLane;
+    const teamMatch = currentTeam === "ALL TEAMS" || ps.team === currentTeam;
+    const laneMatch = currentLane === "ALL ROLES" || ps.lane === currentLane;
     return teamMatch && laneMatch;
   });
 
@@ -1288,8 +1288,8 @@ function showPlayerPools() {
   });
 
   // ===== Filters (Team + Lane) =====
-  const currentTeam = document.getElementById("ppTeamFilter")?.value || "All";
-  const currentLane = document.getElementById("ppLaneFilter")?.value || "All";
+  const currentTeam = document.getElementById("ppTeamFilter")?.value || "ALL TEAMS";
+  const currentLane = document.getElementById("ppLaneFilter")?.value || "ALL ROLES";
 
   // Build filter options from all player entries
   const allPlayers = arr.flatMap(h => h.playersPlayed);
@@ -1301,8 +1301,8 @@ function showPlayerPools() {
   arr = arr
     .map(h => {
       const filteredPlayers = h.playersPlayed.filter(p => {
-        const teamMatch = currentTeam === "All" || p.team === currentTeam;
-        const laneMatch = currentLane === "All" || p.lane === currentLane;
+        const teamMatch = currentTeam === "ALL TEAMS" || p.team === currentTeam;
+        const laneMatch = currentLane === "ALL ROLES" || p.lane === currentLane;
         return teamMatch && laneMatch;
       });
 
