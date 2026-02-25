@@ -4,6 +4,8 @@ let heroSort = { key: null, asc: true };
 let heroPoolSort = { key: null, asc: true };
 let playerPoolsSort = { key: null, asc: true };
 
+
+
 // ===== SEARCH STATE (Players) =====
 let playerSearchState = { value: "", caret: 0 };
 
@@ -17,6 +19,7 @@ function onPlayerSearchInput(e) {
 let heroSearchState = { value: "", caret: 0 };          // Heroes tab (hero name)
 let hpPlayerSearchState = { value: "", caret: 0 };      // Hero Pool tab (player name)
 let ppHeroSearchState = { value: "", caret: 0 };        // Player Pool tab (hero name)
+let ppExcludeUnused = false; // ✅ checkbox state
 
 function onHeroSearchInput(e) {
   heroSearchState.value = e.target.value;
@@ -36,6 +39,11 @@ function onPpHeroSearchInput(e) {
   ppHeroSearchState.value = e.target.value;
   ppHeroSearchState.caret = e.target.selectionStart || ppHeroSearchState.value.length;
   showPlayerPools(true);
+}
+
+function onPpExcludeUnusedToggle(e) {
+  ppExcludeUnused = e.target.checked;
+  showPlayerPools(false);
 }
 
 const laneOrder = {
@@ -1259,19 +1267,31 @@ function sortHeroes(key) {
 function calculateHeroPoolStats() {
   let pool = {};
 
-  for (let match of matches) {
-    for (let game of match.games) {
-      for (let player of game.players) {
+  // 1) Seed from roster so 0-game players exist
+  for (const r of (roster || [])) {
+    pool[r.name] = {
+      name: r.name,
+      team: r.team,
+      lane: r.lane,
+      picture: r.picture,
+      heroes: {} // heroName -> { games:0, wins:0 }
+    };
+  }
 
+  // 2) Add match data
+  for (let match of matches) {
+    for (let game of (match.games || [])) {
+      for (let player of (game.players || [])) {
         const info = getRoster(player.name);
 
+        // If player not in roster (typo/new), still include them
         if (!pool[player.name]) {
           pool[player.name] = {
             name: player.name,
             team: info.team,
             lane: info.lane,
             picture: info.picture,
-            heroes: {} // heroName -> { games:0, wins:0 }
+            heroes: {}
           };
         }
 
@@ -1281,8 +1301,6 @@ function calculateHeroPoolStats() {
         if (!ps.heroes[heroName]) ps.heroes[heroName] = { games: 0, wins: 0 };
 
         ps.heroes[heroName].games++;
-
-        // ✅ winner is TEAM NAME, so compare to roster team
         if (info.team === game.winner) ps.heroes[heroName].wins++;
       }
     }
@@ -1480,24 +1498,24 @@ function sortHeroPool(key) {
 function calculatePlayerPoolsStats() {
   let pools = {};
 
-  for (let match of matches) {
-    for (let game of match.games) {
-      for (let player of game.players) {
+  // ✅ Seed all heroes so unused heroes exist
+  for (const heroName of Object.keys(constHero || {})) {
+    pools[heroName] = { hero: heroName, players: {} };
+  }
 
+  // Add match data
+  for (let match of matches) {
+    for (let game of (match.games || [])) {
+      for (let player of (game.players || [])) {
         const heroName = player.hero;
         const info = getRoster(player.name);
 
         if (!pools[heroName]) {
-          pools[heroName] = {
-            hero: heroName,
-            players: {} // playerName -> { games:0, wins:0, lane, team, picture }
-          };
+          pools[heroName] = { hero: heroName, players: {} };
         }
 
-        const hs = pools[heroName];
-
-        if (!hs.players[player.name]) {
-          hs.players[player.name] = {
+        if (!pools[heroName].players[player.name]) {
+          pools[heroName].players[player.name] = {
             name: player.name,
             team: info.team,
             lane: info.lane,
@@ -1507,8 +1525,8 @@ function calculatePlayerPoolsStats() {
           };
         }
 
-        hs.players[player.name].games++;
-        if (info.team === game.winner) hs.players[player.name].wins++;
+        pools[heroName].players[player.name].games++;
+        if (info.team === game.winner) pools[heroName].players[player.name].wins++;
       }
     }
   }
@@ -1517,13 +1535,12 @@ function calculatePlayerPoolsStats() {
 }
 
 function showPlayerPools(keepSearchFocus = false) {
-
   const pools = calculatePlayerPoolsStats();
 
   let arr = Object.keys(pools).map(heroName => {
     const hs = pools[heroName];
 
-    const playerList = Object.keys(hs.players)
+    const playerList = Object.keys(hs.players || {})
       .map(pn => {
         const p = hs.players[pn];
         return {
@@ -1535,7 +1552,7 @@ function showPlayerPools(keepSearchFocus = false) {
           winRate: p.games ? (p.wins / p.games) * 100 : 0
         };
       })
-      .sort((a,b) => b.games - a.games);
+      .sort((a, b) => b.games - a.games);
 
     return {
       hero: heroName,
@@ -1545,54 +1562,65 @@ function showPlayerPools(keepSearchFocus = false) {
     };
   });
 
-  // ===== Filters (Team + Lane) =====
+  // ===== Current filters =====
   const currentTeam = document.getElementById("ppTeamFilter")?.value || "ALL TEAMS";
   const currentLane = document.getElementById("ppLaneFilter")?.value || "ALL ROLES";
 
-  // ===== SEARCH (HERO NAME ONLY) =====
+  // ===== Search (hero name only) =====
   const searchEl = document.getElementById("ppHeroSearch");
   const currentSearch = searchEl ? searchEl.value : (ppHeroSearchState.value || "");
   const q = currentSearch.trim().toLowerCase();
 
-  // Build filter options from all player entries
-  const allPlayers = arr.flatMap(h => h.playersPlayed);
-  const teams = [...new Set(allPlayers.map(p => p.team))];
-  const lanes = [...new Set(allPlayers.map(p => p.lane))];
+  // ===== Filter dropdown options (from roster, so they always exist even if no games) =====
+  const teams = ["ALL TEAMS", ...new Set((roster || []).map(r => r.team))].filter(Boolean);
+  const lanes = ["ALL ROLES", ...new Set((roster || []).map(r => r.lane))].filter(Boolean);
 
-  // Apply Team/Lane filters (keep hero rows where at least one player matches)
-  arr = arr
-    .map(h => {
-      const filteredPlayers = h.playersPlayed.filter(p => {
-        const teamMatch = currentTeam === "ALL TEAMS" || p.team === currentTeam;
-        const laneMatch = currentLane === "ALL ROLES" || p.lane === currentLane;
-        return teamMatch && laneMatch;
-      });
+  // ===== Apply Team/Lane filters =====
+  // - If Team/Lane is not ALL, we filter the player list within each hero
+  // - BUT we keep unused heroes in the table when checkbox is NOT checked
+  const teamLaneFilteringActive = currentTeam !== "ALL TEAMS" || currentLane !== "ALL ROLES";
 
-      return {
-        ...h,
-        totalPlayers: filteredPlayers.length,
-        playersPlayed: filteredPlayers
-      };
-    })
-    .filter(h => h.playersPlayed.length > 0);
+  arr = arr.map(h => {
+    const filteredPlayers = (h.playersPlayed || []).filter(p => {
+      const teamMatch = currentTeam === "ALL TEAMS" || p.team === currentTeam;
+      const laneMatch = currentLane === "ALL ROLES" || p.lane === currentLane;
+      return teamMatch && laneMatch;
+    });
 
-  // Apply HERO NAME search (filters hero rows by hero name)
+    return {
+      ...h,
+      totalPlayers: filteredPlayers.length,
+      playersPlayed: filteredPlayers
+    };
+  });
+
+  // If filters are active, we usually hide heroes that have 0 matching players,
+  // BUT only if "Exclude unused heroes" is checked.
+  // If checkbox is OFF, we still show heroes with 0 players (unused).
+  if (ppExcludeUnused || teamLaneFilteringActive) {
+    // keep heroes that have at least one matching player
+    // unless checkbox is OFF AND no team/lane filter applied
+    if (ppExcludeUnused) {
+      arr = arr.filter(h => h.totalPlayers > 0);
+    } else if (teamLaneFilteringActive) {
+      arr = arr.filter(h => h.totalPlayers > 0);
+    }
+  }
+
+  // ===== Apply hero-name search =====
   if (q) {
     arr = arr.filter(h => h.hero.toLowerCase().includes(q));
   }
 
-  // Sort
+  // ===== Sort =====
   if (playerPoolsSort.key) {
     arr.sort((a, b) => {
       let valA = a[playerPoolsSort.key];
       let valB = b[playerPoolsSort.key];
 
       if (typeof valA === "string") {
-        return playerPoolsSort.asc
-          ? valA.localeCompare(valB)
-          : valB.localeCompare(valA);
+        return playerPoolsSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
       }
-
       return playerPoolsSort.asc ? valA - valB : valB - valA;
     });
   }
@@ -1610,7 +1638,6 @@ function showPlayerPools(keepSearchFocus = false) {
       <div>
         <label>TEAM: </label>
         <select id="ppTeamFilter" onchange="showPlayerPools()">
-          <option value="ALL TEAMS">ALL TEAMS</option>
           ${teams.map(t => `<option value="${t}" ${t === currentTeam ? "selected" : ""}>${t}</option>`).join("")}
         </select>
       </div>
@@ -1618,14 +1645,12 @@ function showPlayerPools(keepSearchFocus = false) {
       <div>
         <label>ROLE: </label>
         <select id="ppLaneFilter" onchange="showPlayerPools()">
-          <option value="ALL ROLES">ALL ROLES</option>
           ${lanes.map(l => `<option value="${l}" ${l === currentLane ? "selected" : ""}>${l}</option>`).join("")}
         </select>
       </div>
     </div>
 
-    <!-- SEARCH BELOW FILTERS (HERO NAME ONLY) -->
-    <div style="margin-bottom:20px; display:flex; justify-content:center;">
+    <div style="margin:14px 0 18px; display:flex; justify-content:center; align-items:center; gap:14px;">
       <input
         id="ppHeroSearch"
         type="text"
@@ -1634,6 +1659,17 @@ function showPlayerPools(keepSearchFocus = false) {
         oninput="onPpHeroSearchInput(event)"
         style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
       />
+
+      <label style="display:flex; align-items:center; gap:8px; cursor:pointer; user-select:none;">
+        <input
+          id="ppExcludeUnused"
+          type="checkbox"
+          ${ppExcludeUnused ? "checked" : ""}
+          onchange="onPpExcludeUnusedToggle(event)"
+          style="width:18px; height:18px;"
+        />
+        <span style="opacity:0.9;">Exclude unused heroes</span>
+      </label>
     </div>
 
     <table>
@@ -1645,17 +1681,19 @@ function showPlayerPools(keepSearchFocus = false) {
   `;
 
   for (let h of arr) {
-    const playersHTML = h.playersPlayed.map(p => `
-      <span style="display:inline-flex; align-items:center; gap:6px; margin:3px 10px 3px 0;">
-        <img
-          src="${p.picture}"
-          width="85"
-          height="85"
-          style="border-radius:50%; object-fit:cover; border:2px solid #fff;"
-        >
-        <span>${p.name} (${p.games} - ${p.winRate.toFixed(0)}%)</span>
-      </span>
-    `).join("");
+    const playersHTML = (h.playersPlayed && h.playersPlayed.length)
+      ? h.playersPlayed.map(p => `
+          <span style="display:inline-flex; align-items:center; gap:6px; margin:3px 10px 3px 0;">
+            <img
+              src="${p.picture}"
+              width="85"
+              height="85"
+              style="border-radius:50%; object-fit:cover; border:2px solid #fff;"
+            >
+            <span>${p.name} (${p.games} - ${p.winRate.toFixed(0)}%)</span>
+          </span>
+        `).join("")
+      : `<span style="opacity:0.6;">-</span>`;
 
     html += `
       <tr>
