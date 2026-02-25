@@ -121,7 +121,14 @@ const roster = [
   { name: "Munster", team: "GAMESMY Kelantan", lane: "Exp Laner",  picture: "https://i.imgur.com/2bBe6Ev.png" },
   { name: "Matdinz", team: "GAMESMY Kelantan", lane: "Roamer",  picture: "https://i.imgur.com/lSWoHLl.png"},
   { name: "Skyzar", team: "GAMESMY Kelantan", lane: "Gold Laner",  picture: "https://i.imgur.com/TN31Ebg.png" },
+
+  
 ];
+  const rosterMap = Object.fromEntries((roster || []).map(p => [p.name, p]));
+
+  function getRoster(name) {
+  return rosterMap[name] || { name, team: "Unknown", lane: "Unknown", picture: "" };
+}
 
 const constHero = {
 "Arlott": "https://i.imgur.com/4WJhGhe.png",
@@ -268,18 +275,18 @@ let matches = [
         bans: ["Cici","Phoveus","Baxia","Ruby","Esmeralda","Fanny","Wanwan", "Lancelot","Zhuxin", "Pharsa"],
         players: [
           // Monster Vicious Players
-          { name: "Rough", team: "Monster Vicious", lane: "Gold Laner", hero: "Harith", kills: 3, deaths: 0, assists: 7, picture: "https://i.imgur.com/scpwgUa.png" },
-          { name: "Unii", team: "Monster Vicious", lane: "Jungler", hero: "Fredrinn", kills: 3, deaths: 0, assists: 8, picture: "https://i.imgur.com/Y6cCEK4.png" },
-          { name: "Bondolz", team: "Monster Vicious", lane: "Midlaner", hero: "Yve", kills: 2, deaths: 0, assists: 12, picture: "https://i.imgur.com/lLUfZVt.png" },
-          { name: "Momo", team: "Monster Vicious", lane: "Exp Laner", hero: "Arlott", kills: 6, deaths: 1, assists: 5, picture: "https://i.imgur.com/aDKFRPI.png" },
-          { name: "Lyoni", team: "Monster Vicious", lane: "Roamer", hero: "Chip", kills: 0, deaths: 1, assists: 12, picture: "https://i.imgur.com/ouVd1Kr.png"},
+          { name: "Rough",  hero: "Harith", kills: 3, deaths: 0, assists: 7 },
+          { name: "Unii",  hero: "Fredrinn", kills: 3, deaths: 0, assists: 8 },
+          { name: "Bondolz",  hero: "Yve", kills: 2, deaths: 0, assists: 12 },
+          { name: "Momo",  hero: "Arlott", kills: 6, deaths: 1, assists: 5 },
+          { name: "Lyoni",  hero: "Chip", kills: 0, deaths: 1, assists: 12},
 
           // Team Vamos Players
-          { name: "Natco", team: "Team Vamos", lane: "Gold Laner", hero: "Claude", kills: 0, deaths: 3, assists: 0, picture: "https://i.imgur.com/48b6SmK.png" },
-          { name: "Chibi", team: "Team Vamos", lane: "Jungler", hero: "Yi Sun-Shin", kills: 2, deaths: 3, assists: 0, picture: "https://i.imgur.com/ahEyDfv.png" },
-          { name: "Clawkun", team: "Team Vamos", lane: "Midlaner", hero: "Kimmy", kills: 0, deaths: 2, assists: 2, picture: "https://i.imgur.com/mDZrBXV.png" },
-          { name: "Gojes", team: "Team Vamos", lane: "Exp Laner", hero: "Uranus", kills: 0, deaths: 2, assists: 0, picture: "https://i.imgur.com/2inGQSn.png" },
-          { name: "Xorn", team: "Team Vamos", lane: "Roamer", hero: "Hylos", kills: 0, deaths: 4, assists: 0, picture: "https://i.imgur.com/Ux5auTn.png"}
+          { name: "Natco",  hero: "Claude", kills: 0, deaths: 3, assists: 0 },
+          { name: "Chibi",  hero: "Yi Sun-Shin", kills: 2, deaths: 3, assists: 0 },
+          { name: "Clawkun",  hero: "Kimmy", kills: 0, deaths: 2, assists: 2 },
+          { name: "Gojes",  hero: "Uranus", kills: 0, deaths: 2, assists: 0 },
+          { name: "Xorn",  hero: "Hylos", kills: 0, deaths: 4, assists: 0}
         ], objectives: {
           lord: { "Monster Vicious": 1, "Team Vamos": 0 },
           turtle: { "Monster Vicious": 3, "Team Vamos": 0 },
@@ -291,18 +298,18 @@ let matches = [
         bans: ["Cici","Kimmy","Baxia","Ruby","Uranus","Fanny","Wanwan", "Kalea","Chou", "Yve"],
         players: [
           // Monster Vicious Players
-          { name: "Rough", team: "Monster Vicious", lane: "Gold Laner", hero: "Esmeralda", kills: 4, deaths: 0, assists: 8, picture: "https://i.imgur.com/scpwgUa.png" },
-          { name: "Unii", team: "Monster Vicious", lane: "Jungler", hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 11, picture: "https://i.imgur.com/Y6cCEK4.png" },
-          { name: "Bondolz", team: "Monster Vicious", lane: "Midlaner", hero: "Zhuxin", kills: 8, deaths: 0, assists: 10, picture: "https://i.imgur.com/lLUfZVt.png" },
-          { name: "Momo", team: "Monster Vicious", lane: "Exp Laner", hero: "Phoveus", kills: 2, deaths: 0, assists: 10, picture: "https://i.imgur.com/aDKFRPI.png" },
-          { name: "Lyoni", team: "Monster Vicious", lane: "Roamer", hero: "Hylos", kills: 0, deaths: 2, assists: 16, picture: "https://i.imgur.com/ouVd1Kr.png"},
+          { name: "Rough",  hero: "Esmeralda", kills: 4, deaths: 0, assists: 8 },
+          { name: "Unii",  hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 11 },
+          { name: "Bondolz",  hero: "Zhuxin", kills: 8, deaths: 0, assists: 10 },
+          { name: "Momo",  hero: "Phoveus", kills: 2, deaths: 0, assists: 10 },
+          { name: "Lyoni",  hero: "Hylos", kills: 0, deaths: 2, assists: 16},
 
           // Team Vamos Players
-          { name: "Natco", team: "Team Vamos", lane: "Gold Laner", hero: "Harith", kills: 1, deaths: 4, assists: 1, picture: "https://i.imgur.com/48b6SmK.png" },
-          { name: "Chibi", team: "Team Vamos", lane: "Jungler", hero: "Lancelot", kills: 0, deaths: 5, assists: 2, picture: "https://i.imgur.com/ahEyDfv.png" },
-          { name: "Clawkun", team: "Team Vamos", lane: "Midlaner", hero: "Aurora", kills: 1, deaths: 2, assists: 1, picture: "https://i.imgur.com/mDZrBXV.png" },
-          { name: "Gojes", team: "Team Vamos", lane: "Exp Laner", hero: "Arlott", kills: 0, deaths: 3, assists: 0, picture: "https://i.imgur.com/2inGQSn.png" },
-          { name: "Xorn", team: "Team Vamos", lane: "Roamer", hero: "Gatotkaca", kills: 0, deaths: 4, assists: 1, picture: "https://i.imgur.com/Ux5auTn.png"}
+          { name: "Natco",  hero: "Harith", kills: 1, deaths: 4, assists: 1 },
+          { name: "Chibi",  hero: "Lancelot", kills: 0, deaths: 5, assists: 2 },
+          { name: "Clawkun",  hero: "Aurora", kills: 1, deaths: 2, assists: 1 },
+          { name: "Gojes", hero: "Arlott", kills: 0, deaths: 3, assists: 0 },
+          { name: "Xorn",  hero: "Gatotkaca", kills: 0, deaths: 4, assists: 1}
         ], objectives: {
           lord: { "Monster Vicious": 1, "Team Vamos": 0 },
           turtle: { "Monster Vicious": 3, "Team Vamos": 0 },
@@ -320,18 +327,18 @@ let matches = [
         bans: ["Fredrinn","Arlott","Baxia","Yi Sun-Shin","Gatotkaca","Fanny","Wanwan", "Lancelot","Grock", "Uranus"],
         players: [
           // AERO Esports Players
-          { name: "Kusey", team: "AERO Esports", lane: "Gold Laner", hero: "Harith", kills: 1, deaths: 2, assists: 0, picture: "https://i.imgur.com/413R26Z.png" },
-          { name: "Hazle", team: "AERO Esports", lane: "Jungler", hero: "Joy", kills: 2, deaths: 3, assists: 3, picture: "https://i.imgur.com/MvL7jzh.png" },
-          { name: "Kyym", team: "AERO Esports", lane: "Midlaner", hero: "Selena", kills: 1, deaths: 2, assists: 2, picture: "https://i.imgur.com/5X4UXw8.png" },
-          { name: "Smooth", team: "AERO Esports", lane: "Exp Laner", hero: "Phoveus", kills: 0, deaths: 6, assists: 0, picture: "https://i.imgur.com/0bW64Ki.png" },
-          { name: "Zqeef", team: "AERO Esports", lane: "Roamer", hero: "Chou", kills: 1, deaths: 4, assists: 3, picture: "https://i.imgur.com/t7p2IxW.png"},
+          { name: "Kusey",  hero: "Harith", kills: 1, deaths: 2, assists: 0 },
+          { name: "Hazle",  hero: "Joy", kills: 2, deaths: 3, assists: 3 },
+          { name: "Kyym",  hero: "Selena", kills: 1, deaths: 2, assists: 2 },
+          { name: "Smooth",  hero: "Phoveus", kills: 0, deaths: 6, assists: 0 },
+          { name: "Zqeef",  hero: "Chou", kills: 1, deaths: 4, assists: 3},
 
           // Untitled Players
-          { name: "Skyzed", team: "Untitled", lane: "Gold Laner", hero: "Granger", kills: 7, deaths: 1, assists: 2, picture: "https://i.imgur.com/02b5lub.png" },
-          { name: "Keymin", team: "Untitled", lane: "Jungler", hero: "Hayabusa", kills: 4, deaths: 2, assists: 6, picture: "https://i.imgur.com/cVEas3K.png" },
-          { name: "Stowm", team: "Untitled", lane: "Midlaner", hero: "Zhuxin", kills: 1, deaths: 1, assists: 11, picture: "https://i.imgur.com/cOtDg24.png" },
-          { name: "Sizkaa", team: "Untitled", lane: "Exp Laner", hero: "Lapu-Lapu", kills: 2, deaths: 0, assists: 7, picture: "https://i.imgur.com/CgldSAq.png" },
-          { name: "Rasy", team: "Untitled", lane: "Roamer", hero: "Hylos", kills: 3, deaths: 1, assists: 11, picture: "https://i.imgur.com/3xz28tZ.png"}
+          { name: "Skyzed",  hero: "Granger", kills: 7, deaths: 1, assists: 2 },
+          { name: "Keymin",  hero: "Hayabusa", kills: 4, deaths: 2, assists: 6 },
+          { name: "Stowm",  hero: "Zhuxin", kills: 1, deaths: 1, assists: 11 },
+          { name: "Sizkaa",  hero: "Lapu-Lapu", kills: 2, deaths: 0, assists: 7 },
+          { name: "Rasy",  hero: "Hylos", kills: 3, deaths: 1, assists: 11}
         ], objectives: {
           lord: { "AERO Esports": 0, "Untitled": 1 },
           turtle: { "AERO Esports": 2, "Untitled": 1 },
@@ -343,18 +350,18 @@ let matches = [
         bans: ["Chou","Arlott","Baxia","Yi Sun-Shin","Joy","Fanny","Wanwan", "Lancelot","Hayabusa", "Benedetta"],
         players: [
           // AERO Esports Players
-          { name: "Kusey", team: "AERO Esports", lane: "Gold Laner", hero: "Claude", kills: 2, deaths: 4, assists: 7, picture: "https://i.imgur.com/413R26Z.png" },
-          { name: "Hazle", team: "AERO Esports", lane: "Jungler", hero: "Akai", kills: 5, deaths: 6, assists: 6, picture: "https://i.imgur.com/MvL7jzh.png" },
-          { name: "Kyym", team: "AERO Esports", lane: "Midlaner", hero: "Yve", kills: 1, deaths: 5, assists: 15, picture: "https://i.imgur.com/5X4UXw8.png" },
-          { name: "Smooth", team: "AERO Esports", lane: "Exp Laner", hero: "Uranus", kills: 8, deaths: 2, assists: 5, picture: "https://i.imgur.com/0bW64Ki.png" },
-          { name: "Zqeef", team: "AERO Esports", lane: "Roamer", hero: "Hylos", kills: 0, deaths: 8, assists: 13, picture: "https://i.imgur.com/t7p2IxW.png"},
+          { name: "Kusey",  hero: "Claude", kills: 2, deaths: 4, assists: 7 },
+          { name: "Hazle",  hero: "Akai", kills: 5, deaths: 6, assists: 6 },
+          { name: "Kyym",  hero: "Yve", kills: 1, deaths: 5, assists: 15 },
+          { name: "Smooth",  hero: "Uranus", kills: 8, deaths: 2, assists: 5 },
+          { name: "Zqeef",  hero: "Hylos", kills: 0, deaths: 8, assists: 13},
 
           // Untitled Players
-          { name: "Skyzed", team: "Untitled", lane: "Gold Laner", hero: "Granger", kills: 14, deaths: 0, assists: 6, picture: "https://i.imgur.com/02b5lub.png" },
-          { name: "Keymin", team: "Untitled", lane: "Jungler", hero: "Fredrinn", kills: 3, deaths: 5, assists: 14, picture: "https://i.imgur.com/cVEas3K.png" },
-          { name: "Stowm", team: "Untitled", lane: "Midlaner", hero: "Zhuxin", kills: 4, deaths: 2, assists: 17, picture: "https://i.imgur.com/cOtDg24.png" },
-          { name: "Sizkaa", team: "Untitled", lane: "Exp Laner", hero: "Masha", kills: 4, deaths: 3, assists: 8, picture: "https://i.imgur.com/CgldSAq.png" },
-          { name: "Rasy", team: "Untitled", lane: "Roamer", hero: "Chip", kills: 0, deaths: 6, assists: 17, picture: "https://i.imgur.com/3xz28tZ.png"}
+          { name: "Skyzed",  hero: "Granger", kills: 14, deaths: 0, assists: 6 },
+          { name: "Keymin",  hero: "Fredrinn", kills: 3, deaths: 5, assists: 14 },
+          { name: "Stowm",  hero: "Zhuxin", kills: 4, deaths: 2, assists: 17 },
+          { name: "Sizkaa",  hero: "Masha", kills: 4, deaths: 3, assists: 8 },
+          { name: "Rasy",  hero: "Chip", kills: 0, deaths: 6, assists: 17}
         ], objectives: {
           lord: { "AERO Esports": 0, "Untitled": 2 },
           turtle: { "AERO Esports": 2, "Untitled": 1 },
@@ -371,18 +378,18 @@ let matches = [
         bans: ["Fredrinn","Arlott","Baxia","Cici","Gloo","Pharsa","Wanwan", "Lancelot","Kalea", "Zhuxin"],
         players: [
           // Selangor Red Giants Players
-          { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Ruby", kills: 3, deaths: 2, assists: 8, picture: "https://i.imgur.com/SHdZx30.png" },
-          { name: "Sekys", team: "Selangor Red Giants", lane: "Jungler", hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 7, picture: "https://i.imgur.com/6cd6pGF.png" },
-          { name: "Stormie", team: "Selangor Red Giants", lane: "Midlaner", hero: "Luoyi", kills: 4, deaths: 0, assists: 7, picture: "https://i.imgur.com/1KIkUJ7.png" },
-          { name: "Kramm", team: "Selangor Red Giants", lane: "Exp Laner", hero: "Esmeralda", kills: 6, deaths: 0, assists: 4, picture: "https://i.imgur.com/bPYW0sI.png" },
-          { name: "Yums", team: "Selangor Red Giants", lane: "Roamer", hero: "Chou", kills: 1, deaths: 3, assists: 6, picture: "https://i.imgur.com/ws8GoEJ.png"},
+          { name: "Innocent",  hero: "Ruby", kills: 3, deaths: 2, assists: 8 },
+          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 7 },
+          { name: "Stormie",  hero: "Luoyi", kills: 4, deaths: 0, assists: 7 },
+          { name: "Kramm",  hero: "Esmeralda", kills: 6, deaths: 0, assists: 4 },
+          { name: "Yums",  hero: "Chou", kills: 1, deaths: 3, assists: 6},
 
           // Homebois Players
-          { name: "Melqt", team: "Homebois", lane: "Gold Laner", hero: "Harith", kills: 0, deaths: 3, assists: 4, picture: "https://i.imgur.com/ReSovOr.png" },
-          { name: "Eyymal", team: "Homebois", lane: "Jungler", hero: "Fanny", kills: 0, deaths: 3, assists: 3, picture: "https://i.imgur.com/cMJUTQh.png" },
-          { name: "Izanami", team: "Homebois", lane: "Midlaner", hero: "Kimmy", kills: 1, deaths: 6, assists: 4, picture: "https://i.imgur.com/xaBAD77.png" },
-          { name: "Rezza", team: "Homebois", lane: "Exp Laner", hero: "Phoveus", kills: 2, deaths: 2, assists: 1, picture: "https://i.imgur.com/1HJiEgB.png" },
-          { name: "Cayden", team: "Homebois", lane: "Roamer", hero: "Gatotkaca", kills: 2, deaths: 4, assists: 1, picture: "https://i.imgur.com/O4oDGXc.png"}
+          { name: "Melqt",  hero: "Harith", kills: 0, deaths: 3, assists: 4 },
+          { name: "Eyymal",  hero: "Fanny", kills: 0, deaths: 3, assists: 3 },
+          { name: "Izanami",  hero: "Kimmy", kills: 1, deaths: 6, assists: 4 },
+          { name: "Rezza",  hero: "Phoveus", kills: 2, deaths: 2, assists: 1 },
+          { name: "Cayden",  hero: "Gatotkaca", kills: 2, deaths: 4, assists: 1}
         ], objectives: {
           lord: { "Selangor Red Giants": 1, "Homebois": 0 },
           turtle: { "Selangor Red Giants": 3, "Homebois": 0 },
@@ -395,18 +402,18 @@ let matches = [
         bans: ["Valentina","Lunox","Baxia","Harith","Esmeralda","Fanny","Wanwan", "Cici","Grock", "Zhuxin"],
         players: [
           // Selangor Red Giants Players
-          { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Lapu-Lapu", kills: 2, deaths: 3, assists: 2, picture: "https://i.imgur.com/SHdZx30.png" },
-          { name: "Sekys", team: "Selangor Red Giants", lane: "Jungler", hero: "Yi Sun-Shin", kills: 6, deaths: 4, assists: 4, picture: "https://i.imgur.com/6cd6pGF.png" },
-          { name: "Stormie", team: "Selangor Red Giants", lane: "Midlaner", hero: "Kagura", kills: 2, deaths: 2, assists: 7, picture: "https://i.imgur.com/1KIkUJ7.png" },
-          { name: "Kramm", team: "Selangor Red Giants", lane: "Exp Laner", hero: "Phoveus", kills: 0, deaths: 1, assists: 3, picture: "https://i.imgur.com/bPYW0sI.png" },
-          { name: "Yums", team: "Selangor Red Giants", lane: "Roamer", hero: "Gatotkaca", kills: 1, deaths: 2, assists: 8, picture: "https://i.imgur.com/ws8GoEJ.png"},
+          { name: "Innocent",  hero: "Lapu-Lapu", kills: 2, deaths: 3, assists: 2 },
+          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 6, deaths: 4, assists: 4 },
+          { name: "Stormie", hero: "Kagura", kills: 2, deaths: 2, assists: 7 },
+          { name: "Kramm",  hero: "Phoveus", kills: 0, deaths: 1, assists: 3 },
+          { name: "Yums",  hero: "Gatotkaca", kills: 1, deaths: 2, assists: 8},
 
           // Homebois Players
-          { name: "Melqt", team: "Homebois", lane: "Gold Laner", hero: "Moskov", kills: 3, deaths: 1, assists: 4, picture: "https://i.imgur.com/ReSovOr.png" },
-          { name: "Eyymal", team: "Homebois", lane: "Jungler", hero: "Benedetta", kills: 2, deaths: 2, assists: 8, picture: "https://i.imgur.com/cMJUTQh.png" },
-          { name: "Izanami", team: "Homebois", lane: "Midlaner", hero: "Kimmy", kills: 3, deaths: 0, assists: 3, picture: "https://i.imgur.com/xaBAD77.png" },
-          { name: "Rezza", team: "Homebois", lane: "Exp Laner", hero: "Hilda", kills: 3, deaths: 3, assists: 6, picture: "https://i.imgur.com/1HJiEgB.png" },
-          { name: "Cayden", team: "Homebois", lane: "Roamer", hero: "Kalea", kills: 1, deaths: 5, assists: 5, picture: "https://i.imgur.com/O4oDGXc.png"}
+          { name: "Melqt",  hero: "Moskov", kills: 3, deaths: 1, assists: 4 },
+          { name: "Eyymal",  hero: "Benedetta", kills: 2, deaths: 2, assists: 8 },
+          { name: "Izanami",  hero: "Kimmy", kills: 3, deaths: 0, assists: 3 },
+          { name: "Rezza",  hero: "Hilda", kills: 3, deaths: 3, assists: 6 },
+          { name: "Cayden",  hero: "Kalea", kills: 1, deaths: 5, assists: 5}
         ], objectives: {
           lord: { "Selangor Red Giants": 1, "Homebois": 0 },
           turtle: { "Selangor Red Giants": 3, "Homebois": 0 },
@@ -418,18 +425,18 @@ let matches = [
         bans: ["Fredrinn","Arlott","Zhuxin","Selena","Luoyi","Fanny","Wanwan", "Cici","Grock", "Kalea"],
         players: [
                 // Selangor Red Giants Players
-          { name: "Innocent", team: "Selangor Red Giants", lane: "Gold Laner", hero: "Ruby", kills: 3, deaths: 2, assists: 8, picture: "https://i.imgur.com/SHdZx30.png" },
-          { name: "Sekys", team: "Selangor Red Giants", lane: "Jungler", hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 7, picture: "https://i.imgur.com/6cd6pGF.png" },
-          { name: "Stormie", team: "Selangor Red Giants", lane: "Midlaner", hero: "Luoyi", kills: 4, deaths: 0, assists: 7, picture: "https://i.imgur.com/1KIkUJ7.png" },
-          { name: "Kramm", team: "Selangor Red Giants", lane: "Exp Laner", hero: "Esmeralda", kills: 6, deaths: 0, assists: 4, picture: "https://i.imgur.com/bPYW0sI.png" },
-          { name: "Yums", team: "Selangor Red Giants", lane: "Roamer", hero: "Chou", kills: 1, deaths: 3, assists: 6, picture: "https://i.imgur.com/ws8GoEJ.png"},
+          { name: "Innocent",  hero: "Ruby", kills: 3, deaths: 2, assists: 8},
+          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 4, deaths: 0, assists: 7},
+          { name: "Stormie", hero: "Luoyi", kills: 4, deaths: 0, assists: 7 },
+          { name: "Kramm",  hero: "Esmeralda", kills: 6, deaths: 0, assists: 4 },
+          { name: "Yums",  hero: "Chou", kills: 1, deaths: 3, assists: 6, },
 
           // Homebois Players
-          { name: "Melqt", team: "Homebois", lane: "Gold Laner", hero: "Harith", kills: 0, deaths: 3, assists: 4, picture: "https://i.imgur.com/ReSovOr.png" },
-          { name: "Eyymal", team: "Homebois", lane: "Jungler", hero: "Fanny", kills: 0, deaths: 3, assists: 3, picture: "https://i.imgur.com/cMJUTQh.png" },
-          { name: "Izanami", team: "Homebois", lane: "Midlaner", hero: "Kimmy", kills: 1, deaths: 6, assists: 4, picture: "https://i.imgur.com/xaBAD77.png" },
-          { name: "Rezza", team: "Homebois", lane: "Exp Laner", hero: "Phoveus", kills: 2, deaths: 2, assists: 1, picture: "https://i.imgur.com/1HJiEgB.png" },
-          { name: "Cayden", team: "Homebois", lane: "Roamer", hero: "Gatotkaca", kills: 2, deaths: 4, assists: 1, picture: "https://i.imgur.com/O4oDGXc.png"}
+          { name: "Melqt",  hero: "Harith", kills: 0, deaths: 3, assists: 4 },
+          { name: "Eyymal",  hero: "Fanny", kills: 0, deaths: 3, assists: 3 },
+          { name: "Izanami",  hero: "Kimmy", kills: 1, deaths: 6, assists: 4 },
+          { name: "Rezza",  hero: "Phoveus", kills: 2, deaths: 2, assists: 1 },
+          { name: "Cayden",  hero: "Gatotkaca", kills: 2, deaths: 4, assists: 1}
         ], objectives: {
           lord: { "Selangor Red Giants": 1, "Homebois": 0 },
           turtle: { "Selangor Red Giants": 3, "Homebois": 0 },
@@ -446,18 +453,18 @@ let matches = [
         bans: ["Lancelot","Fanny","Zhuxin","Chip","Valentina","Cici","Kalea", "Arlott","Akai", "Hayabusa"],
         players: [
           // Team Rey Players
-          { name: "Jowm", team: "Team Rey", lane: "Gold Laner", hero: "Moskov", kills: 8, deaths: 1, assists: 6, picture: "https://i.imgur.com/vVtCp4S.png" },
-          { name: "Duskk", team: "Team Rey", lane: "Jungler", hero: "Fredrinn", kills: 2, deaths: 3, assists: 9, picture: "https://i.imgur.com/yEpZzkl.png" },
-          { name: "Zakqt", team: "Team Rey", lane: "Midlaner", hero: "Pharsa", kills: 1, deaths: 1, assists: 11, picture: "https://i.imgur.com/rLCjvzJ.png" },
-          { name: "Der", team: "Team Rey", lane: "Exp Laner", hero: "Lapu-Lapu", kills: 3, deaths: 3, assists: 10, picture: "https://i.imgur.com/V0kSb6s.png" },
-          { name: "NovaXCobar", team: "Team Rey", lane: "Roamer", hero: "Kaja", kills: 1, deaths: 4, assists: 9, picture: "https://i.imgur.com/dgfRft1.png"},
+          { name: "Jowm",  hero: "Moskov", kills: 8, deaths: 1, assists: 6 },
+          { name: "Duskk",  hero: "Fredrinn", kills: 2, deaths: 3, assists: 9 },
+          { name: "Zakqt",  hero: "Pharsa", kills: 1, deaths: 1, assists: 11 },
+          { name: "Der",  hero: "Lapu-Lapu", kills: 3, deaths: 3, assists: 10 },
+          { name: "NovaXCobar",  hero: "Kaja", kills: 1, deaths: 4, assists: 9},
 
           // Todak Players
-          { name: "Loleal", team: "Todak", lane: "Gold Laner", hero: "Wanwan", kills: 4, deaths: 3, assists: 5, picture: "https://i.imgur.com/Mmz80I7.png" },
-          { name: "Zahyed", team: "Todak", lane: "Jungler", hero: "Baxia", kills: 0, deaths: 5, assists: 9, picture: "https://i.imgur.com/Zr5f3ZU.png" },
-          { name: "ZaimSempoi", team: "Todak", lane: "Midlaner", hero: "Selena", kills: 4, deaths: 1, assists: 4, picture: "https://i.imgur.com/J1dXujF.png" },
-          { name: "Fawndeer", team: "Todak", lane: "Exp Laner", hero: "Phoveus", kills: 4, deaths: 4, assists: 5, picture: "https://i.imgur.com/5AMdEih.png" },
-          { name: "Dreams", team: "Todak", lane: "Roamer", hero: "Khaleed", kills: 0, deaths: 2, assists: 8, picture: "https://i.imgur.com/aNDNWHb.png"}
+          { name: "Loleal",  hero: "Wanwan", kills: 4, deaths: 3, assists: 5 },
+          { name: "Zahyed",  hero: "Baxia", kills: 0, deaths: 5, assists: 9 },
+          { name: "ZaimSempoi", hero: "Selena", kills: 4, deaths: 1, assists: 4 },
+          { name: "Fawndeer",  hero: "Phoveus", kills: 4, deaths: 4, assists: 5 },
+          { name: "Dreams", hero: "Khaleed", kills: 0, deaths: 2, assists: 8}
         ], objectives: {
           lord: { "Team Rey": 3, "Todak": 0 },
           turtle: { "Team Rey": 2, "Todak": 1 },
@@ -469,18 +476,18 @@ let matches = [
         bans: ["Lancelot","Fanny","Wanwan","Ruby","Harith","Cici","Arlott", "Pharsa","Kalea", "Kimmy"],
         players: [
           // Team Rey Players
-          { name: "Jowm", team: "Team Rey", lane: "Gold Laner", hero: "Moskov", kills: 1, deaths: 0, assists: 5, picture: "https://i.imgur.com/vVtCp4S.png" },
-          { name: "Duskk", team: "Team Rey", lane: "Jungler", hero: "Fredrinn", kills: 3, deaths: 1, assists: 2, picture: "https://i.imgur.com/yEpZzkl.png" },
-          { name: "Zakqt", team: "Team Rey", lane: "Midlaner", hero: "Valentina", kills: 1, deaths: 0, assists: 7, picture: "https://i.imgur.com/rLCjvzJ.png" },
-          { name: "Der", team: "Team Rey", lane: "Exp Laner", hero: "Lapu-Lapu", kills: 1, deaths: 3, assists: 4, picture: "https://i.imgur.com/V0kSb6s.png" },
-          { name: "NovaXCobar", team: "Team Rey", lane: "Roamer", hero: "Chou", kills: 3, deaths: 0, assists: 2, picture: "https://i.imgur.com/dgfRft1.png"},
+          { name: "Jowm",  hero: "Moskov", kills: 1, deaths: 0, assists: 5 },
+          { name: "Duskk",  hero: "Fredrinn", kills: 3, deaths: 1, assists: 2 },
+          { name: "Zakqt",  hero: "Valentina", kills: 1, deaths: 0, assists: 7 },
+          { name: "Der",  hero: "Lapu-Lapu", kills: 1, deaths: 3, assists: 4 },
+          { name: "NovaXCobar",  hero: "Chou", kills: 3, deaths: 0, assists: 2},
 
           // Todak Players
-          { name: "Loleal", team: "Todak", lane: "Gold Laner", hero: "Claude", kills: 0, deaths: 1, assists: 2, picture: "https://i.imgur.com/Mmz80I7.png" },
-          { name: "Zahyed", team: "Todak", lane: "Jungler", hero: "Yi Sun-Shin", kills: 2, deaths: 2, assists: 2, picture: "https://i.imgur.com/Zr5f3ZU.png" },
-          { name: "ZaimSempoi", team: "Todak", lane: "Midlaner", hero: "Zhuxin", kills: 2, deaths: 1, assists: 2, picture: "https://i.imgur.com/J1dXujF.png" },
-          { name: "Fawndeer", team: "Todak", lane: "Exp Laner", hero: "Esmeralda", kills: 0, deaths: 2, assists: 2, picture: "https://i.imgur.com/5AMdEih.png" },
-          { name: "Dreams", team: "Todak", lane: "Roamer", hero: "Gatotkaca", kills: 0, deaths: 3, assists: 4, picture: "https://i.imgur.com/aNDNWHb.png"}
+          { name: "Loleal",  hero: "Claude", kills: 0, deaths: 1, assists: 2},
+          { name: "Zahyed",  hero: "Yi Sun-Shin", kills: 2, deaths: 2, assists: 2 },
+          { name: "ZaimSempoi",  hero: "Zhuxin", kills: 2, deaths: 1, assists: 2 },
+          { name: "Fawndeer",  hero: "Esmeralda", kills: 0, deaths: 2, assists: 2 },
+          { name: "Dreams",  hero: "Gatotkaca", kills: 0, deaths: 3, assists: 4}
         ], objectives: {
           lord: { "Team Rey": 1, "Todak": 0 },
           turtle: { "Team Rey": 1, "Todak": 2 },
@@ -497,18 +504,18 @@ let matches = [
         bans: ["Phoveus","Arlott","Hayabusa","Moskov","Granger","Wanwan","Lancelot", "Pharsa","Lapu-Lapu", "Kadita"],
         players: [
           // CG Esports Players
-          { name: "Amzziq", team: "CG Esports", lane: "Gold Laner", hero: "Harith", kills: 5, deaths: 1, assists: 3, picture: "https://i.imgur.com/wguX967.png" },
-          { name: "Gary", team: "CG Esports", lane: "Jungler", hero: "Baxia", kills: 4, deaths: 3, assists: 5, picture: "https://i.imgur.com/QPK02Ki.png" },
-          { name: "Ciku", team: "CG Esports", lane: "Midlaner", hero: "Xavier", kills: 0, deaths: 2, assists: 6, picture: "https://i.imgur.com/r3iKJPK.png" },
-          { name: "Ye3", team: "CG Esports", lane: "Exp Laner", hero: "Paquito", kills: 1, deaths: 2, assists: 5, picture: "https://i.imgur.com/Dzd9Bpy.png" },
-          { name: "Valenz", team: "CG Esports", lane: "Roamer", hero: "Kalea", kills: 0, deaths: 1, assists: 5, picture: "https://i.imgur.com/nzbIpw1.png"},
+          { name: "Amzziq",  hero: "Harith", kills: 5, deaths: 1, assists: 3 },
+          { name: "Gary",  hero: "Baxia", kills: 4, deaths: 3, assists: 5 },
+          { name: "Ciku",  hero: "Xavier", kills: 0, deaths: 2, assists: 6 },
+          { name: "Ye3",  hero: "Paquito", kills: 1, deaths: 2, assists: 5 },
+          { name: "Valenz",  hero: "Kalea", kills: 0, deaths: 1, assists: 5},
 
           // GAMESMY Kelantan Players
-          { name: "Immqt", team: "GAMESMY Kelantan", lane: "Gold Laner", hero: "Bruno", kills: 2, deaths: 1, assists: 3, picture: "https://i.imgur.com/K18ycH2.png" },
-          { name: "Jaja", team: "GAMESMY Kelantan", lane: "Jungler", hero: "Fredrinn", kills: 1, deaths: 2, assists: 6, picture: "https://i.imgur.com/qwypigC.png" },
-          { name: "Maima", team: "GAMESMY Kelantan", lane: "Midlaner", hero: "Kimmy", kills: 3, deaths: 4, assists: 3, picture: "https://i.imgur.com/0WNp0Ub.png" },
-          { name: "Munster", team: "GAMESMY Kelantan", lane: "Exp Laner", hero: "Cici", kills: 3, deaths: 2, assists: 4, picture: "https://i.imgur.com/2bBe6Ev.png" },
-          { name: "Matdinz", team: "GAMESMY Kelantan", lane: "Roamer", hero: "Mathilda", kills: 0, deaths: 1, assists: 7, picture: "https://i.imgur.com/lSWoHLl.png"}
+          { name: "Immqt",  hero: "Bruno", kills: 2, deaths: 1, assists: 3},
+          { name: "Jaja",  hero: "Fredrinn", kills: 1, deaths: 2, assists: 6 },
+          { name: "Maima",  hero: "Kimmy", kills: 3, deaths: 4, assists: 3 },
+          { name: "Munster",  hero: "Cici", kills: 3, deaths: 2, assists: 4 },
+          { name: "Matdinz",  hero: "Mathilda", kills: 0, deaths: 1, assists: 7}
         ], objectives: {
           lord: { "CG Esports": 2, "GAMESMY Kelantan": 0 },
           turtle: { "CG Esports": 3, "GAMESMY Kelantan": 0 },
@@ -521,18 +528,18 @@ let matches = [
         bans: ["Wanwan","Arlott","Baxia","Grock","Moskov","Fanny","Cici", "Kimmy","Ruby", "Pharsa"],
         players: [
           // CG Esports Players
-          { name: "Amzziq", team: "CG Esports", lane: "Gold Laner", hero: "Granger", kills: 4, deaths: 0, assists: 6, picture: "https://i.imgur.com/wguX967.png" },
-          { name: "Gary", team: "CG Esports", lane: "Jungler", hero: "Yi Sun-Shin", kills: 3, deaths: 0, assists: 11, picture: "https://i.imgur.com/QPK02Ki.png" },
-          { name: "Ciku", team: "CG Esports", lane: "Midlaner", hero: "Odette", kills: 6, deaths: 1, assists: 4, picture: "https://i.imgur.com/r3iKJPK.png" },
-          { name: "Ye3", team: "CG Esports", lane: "Exp Laner", hero: "Esmeralda", kills: 2, deaths: 0, assists: 4, picture: "https://i.imgur.com/Dzd9Bpy.png" },
-          { name: "Valenz", team: "CG Esports", lane: "Roamer", hero: "Kalea", kills: 0, deaths: 0, assists: 12, picture: "https://i.imgur.com/nzbIpw1.png"},
+          { name: "Amzziq",  hero: "Granger", kills: 4, deaths: 0, assists: 6 },
+          { name: "Gary",  hero: "Yi Sun-Shin", kills: 3, deaths: 0, assists: 11 },
+          { name: "Ciku",  hero: "Odette", kills: 6, deaths: 1, assists: 4 },
+          { name: "Ye3",  hero: "Esmeralda", kills: 2, deaths: 0, assists: 4 },
+          { name: "Valenz",  hero: "Kalea", kills: 0, deaths: 0, assists: 12},
 
           // GAMESMY Kelantan Players
-          { name: "Immqt", team: "GAMESMY Kelantan", lane: "Gold Laner", hero: "Harith", kills: 0, deaths: 0, assists: 0, picture: "https://i.imgur.com/K18ycH2.png" },
-          { name: "Jaja", team: "GAMESMY Kelantan", lane: "Jungler", hero: "Lancelot", kills: 0, deaths: 3, assists: 1, picture: "https://i.imgur.com/qwypigC.png" },
-          { name: "Maima", team: "GAMESMY Kelantan", lane: "Midlaner", hero: "Zhuxin", kills: 0, deaths: 3, assists: 1, picture: "https://i.imgur.com/0WNp0Ub.png" },
-          { name: "Munster", team: "GAMESMY Kelantan", lane: "Exp Laner", hero: "Uranus", kills: 0, deaths: 4, assists: 0, picture: "https://i.imgur.com/2bBe6Ev.png" },
-          { name: "Matdinz", team: "GAMESMY Kelantan", lane: "Roamer", hero: "Gatotkaca", kills: 1, deaths: 5, assists: 0, picture: "https://i.imgur.com/lSWoHLl.png"}
+          { name: "Immqt",  hero: "Harith", kills: 0, deaths: 0, assists: 0 },
+          { name: "Jaja",  hero: "Lancelot", kills: 0, deaths: 3, assists: 1 },
+          { name: "Maima",  hero: "Zhuxin", kills: 0, deaths: 3, assists: 1 },
+          { name: "Munster",  hero: "Uranus", kills: 0, deaths: 4, assists: 0 },
+          { name: "Matdinz",  hero: "Gatotkaca", kills: 1, deaths: 5, assists: 0}
         ], objectives: {
           lord: { "CG Esports": 1, "GAMESMY Kelantan": 0 },
           turtle: { "CG Esports": 3, "GAMESMY Kelantan": 0 },
@@ -550,18 +557,18 @@ let matches = [
         players: [
           // Team Vamos Players
           // Team Vamos Players
-          { name: "Natco", team: "Team Vamos", lane: "Gold Laner", hero: "Granger", kills: 3, deaths: 1, assists: 5, picture: "https://i.imgur.com/48b6SmK.png" },
-          { name: "Chibi", team: "Team Vamos", lane: "Jungler", hero: "Lancelot", kills: 3, deaths: 0, assists: 7, picture: "https://i.imgur.com/ahEyDfv.png" },
-          { name: "Clawkun", team: "Team Vamos", lane: "Midlaner", hero: "Pharsa", kills: 2, deaths: 2, assists: 6, picture: "https://i.imgur.com/mDZrBXV.png" },
-          { name: "Gojes", team: "Team Vamos", lane: "Exp Laner", hero: "Hilda", kills: 4, deaths: 2, assists: 6, picture: "https://i.imgur.com/2inGQSn.png" },
-          { name: "Xorn", team: "Team Vamos", lane: "Roamer", hero: "Kalea", kills: 1, deaths: 4, assists: 9, picture: "https://i.imgur.com/Ux5auTn.png"},
+          { name: "Natco", hero: "Granger", kills: 3, deaths: 1, assists: 5 },
+          { name: "Chibi", hero: "Lancelot", kills: 3, deaths: 0, assists: 7 },
+          { name: "Clawkun",  hero: "Pharsa", kills: 2, deaths: 2, assists: 6 },
+          { name: "Gojes", hero: "Hilda", kills: 4, deaths: 2, assists: 6 },
+          { name: "Xorn",  hero: "Kalea", kills: 1, deaths: 4, assists: 9},
 
           // Homebois Players
-          { name: "Zippyqt", team: "Homebois", lane: "Gold Laner", hero: "Moskov", kills: 0, deaths: 2, assists: 3, picture: "https://i.imgur.com/Po8ykTi.png" },
-          { name: "Eyymal", team: "Homebois", lane: "Jungler", hero: "Yi Sun-Shin", kills: 0, deaths: 2, assists: 8, picture: "https://i.imgur.com/cMJUTQh.png" },
-          { name: "Izanami", team: "Homebois", lane: "Midlaner", hero: "Selena", kills: 3, deaths: 3, assists: 6, picture: "https://i.imgur.com/xaBAD77.png" },
-          { name: "Rezza", team: "Homebois", lane: "Exp Laner", hero: "Badang", kills: 4, deaths: 3, assists: 3, picture: "https://i.imgur.com/1HJiEgB.png" },
-          { name: "Cayden", team: "Homebois", lane: "Roamer", hero: "Gatotkaca", kills: 2, deaths: 3, assists: 7, picture: "https://i.imgur.com/O4oDGXc.png"}
+          { name: "Zippyqt",  hero: "Moskov", kills: 0, deaths: 2, assists: 3 },
+          { name: "Eyymal",  hero: "Yi Sun-Shin", kills: 0, deaths: 2, assists: 8},
+          { name: "Izanami",  hero: "Selena", kills: 3, deaths: 3, assists: 6 },
+          { name: "Rezza",  hero: "Badang", kills: 4, deaths: 3, assists: 3 },
+          { name: "Cayden",  hero: "Gatotkaca", kills: 2, deaths: 3, assists: 7}
         ], objectives: {
           lord: { "Team Vamos": 1, "Homebois": 0 },
           turtle: { "Team Vamos": 2, "Homebois": 1 },
@@ -573,18 +580,18 @@ let matches = [
         bans: ["Fanny","Zhuxin","Baxia","Kagura","Valentina","Cici","Yi Sun-Shin", "Wanwan","Phoveus", "Arlott"],
         players: [
           // Team Vamos Players
-          { name: "Natco", team: "Team Vamos", lane: "Gold Laner", hero: "Granger", kills: 6, deaths: 0, assists: 6, picture: "https://i.imgur.com/48b6SmK.png" },
-          { name: "Chibi", team: "Team Vamos", lane: "Jungler", hero: "Lancelot", kills: 1, deaths: 2, assists: 13, picture: "https://i.imgur.com/ahEyDfv.png" },
-          { name: "Clawkun", team: "Team Vamos", lane: "Midlaner", hero: "Pharsa", kills: 7, deaths: 0, assists: 7, picture: "https://i.imgur.com/mDZrBXV.png" },
-          { name: "Gojes", team: "Team Vamos", lane: "Exp Laner", hero: "Esmeralda", kills: 3, deaths: 1, assists: 8, picture: "https://i.imgur.com/2inGQSn.png" },
-          { name: "Xorn", team: "Team Vamos", lane: "Roamer", hero: "Kalea", kills: 0, deaths: 1, assists: 10, picture: "https://i.imgur.com/Ux5auTn.png"},
+          { name: "Natco",  hero: "Granger", kills: 6, deaths: 0, assists: 6 },
+          { name: "Chibi",  hero: "Lancelot", kills: 1, deaths: 2, assists: 13 },
+          { name: "Clawkun",  hero: "Pharsa", kills: 7, deaths: 0, assists: 7 },
+          { name: "Gojes",  hero: "Esmeralda", kills: 3, deaths: 1, assists: 8 },
+          { name: "Xorn",  hero: "Kalea", kills: 0, deaths: 1, assists: 10},
 
           // Homebois Players
-          { name: "Zippyqt", team: "Homebois", lane: "Gold Laner", hero: "Harith", kills: 1, deaths: 3, assists: 0, picture: "https://i.imgur.com/Po8ykTi.png" },
-          { name: "Eyymal", team: "Homebois", lane: "Jungler", hero: "Benedetta", kills: 1, deaths: 3, assists: 1, picture: "https://i.imgur.com/cMJUTQh.png" },
-          { name: "Izanami", team: "Homebois", lane: "Midlaner", hero: "Lunox", kills: 2, deaths: 1, assists: 2, picture: "https://i.imgur.com/xaBAD77.png" },
-          { name: "Rezza", team: "Homebois", lane: "Exp Laner", hero: "Gloo", kills: 0, deaths: 4, assists: 2, picture: "https://i.imgur.com/1HJiEgB.png" },
-          { name: "Cayden", team: "Homebois", lane: "Roamer", hero: "Gatotkaca", kills: 0, deaths: 6, assists: 3, picture: "https://i.imgur.com/O4oDGXc.png"}
+          { name: "Zippyqt",  hero: "Harith", kills: 1, deaths: 3, assists: 0 },
+          { name: "Eyymal",  hero: "Benedetta", kills: 1, deaths: 3, assists: 1 },
+          { name: "Izanami",  hero: "Lunox", kills: 2, deaths: 1, assists: 2 },
+          { name: "Rezza",  hero: "Gloo", kills: 0, deaths: 4, assists: 2 },
+          { name: "Cayden",  hero: "Gatotkaca", kills: 0, deaths: 6, assists: 3}
         ], objectives: {
           lord: { "Team Vamos": 1, "Homebois": 0 },
           turtle: { "Team Vamos": 2, "Homebois": 0 },
@@ -621,12 +628,23 @@ function calculateTeamStats() {
 
       if (game.winner === match.teamA) teamAGameWins++; else teamBGameWins++;
 
-      for (let player of game.players) {
-        let t = player.team;
-        teamStats[t].kills += player.kills;
-        teamStats[t].deaths += player.deaths;
-        teamStats[t].assists += player.assists;
-      }
+for (let player of game.players) {
+  const info = getRoster(player.name);
+  const t = info.team;
+
+  if (!teamStats[t]) {
+    teamStats[t] = {
+      kills:0,deaths:0,assists:0,
+      gamesPlayed:0,gameWins:0,
+      matchesPlayed:0,matchWins:0,
+      lord:0,turtle:0,tower:0
+    };
+  }
+
+  teamStats[t].kills += player.kills;
+  teamStats[t].deaths += player.deaths;
+  teamStats[t].assists += player.assists;
+}
 
       // objectives totals (safe if missing)
       if (game.objectives) {
@@ -662,26 +680,68 @@ function calculateTeamStats() {
 
 function calculatePlayerStats() {
   let playerStats = {};
+
+  // Seed from roster so subs show with 0 games
+  for (const r of (roster || [])) {
+    playerStats[r.name] = {
+      team: r.team,
+      lane: r.lane,
+      games: 0,
+      kills: 0,
+      deaths: 0,
+      assists: 0,
+      kpTotal: 0,
+      picture: r.picture
+    };
+  }
+
+  // Add match data
   for (let match of matches) {
     for (let game of match.games) {
+
+      // teamKills needs team info from roster
       let teamKills = {};
       for (let player of game.players) {
-        if (!teamKills[player.team]) teamKills[player.team] = 0;
-        teamKills[player.team] += player.kills;
+        const t = getRoster(player.name).team;
+        if (!teamKills[t]) teamKills[t] = 0;
+        teamKills[t] += player.kills;
       }
+
       for (let player of game.players) {
+        const info = getRoster(player.name);
+
+        // if player not in roster (typo/new), still include them
         if (!playerStats[player.name]) {
-          playerStats[player.name] = { team: player.team, lane: player.lane, games:0, kills:0,deaths:0,assists:0,kpTotal:0, picture:player.picture };
+          playerStats[player.name] = {
+            team: info.team,
+            lane: info.lane,
+            games: 0,
+            kills: 0,
+            deaths: 0,
+            assists: 0,
+            kpTotal: 0,
+            picture: info.picture
+          };
         }
-        let ps = playerStats[player.name];
+
+        const ps = playerStats[player.name];
+        ps.team = info.team;
+        ps.lane = info.lane;
+        ps.picture = info.picture;
+
         ps.games++;
         ps.kills += player.kills;
         ps.deaths += player.deaths;
         ps.assists += player.assists;
-        ps.kpTotal += (player.kills + player.assists)/teamKills[player.team];
+
+        const denom = teamKills[info.team] || 0;
+        if (denom > 0) {
+          ps.kpTotal += (player.kills + player.assists) / denom;
+        }
       }
     }
   }
+
   return playerStats;
 }
 
@@ -995,82 +1055,103 @@ function showTopPlayers(category) {
 }
 
 function calculateHeroStats() {
-  let heroStats = {};
-
-  let totalPicks = 0;
+  const heroStats = {};
   let totalGames = 0;
 
-  for (let match of matches) {
-    for (let game of match.games) {
+  for (const match of matches) {
+    for (const game of (match.games || [])) {
       totalGames++;
 
-      // PICKS + WINS from players
-      for (let player of game.players) {
-        const h = player.hero;
-        if (!heroStats[h]) heroStats[h] = { hero: h, pick: 0, ban: 0, win: 0 };
-        heroStats[h].pick++;
-        totalPicks++;
+      // Track which heroes were picked THIS game (so pickGames counts once per game)
+      const pickedThisGame = new Set();
 
-        if (player.team === game.winner) {
-          heroStats[h].win++;
-        }
+      // PICKS + WINS
+      for (const p of (game.players || [])) {
+        const h = String(p.hero || "").trim();
+        if (!h) continue;
+
+        if (!heroStats[h]) heroStats[h] = { hero: h, pick: 0, pickGames: 0, ban: 0, win: 0 };
+
+        heroStats[h].pick += 1;          // total times picked (player-picks)
+        pickedThisGame.add(h);           // used for per-game pick rate
+
+        const team = getRoster(p.name).team;
+        if (team === game.winner) heroStats[h].win += 1; // win per pick (same as before)
       }
 
-      // BANS (count ONCE per game per hero)
+      // After reading all players, add 1 pickGame for each hero picked this game
+      for (const h of pickedThisGame) {
+        heroStats[h].pickGames += 1;
+      }
+
+      // BANS (once per game per hero)
       if (Array.isArray(game.bans)) {
-        const uniqueBans = new Set(game.bans);
-        for (let b of uniqueBans) {
-          if (!heroStats[b]) heroStats[b] = { hero: b, pick: 0, ban: 0, win: 0 };
-          heroStats[b].ban++;
+        const uniqueBans = new Set(game.bans.map(b => String(b).trim()));
+        for (const b of uniqueBans) {
+          if (!heroStats[b]) heroStats[b] = { hero: b, pick: 0, pickGames: 0, ban: 0, win: 0 };
+          heroStats[b].ban += 1;
         }
       }
     }
   }
 
-  // ✅ Ensure unused heroes appear too:
-  // Start from ALL heroes in constHero, plus any extra picked/banned heroes not in constHero.
+  // Include unused heroes too
   const allHeroes = new Set([
     ...Object.keys(constHero || {}),
     ...Object.keys(heroStats)
   ]);
 
-  // Build final array with rates (including unused heroes)
-  let arr = Array.from(allHeroes).map(h => {
-    const hs = heroStats[h] || { hero: h, pick: 0, ban: 0, win: 0 };
-
-    const winRate = hs.pick ? (hs.win / hs.pick) * 100 : 0;
-    const pickRate = totalPicks ? (hs.pick / totalPicks) * 100 : 0;
-    const banRate = totalGames ? (hs.ban / totalGames) * 100 : 0;
+  return Array.from(allHeroes).map(h => {
+    const hs = heroStats[h] || { hero: h, pick: 0, pickGames: 0, ban: 0, win: 0 };
 
     return {
       hero: hs.hero,
       pick: hs.pick,
-      pickRate,
+      pickRate: totalGames ? (hs.pickGames / totalGames) * 100 : 0, // ✅ per-game pick rate
       ban: hs.ban,
-      banRate,
-      winRate,
+      banRate: totalGames ? (hs.ban / totalGames) * 100 : 0,
+      winRate: hs.pick ? (hs.win / hs.pick) * 100 : 0,
       img: constHero[hs.hero] || ""
     };
   });
-
-  return arr;
 }
 
 function showHeroes(keepSearchFocus = false) {
-
   let arr = calculateHeroStats();
 
-  // Top 5 Pick
-  let topPick = [...arr].sort((a,b) => b.pick - a.pick).slice(0,5);
+  // ===== helper: unified top row renderer =====
+  function renderTopRow(label, list, valueFn) {
+    return `
+      <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
+        <strong style="min-width:240px; text-align:right; align-self:center;">
+          ${label}
+        </strong>
 
-  // Top 5 Ban
-  let topBan = [...arr].sort((a,b) => b.ban - a.ban).slice(0,5);
+        <div style="display:flex; justify-content:center; align-items:center; gap:16px;">
+          ${list.map(item => `
+            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
+              <img src="${item.img}" width="120" height="120" style="border-radius:50%;">
+              ${item.hero} (${valueFn(item)})
+            </span>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
 
-  // Top 5 Winrate (min 5 picks)
-  let topWin = arr
-    .filter(h => h.pick >= 5)
-    .sort((a,b) => b.winRate - a.winRate)
-    .slice(0,5);
+  // ===== TOP LISTS =====
+  const topPick = [...arr].sort((a,b) => b.pick - a.pick).slice(0,5);
+  const topBan  = [...arr].sort((a,b) => b.ban - a.ban).slice(0,5);
+
+  // Top 5 Winrate (min 5 picks) - optional fallback if none
+  let topWinCandidates = arr.filter(h => h.pick >= 5);
+  if (topWinCandidates.length === 0) topWinCandidates = arr.filter(h => h.pick > 0);
+
+  const topWin = [...topWinCandidates].sort((a,b) => b.winRate - a.winRate).slice(0,5);
+
+  const winLabel = arr.some(h => h.pick >= 5)
+    ? "TOP 5 WINRATE (MIN 5 GAMES) :"
+    : "TOP 5 WINRATE (MIN 1 PICK - EARLY DATA) :";
 
   // ===== SEARCH (HERO NAME ONLY) =====
   const searchEl = document.getElementById("heroSearch");
@@ -1081,7 +1162,7 @@ function showHeroes(keepSearchFocus = false) {
     arr = arr.filter(h => h.hero.toLowerCase().includes(q));
   }
 
-  // SORT table
+  // ===== SORT table =====
   if (heroSort.key) {
     arr.sort((a, b) => {
       let valA = a[heroSort.key];
@@ -1099,38 +1180,17 @@ function showHeroes(keepSearchFocus = false) {
     return heroSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
   }
 
+  // ===== Build unified top rows =====
+  const topPickRow = renderTopRow("TOP 5 PICK :", topPick, h => h.pick);
+  const topBanRow  = renderTopRow("TOP 5 BAN :", topBan, h => h.ban);
+  const topWinRow  = renderTopRow(winLabel, topWin, h => `${h.winRate.toFixed(1)}%`);
+
   let html = `
     <h2 style="text-align:center;">HERO STATS MPL MY S16</h2>
 
-    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-      <strong style="align-self:center;">TOP 5 PICK :</strong>
-      ${topPick.map(h => `
-        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
-          ${h.hero} (${h.pick})
-        </span>
-      `).join('')}
-    </div>
-
-    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-      <strong style="align-self:center;">TOP 5 BAN:</strong>
-      ${topBan.map(h => `
-        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
-          ${h.hero} (${h.ban})
-        </span>
-      `).join('')}
-    </div>
-
-    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-      <strong style="align-self:center;">TOP 5 WINRATE (MIN 5 GAMES PLAYED) :</strong>
-      ${topWin.map(h => `
-        <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-          <img src="${h.img}" width="120" height="120" style="border-radius:50%;">
-          ${h.hero} (${h.winRate.toFixed(1)}%)
-        </span>
-      `).join("")}
-    </div>
+    ${topPickRow}
+    ${topBanRow}
+    ${topWinRow}
 
     <!-- SEARCH BELOW TOP 5 WINRATE -->
     <div style="margin:20px 0; display:flex; justify-content:center;">
@@ -1202,12 +1262,15 @@ function calculateHeroPoolStats() {
   for (let match of matches) {
     for (let game of match.games) {
       for (let player of game.players) {
+
+        const info = getRoster(player.name);
+
         if (!pool[player.name]) {
           pool[player.name] = {
             name: player.name,
-            team: player.team,
-            lane: player.lane,
-            picture: player.picture,
+            team: info.team,
+            lane: info.lane,
+            picture: info.picture,
             heroes: {} // heroName -> { games:0, wins:0 }
           };
         }
@@ -1218,7 +1281,9 @@ function calculateHeroPoolStats() {
         if (!ps.heroes[heroName]) ps.heroes[heroName] = { games: 0, wins: 0 };
 
         ps.heroes[heroName].games++;
-        if (player.team === game.winner) ps.heroes[heroName].wins++;
+
+        // ✅ winner is TEAM NAME, so compare to roster team
+        if (info.team === game.winner) ps.heroes[heroName].wins++;
       }
     }
   }
@@ -1374,7 +1439,7 @@ function showHeroPool(keepSearchFocus = false) {
 
         <td style="vertical-align:middle;">
           <div style="display:flex; align-items:center; gap:8px;">
-            <img src="${teamLogos[ps.team]}" width="45" height="45" style="border-radius:50%;">
+            <img src="${teamLogos[ps.team] || ""}" width="45" height="45" style="border-radius:50%;">
             <span>${ps.team}</span>
           </div>
         </td>
@@ -1418,7 +1483,9 @@ function calculatePlayerPoolsStats() {
   for (let match of matches) {
     for (let game of match.games) {
       for (let player of game.players) {
+
         const heroName = player.hero;
+        const info = getRoster(player.name);
 
         if (!pools[heroName]) {
           pools[heroName] = {
@@ -1432,16 +1499,16 @@ function calculatePlayerPoolsStats() {
         if (!hs.players[player.name]) {
           hs.players[player.name] = {
             name: player.name,
-            team: player.team,
-            lane: player.lane,
-            picture: player.picture,
+            team: info.team,
+            lane: info.lane,
+            picture: info.picture,
             games: 0,
             wins: 0
           };
         }
 
         hs.players[player.name].games++;
-        if (player.team === game.winner) hs.players[player.name].wins++;
+        if (info.team === game.winner) hs.players[player.name].wins++;
       }
     }
   }
@@ -1669,5 +1736,5 @@ function setSupportPos(mode) {
     el.style.left = "auto";
     el.style.bottom = "auto";
     el.style.transform = "none";
-  }
-}
+
+  }}
