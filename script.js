@@ -1188,8 +1188,10 @@ function showHeroPool() {
 
     html += `
       <tr>
-        <td style="display:flex; align-items:center; gap:12px;">
-          <img src="${ps.picture}" width="70" height="70" style="border-radius:50%;">
+        <td style="vertical-align:middle;">
+         <div style="display:flex; align-items:center; gap:10px; height:100%;">
+          <img src="${ps.picture}" width="55" height="55"
+            style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
           <span>${ps.name}</span>
         </td>
 
