@@ -1337,7 +1337,7 @@ function showTeams() {
   }
 
   let html = `
-    <table>
+    <table class="teamsTable">
       <tr>
         <th onclick="sortTeams('team')">TEAM${arrow('team')}</th>
         <th onclick="sortTeams('matchWins')">MATCHES WON${arrow('matchWins')}</th>
