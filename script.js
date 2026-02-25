@@ -1167,6 +1167,8 @@ let matches = [
 
 
 // === Functions ===
+
+
 function calculateTeamStats() {
   let teamStats = {};
   for (let match of matches) {
@@ -1317,63 +1319,59 @@ function showTeams() {
     ...t[team]
   }));
 
-  // SORTING
   if (teamSort.key) {
     arr.sort((a, b) => {
       let valA = a[teamSort.key];
       let valB = b[teamSort.key];
 
       if (typeof valA === "string") {
-        return teamSort.asc
-          ? valA.localeCompare(valB)
-          : valB.localeCompare(valA);
+        return teamSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
       }
-
       return teamSort.asc ? valA - valB : valB - valA;
     });
   }
 
   function arrow(key) {
-    if (teamSort.key !== key) {
-      return ' <span style="opacity:0.4;">⇅</span>';
-    }
-    return teamSort.asc
-      ? ' <span>▲</span>'
-      : ' <span>▼</span>';
+    if (teamSort.key !== key) return ' <span style="opacity:0.4;">⇅</span>';
+    return teamSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
   }
 
   let html = `
-  <table>
-  <tr>
-    <th onclick="sortTeams('team')">TEAM${arrow('team')}</th>
-    <th onclick="sortTeams('matchWins')">MATCHES WON${arrow('matchWins')}</th>
-    <th onclick="sortTeams('kills')">KILLS${arrow('kills')}</th>
-    <th onclick="sortTeams('deaths')">DEATHS${arrow('deaths')}</th>
-    <th onclick="sortTeams('assists')">ASSISTS${arrow('assists')}</th>
-    <th onclick="sortTeams('lord')">LORD${arrow('lord')}</th>
-    <th onclick="sortTeams('turtle')">TURTLE${arrow('turtle')}</th>
-    <th onclick="sortTeams('tower')">TOWER${arrow('tower')}</th>
-  </tr>
+    <table>
+      <tr>
+        <th onclick="sortTeams('team')">TEAM${arrow('team')}</th>
+        <th onclick="sortTeams('matchWins')">MATCHES WON${arrow('matchWins')}</th>
+        <th onclick="sortTeams('kills')">KILLS${arrow('kills')}</th>
+        <th onclick="sortTeams('deaths')">DEATHS${arrow('deaths')}</th>
+        <th onclick="sortTeams('assists')">ASSISTS${arrow('assists')}</th>
+        <th onclick="sortTeams('lord')">LORD${arrow('lord')}</th>
+        <th onclick="sortTeams('turtle')">TURTLE${arrow('turtle')}</th>
+        <th onclick="sortTeams('tower')">TOWER${arrow('tower')}</th>
+      </tr>
   `;
 
   for (let ts of arr) {
+    const logo = teamLogos[ts.team] || "";
     html += `
-    <tr>
-      <td style="display:flex; align-items:center; gap:8px;">
-        <img src="${teamLogos[ts.team]}" width="50" height="50" style="border-radius:50%;">
-        <span>${ts.team}</span>
-      </td>
-      <td>${ts.matchWins}</td>
-      <td>${ts.kills}</td>
-      <td>${ts.deaths}</td>
-      <td>${ts.assists}</td>
-      <td>${ts.lord || 0}</td>
-      <td>${ts.turtle || 0}</td>
-      <td>${ts.tower || 0}</td>
-    </tr>`;
+      <tr>
+        <td>
+          <div class="teamCell">
+            ${logo ? `<img src="${logo}" alt="${ts.team}">` : ""}
+            <span>${ts.team}</span>
+          </div>
+        </td>
+        <td>${ts.matchWins}</td>
+        <td>${ts.kills}</td>
+        <td>${ts.deaths}</td>
+        <td>${ts.assists}</td>
+        <td>${ts.lord || 0}</td>
+        <td>${ts.turtle || 0}</td>
+        <td>${ts.tower || 0}</td>
+      </tr>
+    `;
   }
 
-  html += "</table>";
+  html += `</table>`;
   document.getElementById("output").innerHTML = html;
 }
 
@@ -1466,35 +1464,46 @@ function arrow(key) {
     : ' <span>▼</span>';
 }
   // ===== START HTML =====
-  let html = `
-  <h2 style="text-align:center;">TOP PLAYERS MPL MY S16</h2>
-    <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">TOP 5 KILLS:</strong>
-  ${topKills.map(pl => `
-    <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-      <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
-      ${pl.name} (${pl.kills})
-    </span>
-  `).join('')}
+let html = `
+<h2 style="text-align:center;">TOP PLAYERS MPL MY S16</h2>
+
+<div class="topRow">
+  <strong>TOP 5 KILLS:</strong>
+  <div class="topItems">
+    ${topKills.map(pl => `
+      <div class="topItem">
+        <img src="${pl.picture}">
+        ${pl.name} (${pl.kills})
+      </div>
+    `).join('')}
+  </div>
 </div>
-      <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">TOP 5 ASSISTS:</strong>
-  ${topAssists.map(pl => `
-    <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-      <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
-      ${pl.name} (${pl.assists})
-    </span>
-  `).join('')}
+
+<div class="topRow">
+  <strong>TOP 5 ASSISTS:</strong>
+  <div class="topItems">
+    ${topAssists.map(pl => `
+      <div class="topItem">
+        <img src="${pl.picture}">
+        ${pl.name} (${pl.assists})
+      </div>
+    `).join('')}
+  </div>
 </div>
-      <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-  <strong style="align-self:center;">TOP 5 KDA:</strong>
-  ${topKDA.map(pl => `
-    <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-      <img src="${pl.picture}" width="120" height="120" style="border-radius:50%;">
-      ${pl.name} (${pl.kda.toFixed(2)})
-    </span>
-  `).join('')}
+
+<div class="topRow">
+  <strong>TOP 5 KDA:</strong>
+  <div class="topItems">
+    ${topKDA.map(pl => `
+      <div class="topItem">
+        <img src="${pl.picture}">
+        ${pl.name} (${pl.kda.toFixed(2)})
+      </div>
+    `).join('')}
+  </div>
 </div>
+
+
 
   <div style="margin-bottom:20px; display:flex; gap:20px; justify-content:center;">
     <div>
@@ -1543,28 +1552,34 @@ function arrow(key) {
   `;
 
   for (let ps of arr) {
-    html += `
-    <tr>
-      <td style="display:flex; align-items:center; gap:12px;">
-        <img src="${ps.picture}" width="90" height="90" style="border-radius:50%;">
-        <span>${ps.name}</span>
-<td style="vertical-align:middle;">
-  <div style="display:flex; align-items:center; gap:8px;">
-    <img src="${teamLogos[ps.team]}" width="50" height="50" style="border-radius:50%;">
-    <span>${ps.team}</span>
-  </div>
-</td>
-      <td>${ps.lane}</td>
-      <td>${ps.games}</td>
-      <td>${ps.kills}</td>
-      <td>${ps.avgK.toFixed(2)}</td>
-      <td>${ps.deaths}</td>
-      <td>${ps.avgD.toFixed(2)}</td>
-      <td>${ps.assists}</td>
-      <td>${ps.avgA.toFixed(2)}</td>
-      <td>${ps.kda.toFixed(2)}</td>
-      <td>${ps.kp.toFixed(1)}%</td>
-    </tr>`;
+html += `
+<tr>
+  <td>
+    <div class="teamCell">
+      <img src="${ps.picture}" width="90" height="90" style="border-radius:50%;">
+      <span>${ps.name}</span>
+    </div>
+  </td>
+
+  <td>
+    <div class="teamCell">
+      <img src="${teamLogos[ps.team] || ""}" width="50" height="50" style="border-radius:50%;">
+      <span>${ps.team}</span>
+    </div>
+  </td>
+
+  <td>${ps.lane}</td>
+  <td>${ps.games}</td>
+  <td>${ps.kills}</td>
+  <td>${ps.avgK.toFixed(2)}</td>
+  <td>${ps.deaths}</td>
+  <td>${ps.avgD.toFixed(2)}</td>
+  <td>${ps.assists}</td>
+  <td>${ps.avgA.toFixed(2)}</td>
+  <td>${ps.kda.toFixed(2)}</td>
+  <td>${ps.kp.toFixed(1)}%</td>
+</tr>
+`;
   }
 
   html += "</table>";
@@ -1683,39 +1698,19 @@ function calculateHeroStats() {
 function showHeroes(keepSearchFocus = false) {
   let arr = calculateHeroStats();
 
-  // ===== helper: unified top row renderer =====
-  function renderTopRow(label, list, valueFn) {
-    return `
-      <div style="margin-bottom:10px; display:flex; justify-content:center; align-items:center; gap:16px;">
-        <strong style="min-width:240px; text-align:right; align-self:center;">
-          ${label}
-        </strong>
-
-        <div style="display:flex; justify-content:center; align-items:center; gap:16px;">
-          ${list.map(item => `
-            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:8px;">
-              <img src="${item.img}" width="120" height="120" style="border-radius:50%;">
-              ${item.hero} (${valueFn(item)})
-            </span>
-          `).join("")}
-        </div>
-      </div>
-    `;
-  }
-
   // ===== TOP LISTS =====
-  const topPick = [...arr].sort((a,b) => b.pick - a.pick).slice(0,5);
-  const topBan  = [...arr].sort((a,b) => b.ban - a.ban).slice(0,5);
+  const topPick = [...arr].sort((a, b) => b.pick - a.pick).slice(0, 5);
+  const topBan  = [...arr].sort((a, b) => b.ban - a.ban).slice(0, 5);
 
-  // Top 5 Winrate (min 5 picks) - optional fallback if none
+  // Top 5 Winrate (min 5 picks). Fallback to min 1 pick if none >= 5
   let topWinCandidates = arr.filter(h => h.pick >= 5);
-  if (topWinCandidates.length === 0) topWinCandidates = arr.filter(h => h.pick > 0);
+  const hasMin5 = topWinCandidates.length > 0;
+  if (!hasMin5) topWinCandidates = arr.filter(h => h.pick > 0);
+  const topWin = [...topWinCandidates].sort((a, b) => b.winRate - a.winRate).slice(0, 5);
 
-  const topWin = [...topWinCandidates].sort((a,b) => b.winRate - a.winRate).slice(0,5);
-
-  const winLabel = arr.some(h => h.pick >= 5)
-    ? "TOP 5 WINRATE (MIN 5 GAMES) :"
-    : "TOP 5 WINRATE (MIN 1 PICK - EARLY DATA) :";
+  const winLabel = hasMin5
+    ? "TOP 5 WINRATE (MIN 5 GAMES):"
+    : "TOP 5 WINRATE (MIN 1 PICK):";
 
   // ===== SEARCH (HERO NAME ONLY) =====
   const searchEl = document.getElementById("heroSearch");
@@ -1726,7 +1721,7 @@ function showHeroes(keepSearchFocus = false) {
     arr = arr.filter(h => h.hero.toLowerCase().includes(q));
   }
 
-  // ===== SORT table =====
+  // ===== SORT TABLE =====
   if (heroSort.key) {
     arr.sort((a, b) => {
       let valA = a[heroSort.key];
@@ -1744,58 +1739,87 @@ function showHeroes(keepSearchFocus = false) {
     return heroSort.asc ? ' <span>▲</span>' : ' <span>▼</span>';
   }
 
-  // ===== Build unified top rows =====
-  const topPickRow = renderTopRow("TOP 5 PICK :", topPick, h => h.pick);
-  const topBanRow  = renderTopRow("TOP 5 BAN :", topBan, h => h.ban);
-  const topWinRow  = renderTopRow(winLabel, topWin, h => `${h.winRate.toFixed(1)}%`);
+  // ===== unified top row renderer (centered + consistent card/avatar) =====
+  function renderTopRow(label, list, valueFn) {
+    return `
+      <div class="toprow">
+        <div class="toprow-label">${label}</div>
+
+        <div class="toprow-grid">
+          ${list.map(item => `
+            <div class="topcard">
+              <img class="topavatar" src="${item.img}" alt="${item.hero}">
+              <div class="topname">${item.hero} <span class="topvalue">(${valueFn(item)})</span></div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  const topPickRow = renderTopRow("TOP 5 PICK:", topPick, h => h.pick);
+  const topBanRow  = renderTopRow("TOP 5 BAN:",  topBan,  h => h.ban);
+  const topWinRow  = renderTopRow(winLabel,      topWin,  h => `${h.winRate.toFixed(1)}%`);
 
   let html = `
-    <h2 style="text-align:center;">HERO STATS MPL MY S16</h2>
+  <h2 class="panel-title">HERO STATS MPL MY S16</h2>
 
+  <div class="toprows">
     ${topPickRow}
     ${topBanRow}
     ${topWinRow}
+  </div>
 
-    <!-- SEARCH BELOW TOP 5 WINRATE -->
-    <div style="margin:20px 0; display:flex; justify-content:center;">
-      <input
-        id="heroSearch"
-        type="text"
-        placeholder="Search hero..."
-        value="${currentSearch.replace(/"/g, "&quot;")}"
-        oninput="onHeroSearchInput(event)"
-        style="padding:10px 14px; width:320px; border-radius:10px; border:1px solid #444; background:#0b0b0b; color:#fff;"
-      />
-    </div>
+  <div class="searchRow">
+    <input
+      id="heroSearch"
+      class="searchInput"
+      type="text"
+      placeholder="Search hero..."
+      value="${currentSearch.replace(/"/g, "&quot;")}"
+      oninput="onHeroSearchInput(event)"
+    />
+  </div>
 
-    <table>
-      <tr>
-        <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
-        <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
-        <th onclick="sortHeroes('pickRate')">PICK RATE${arrow('pickRate')}</th>
-        <th onclick="sortHeroes('ban')">BAN${arrow('ban')}</th>
-        <th onclick="sortHeroes('banRate')">BAN RATE${arrow('banRate')}</th>
-        <th onclick="sortHeroes('winRate')">WIN RATE${arrow('winRate')}</th>
-      </tr>
+  <div class="tableWrap">
+    <table class="dataTable">
+
+      <div class="tableWrap">
+        <table class="dataTable">
+          <tr>
+            <th onclick="sortHeroes('hero')">HERO${arrow('hero')}</th>
+            <th onclick="sortHeroes('pick')">PICK${arrow('pick')}</th>
+            <th onclick="sortHeroes('pickRate')">PICK RATE${arrow('pickRate')}</th>
+            <th onclick="sortHeroes('ban')">BAN${arrow('ban')}</th>
+            <th onclick="sortHeroes('banRate')">BAN RATE${arrow('banRate')}</th>
+            <th onclick="sortHeroes('winRate')">WIN RATE${arrow('winRate')}</th>
+          </tr>
   `;
 
   for (let h of arr) {
     html += `
       <tr>
-        <td style="display:flex; align-items:center; gap:10px;">
-          <img src="${h.img}" width="55" height="55" style="border-radius:12px;">
-          <span>${h.hero}</span>
+        <td>
+          <div class="cellHero">
+            <img class="cellHeroImg" src="${h.img}" alt="${h.hero}">
+            <span class="cellHeroName">${h.hero}</span>
+          </div>
         </td>
-        <td>${h.pick}</td>
-        <td>${h.pickRate.toFixed(1)}%</td>
-        <td>${h.ban}</td>
-        <td>${h.banRate.toFixed(1)}%</td>
-        <td>${h.winRate.toFixed(1)}%</td>
+        <td class="tdCenter">${h.pick}</td>
+        <td class="tdCenter">${h.pickRate.toFixed(1)}%</td>
+        <td class="tdCenter">${h.ban}</td>
+        <td class="tdCenter">${h.banRate.toFixed(1)}%</td>
+        <td class="tdCenter">${h.winRate.toFixed(1)}%</td>
       </tr>
     `;
   }
 
-  html += `</table>`;
+  html += `
+        </table>
+      </div>
+    </div>
+  `;
+
   document.getElementById("output").innerHTML = html;
 
   // keep continuous typing
@@ -2332,3 +2356,7 @@ function setSupportPos(mode) {
     el.style.transform = "none";
 
   }}
+// ✅ HOME = TEAMS (auto render on first load)
+window.addEventListener("DOMContentLoaded", () => {
+  showTeams();
+});
