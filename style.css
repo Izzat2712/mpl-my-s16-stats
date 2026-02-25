@@ -372,20 +372,24 @@ select:focus{
 .cellHeroName{ font-weight:700; }
 
 /* ===================================================
-   MOBILE ONLY: TEAMS table becomes vertical cards
-   (PC stays exactly the same)
+   MOBILE ONLY: Convert ALL tables to card layout
+   PC stays unchanged
 =================================================== */
 @media (max-width: 700px){
 
-  /* make the panel a bit tighter on phones */
+  /* tighter panel on phones */
   .panel{
     width: calc(100% - 24px);
     margin: 16px auto 40px;
     padding: 16px 12px;
   }
 
-  /* only target the Teams table if you add class="teamsTable" in JS */
-  table.teamsTable{
+  /* generic card-table behavior */
+  table.teamsTable,
+  table.playersTable,
+  table.heroesTable,
+  table.heroPoolTable,
+  table.playerPoolTable{
     display:block;
     background: transparent;
     border-radius: 0;
@@ -393,13 +397,21 @@ select:focus{
     margin-top: 12px;
   }
 
-  /* hide header row on mobile */
-  table.teamsTable tr:first-child{
+  /* hide header row */
+  table.teamsTable tr:first-child,
+  table.playersTable tr:first-child,
+  table.heroesTable tr:first-child,
+  table.heroPoolTable tr:first-child,
+  table.playerPoolTable tr:first-child{
     display:none;
   }
 
   /* each row becomes a card */
-  table.teamsTable tr{
+  table.teamsTable tr,
+  table.playersTable tr,
+  table.heroesTable tr,
+  table.heroPoolTable tr,
+  table.playerPoolTable tr{
     display:block;
     margin: 10px 0;
     background: rgba(255,255,255,0.05);
@@ -408,8 +420,12 @@ select:focus{
     overflow: hidden;
   }
 
-  /* each cell becomes a stacked stat row */
-  table.teamsTable td{
+  /* each cell becomes a stacked stat line */
+  table.teamsTable td,
+  table.playersTable td,
+  table.heroesTable td,
+  table.heroPoolTable td,
+  table.playerPoolTable td{
     display:flex;
     justify-content: space-between;
     align-items:center;
@@ -418,12 +434,20 @@ select:focus{
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  table.teamsTable tr td:last-child{
+  table.teamsTable tr td:last-child,
+  table.playersTable tr td:last-child,
+  table.heroesTable tr td:last-child,
+  table.heroPoolTable tr td:last-child,
+  table.playerPoolTable tr td:last-child{
     border-bottom:none;
   }
 
-  /* labels (left side) */
-  table.teamsTable td::before{
+  /* labels on the left */
+  table.teamsTable td::before,
+  table.playersTable td::before,
+  table.heroesTable td::before,
+  table.heroPoolTable td::before,
+  table.playerPoolTable td::before{
     font-weight: 800;
     opacity: 0.85;
     text-align:left;
@@ -431,7 +455,7 @@ select:focus{
     white-space: nowrap;
   }
 
-  /* map labels based on your column order */
+  /* ========= TEAMS labels (8 cols) ========= */
   table.teamsTable tr td:nth-child(1)::before{ content:"TEAM"; }
   table.teamsTable tr td:nth-child(2)::before{ content:"MATCHES WON"; }
   table.teamsTable tr td:nth-child(3)::before{ content:"KILLS"; }
@@ -441,13 +465,99 @@ select:focus{
   table.teamsTable tr td:nth-child(7)::before{ content:"TURTLE"; }
   table.teamsTable tr td:nth-child(8)::before{ content:"TOWER"; }
 
-  /* TEAM row: keep logo+name nice */
+  /* TEAM row content */
   table.teamsTable td:first-child{
     justify-content:flex-start;
     text-align:left !important;
   }
-
   table.teamsTable .teamCell{
-    justify-content:flex-start; /* looks best on mobile cards */
+    justify-content:flex-start;
+  }
+
+  /* ========= PLAYERS labels (12 cols) ========= */
+  table.playersTable tr td:nth-child(1)::before{ content:"PLAYER"; }
+  table.playersTable tr td:nth-child(2)::before{ content:"TEAM"; }
+  table.playersTable tr td:nth-child(3)::before{ content:"ROLE"; }
+  table.playersTable tr td:nth-child(4)::before{ content:"GAMES"; }
+  table.playersTable tr td:nth-child(5)::before{ content:"KILLS"; }
+  table.playersTable tr td:nth-child(6)::before{ content:"AVG KILLS"; }
+  table.playersTable tr td:nth-child(7)::before{ content:"DEATHS"; }
+  table.playersTable tr td:nth-child(8)::before{ content:"AVG DEATHS"; }
+  table.playersTable tr td:nth-child(9)::before{ content:"ASSISTS"; }
+  table.playersTable tr td:nth-child(10)::before{ content:"AVG ASSISTS"; }
+  table.playersTable tr td:nth-child(11)::before{ content:"KDA"; }
+  table.playersTable tr td:nth-child(12)::before{ content:"KP%"; }
+
+  /* make PLAYER + TEAM rows left aligned so avatars look nice */
+  table.playersTable td:nth-child(1),
+  table.playersTable td:nth-child(2){
+    justify-content:flex-start;
+    text-align:left !important;
+  }
+
+  /* ========= HEROES labels (6 cols) ========= */
+  table.heroesTable tr td:nth-child(1)::before{ content:"HERO"; }
+  table.heroesTable tr td:nth-child(2)::before{ content:"PICK"; }
+  table.heroesTable tr td:nth-child(3)::before{ content:"PICK RATE"; }
+  table.heroesTable tr td:nth-child(4)::before{ content:"BAN"; }
+  table.heroesTable tr td:nth-child(5)::before{ content:"BAN RATE"; }
+  table.heroesTable tr td:nth-child(6)::before{ content:"WIN RATE"; }
+
+  table.heroesTable td:first-child{
+    justify-content:flex-start;
+    text-align:left !important;
+  }
+
+  /* ========= HERO POOL labels (5 cols) ========= */
+  table.heroPoolTable tr td:nth-child(1)::before{ content:"PLAYER"; }
+  table.heroPoolTable tr td:nth-child(2)::before{ content:"TEAM"; }
+  table.heroPoolTable tr td:nth-child(3)::before{ content:"ROLE"; }
+  table.heroPoolTable tr td:nth-child(4)::before{ content:"TOTAL HEROES"; }
+  table.heroPoolTable tr td:nth-child(5)::before{ content:"HEROES PLAYED"; }
+
+  table.heroPoolTable td:nth-child(1),
+  table.heroPoolTable td:nth-child(2){
+    justify-content:flex-start;
+    text-align:left !important;
+  }
+
+  /* let the long heroes list wrap nicely */
+  table.heroPoolTable td:nth-child(5){
+    flex-direction: column;
+    align-items:flex-start;
+    text-align:left !important;
+    gap: 8px;
+  }
+  table.heroPoolTable td:nth-child(5)::before{
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  /* ========= PLAYER POOL labels (3 cols) ========= */
+  table.playerPoolTable tr td:nth-child(1)::before{ content:"HERO"; }
+  table.playerPoolTable tr td:nth-child(2)::before{ content:"TOTAL PLAYERS"; }
+  table.playerPoolTable tr td:nth-child(3)::before{ content:"PLAYERS PLAYED"; }
+
+  table.playerPoolTable td:nth-child(1){
+    justify-content:flex-start;
+    text-align:left !important;
+  }
+
+  table.playerPoolTable td:nth-child(3){
+    flex-direction: column;
+    align-items:flex-start;
+    text-align:left !important;
+    gap: 8px;
+  }
+  table.playerPoolTable td:nth-child(3)::before{
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  /* smaller images in long lists so it fits mobile better */
+  table.heroPoolTable td img,
+  table.playerPoolTable td img{
+    max-width: 64px;
+    max-height: 64px;
   }
 }
