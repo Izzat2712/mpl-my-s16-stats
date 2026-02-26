@@ -2273,7 +2273,7 @@ function showPlayerPools(keepSearchFocus = false) {
 
   // ===== Render =====
   let html = `
-    <h2 style="text-align:center;">PLAYER POOL</h2>
+    <h2 style="text-align:center;">PLAYER POOL MPL MY S16</h2>
 
     <div style="margin-bottom:20px; display:flex; gap:20px; justify-content:center;">
       <div>
@@ -2425,3 +2425,4 @@ function setSupportPos(mode) {
 window.addEventListener("DOMContentLoaded", () => {
   showTeams();
 });
+
