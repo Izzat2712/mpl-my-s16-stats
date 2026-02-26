@@ -2099,7 +2099,7 @@ let matches = [
           { name: "Rezza",  hero: "Cici", kills: 0, deaths: 3, assists: 7 },
           { name: "Daniel",  hero: "Khaleed", kills: 3, deaths: 4, assists: 7},
 
-          // Monster Vicious Players
+          // Monster Vicious Player
           { name: "Rough",  hero: "Obsidia", kills: 7, deaths: 3, assists: 5 },
           { name: "Unii",  hero: "Yi Sun-Shin", kills: 2, deaths: 4, assists: 9 },
           { name: "Bondolz",  hero: "Zhuxin", kills: 3, deaths: 3, assists: 8 },
@@ -3377,3 +3377,4 @@ function setSupportPos(mode) {
 window.addEventListener("DOMContentLoaded", () => {
   showTeams();
 });
+
