@@ -1517,18 +1517,18 @@ let matches = [
         bans: ["Zhuxin","Baxia","Arlott","Odette","Uranus","Chibi","Kimmy", "Fanny","Wanwan", "Cici"],
         players: [
           // Selangor Red Giants Players
-          { name: "Innocent",  hero: "Ruby", kills: 1, deaths: 1, assists: 8 },
-          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 3, deaths: 1, assists: 11 },
-          { name: "Stormie",  hero: "Pharsa", kills: 8, deaths: 1, assists: 6 },
-          { name: "Kramm",  hero: "Esmeralda", kills: 3, deaths: 1, assists: 5 },
-          { name: "Yums",  hero: "Grock", kills: 2, deaths: 0, assists: 11},
+          { name: "Innocent",  hero: "Ruby", kills: 1, deaths: 4, assists: 2 },
+          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 3, deaths: 2, assists: 2 },
+          { name: "Stormie",  hero: "Pharsa", kills: 0, deaths: 1, assists: 5 },
+          { name: "Kramm",  hero: "Esmeralda", kills: 1, deaths: 5, assists: 2 },
+          { name: "Yums",  hero: "Grock", kills: 0, deaths: 6, assists: 3},
 
           // cg Players
-          { name: "Amzziq",  hero: "Granger", kills: 10, deaths: 0, assists: 6 },
-          { name: "Gary",  hero: "Lancelot", kills: 5, deaths: 2, assists: 9 },
-          { name: "Ciku",  hero: "Lunox", kills: 1, deaths: 3, assists: 13 },
-          { name: "Ye3",  hero: "Lapu-Lapu", kills: 2, deaths: 2, assists: 15 },
-          { name: "Valenz",  hero: "Kalea", kills: 1, deaths: 1, assists: 14},
+          { name: "Amzziq",  hero: "Granger", kills: 7, deaths: 0, assists: 4 },
+          { name: "Gary",  hero: "Lancelot", kills: 5, deaths: 0, assists: 8 },
+          { name: "Ciku",  hero: "Lunox", kills: 3, deaths: 0, assists: 12 },
+          { name: "Ye3",  hero: "Lapu-Lapu", kills: 2, deaths: 3, assists: 10 },
+          { name: "Valenz",  hero: "Kalea", kills: 1, deaths: 2, assists: 14},
         ], objectives: {
           lord: { "Selangor Red Giants":0 , "CG Esports":1  },
           turtle: { "Selangor Red Giants":0 , "CG Esports":3  },
@@ -1540,18 +1540,18 @@ let matches = [
         bans: ["Fanny","Cici","Zhuxin","Grock","Chip","Odette","Ruby", "Kalea","Baxia", "Wanwan"],
         players: [
           // Selangor Red Giants Players
-          { name: "Innocent",  hero: "Claude", kills: 1, deaths: 1, assists: 8 },
-          { name: "Sekys",  hero: "Lancelot", kills: 3, deaths: 1, assists: 11 },
-          { name: "Stormie",  hero: "Kimmy", kills: 8, deaths: 1, assists: 6 },
-          { name: "Kramm",  hero: "Lapu-Lapu", kills: 3, deaths: 1, assists: 5 },
-          { name: "Yums",  hero: "Gatotkaca", kills: 2, deaths: 0, assists: 11},
+          { name: "Innocent",  hero: "Claude", kills: 6, deaths: 1, assists: 11 },
+          { name: "Sekys",  hero: "Lancelot", kills: 2, deaths: 3, assists: 13 },
+          { name: "Stormie",  hero: "Kimmy", kills: 11, deaths: 4, assists: 9 },
+          { name: "Kramm",  hero: "Lapu-Lapu", kills: 7, deaths: 1, assists: 6 },
+          { name: "Yums",  hero: "Gatotkaca", kills: 1, deaths: 2, assists: 16},
 
           // cg Players
-          { name: "Amzziq",  hero: "Granger", kills: 10, deaths: 0, assists: 6 },
-          { name: "Gary",  hero: "Yi Sun-Shin", kills: 5, deaths: 2, assists: 9 },
-          { name: "Ciku",  hero: "Lunox", kills: 1, deaths: 3, assists: 13 },
-          { name: "Ye3",  hero: "Esmeralda", kills: 2, deaths: 2, assists: 15 },
-          { name: "Valenz",  hero: "Chou", kills: 1, deaths: 1, assists: 14},
+          { name: "Amzziq",  hero: "Granger", kills: 3, deaths: 5, assists: 3 },
+          { name: "Gary",  hero: "Yi Sun-Shin", kills: 5, deaths: 3, assists: 5 },
+          { name: "Ciku",  hero: "Lunox", kills: 3, deaths: 6, assists: 4 },
+          { name: "Ye3",  hero: "Esmeralda", kills: 0, deaths: 6, assists: 4 },
+          { name: "Valenz",  hero: "Chou", kills: 0, deaths: 7, assists: 6},
         ], objectives: {
           lord: { "Selangor Red Giants":2 , "CG Esports":0  },
           turtle: { "Selangor Red Giants":3 , "CG Esports":0  },
@@ -1563,18 +1563,18 @@ let matches = [
         bans: ["Zhuxin","Baxia","Lancelot","Grock","Odette","Bane","Lunox", "Kimmy","Kalea", "Wanwan"],
         players: [
           // Selangor Red Giants Players
-          { name: "Innocent",  hero: "Harith", kills: 1, deaths: 1, assists: 8 },
-          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 3, deaths: 1, assists: 11 },
-          { name: "Stormie",  hero: "Selena", kills: 8, deaths: 1, assists: 6 },
-          { name: "Kramm",  hero: "Lapu-Lapu", kills: 3, deaths: 1, assists: 5 },
-          { name: "Yums",  hero: "Chou", kills: 2, deaths: 0, assists: 11},
+          { name: "Innocent",  hero: "Harith", kills: 6, deaths: 1, assists: 4 },
+          { name: "Sekys",  hero: "Yi Sun-Shin", kills: 9, deaths: 0, assists: 6 },
+          { name: "Stormie",  hero: "Selena", kills: 1, deaths: 0, assists: 9 },
+          { name: "Kramm",  hero: "Lapu-Lapu", kills: 4, deaths: 3, assists: 5 },
+          { name: "Yums",  hero: "Chou", kills: 0, deaths: 2, assists: 14},
 
           // cg Players
-          { name: "Amzziq",  hero: "Granger", kills: 10, deaths: 0, assists: 6 },
-          { name: "Gary",  hero: "Joy", kills: 5, deaths: 2, assists: 9 },
-          { name: "Ciku",  hero: "Novaria", kills: 1, deaths: 3, assists: 13 },
-          { name: "Ye3",  hero: "Uranus", kills: 2, deaths: 2, assists: 15 },
-          { name: "Valenz",  hero: "Badang", kills: 1, deaths: 1, assists: 14},
+          { name: "Amzziq",  hero: "Granger", kills: 4, deaths: 5, assists: 2 },
+          { name: "Gary",  hero: "Joy", kills: 1, deaths: 5, assists: 2 },
+          { name: "Ciku",  hero: "Novaria", kills: 1, deaths: 1, assists: 4 },
+          { name: "Ye3",  hero: "Uranus", kills: 0, deaths: 2, assists: 2 },
+          { name: "Valenz",  hero: "Badang", kills: 0, deaths: 7, assists: 4},
         ], objectives: {
           lord: { "Selangor Red Giants":3 , "CG Esports":1  },
           turtle: { "Selangor Red Giants":3, "CG Esports":0 },
@@ -2099,7 +2099,7 @@ let matches = [
           { name: "Rezza",  hero: "Cici", kills: 0, deaths: 3, assists: 7 },
           { name: "Daniel",  hero: "Khaleed", kills: 3, deaths: 4, assists: 7},
 
-          // Monster Vicious Player
+          // Monster Vicious Players
           { name: "Rough",  hero: "Obsidia", kills: 7, deaths: 3, assists: 5 },
           { name: "Unii",  hero: "Yi Sun-Shin", kills: 2, deaths: 4, assists: 9 },
           { name: "Bondolz",  hero: "Zhuxin", kills: 3, deaths: 3, assists: 8 },
@@ -2113,7 +2113,7 @@ let matches = [
         }
       },
     ]},
-          
+             
 ]
     
 
@@ -3377,4 +3377,3 @@ function setSupportPos(mode) {
 window.addEventListener("DOMContentLoaded", () => {
   showTeams();
 });
-
