@@ -1,12 +1,12 @@
-let teamSort = { key: null, asc: true };
-let playerSort = { key: null, asc: true };
-let heroSort = { key: null, asc: true };
-let heroPoolSort = { key: null, asc: true };
-let playerPoolsSort = { key: null, asc: true };
+let teamSort = {key: "matchWins", asc: false }; // false = DESC (highest matchWins first)
+let playerSort = { key: "kda", asc: false };
+let heroSort = { key: "pickRate", asc: false };
+let heroPoolSort = { key: "totalHeroes", asc: false };
+let playerPoolsSort = { key: "totalPlayers", asc: false };
 
 
 
-// ===== SEARCH STATE (Players) ====
+// ===== SEARCH STATE (Players) =====
 let playerSearchState = { value: "", caret: 0 };
 
 function onPlayerSearchInput(e) {
@@ -2113,7 +2113,7 @@ let matches = [
         }
       },
     ]},
-             
+
 ]
     
 
@@ -2336,7 +2336,7 @@ function sortTeams(key) {
     teamSort.asc = !teamSort.asc;
   } else {
     teamSort.key = key;
-    teamSort.asc = true;
+    teamSort.asc = false; // default DESC
   }
   showTeams();
 }
@@ -2607,7 +2607,7 @@ function sortPlayers(key) {
     playerSort.asc = !playerSort.asc;
   } else {
     playerSort.key = key;
-    playerSort.asc = true;
+    playerSort.asc = false;
   }
 
   showPlayers(); // re-render with same filters preserved
@@ -2848,7 +2848,7 @@ function sortHeroes(key) {
     heroSort.asc = !heroSort.asc;
   } else {
     heroSort.key = key;
-    heroSort.asc = true;
+    heroSort.asc = false;
   }
   showHeroes();
 }
@@ -3083,7 +3083,7 @@ function sortHeroPool(key) {
     heroPoolSort.asc = !heroPoolSort.asc;
   } else {
     heroPoolSort.key = key;
-    heroPoolSort.asc = true;
+    heroPoolSort.asc = false;
   }
   showHeroPool();
 }
@@ -3327,7 +3327,7 @@ function sortPlayerPools(key) {
     playerPoolsSort.asc = !playerPoolsSort.asc;
   } else {
     playerPoolsSort.key = key;
-    playerPoolsSort.asc = true;
+    playerPoolsSort.asc = false;
   }
   showPlayerPools();
 }
@@ -3377,4 +3377,3 @@ function setSupportPos(mode) {
 window.addEventListener("DOMContentLoaded", () => {
   showTeams();
 });
-
