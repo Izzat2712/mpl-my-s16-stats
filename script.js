@@ -2113,7 +2113,962 @@ let matches = [
         }
       },
     ]},
+              //week 5 friday match 1 (srg 2-0 tr)
+  {
+        teamA: "Selangor Red Giants",
+        teamB: "Team Rey",
+        games: [
+            { //game 1
+        winner: "Selangor Red Giants",
+        bans: ["Arlott","Zhuxin","Fanny","Ruby","Harith","Grock","Esmeralda", "Chip","Wanwan", "Kalea"],
+        players: [
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Cici", kills: 1, deaths: 0, assists: 7 },
+          { name: "Sekys",  hero: "Lancelot", kills: 4, deaths: 0, assists: 6 },
+          { name: "Stormie",  hero: "Kimmy", kills: 2, deaths: 0, assists: 12 },
+          { name: "Kramm",  hero: "Lapu-Lapu", kills: 8, deaths: 1, assists: 4 },
+          { name: "Yums",  hero: "Gatotkaca", kills: 2, deaths: 0, assists: 12},
 
+          // Team Rey Players
+          { name: "Jowm",  hero: "Karrie", kills: 0, deaths: 2, assists: 1 },
+          { name: "Error404",  hero: "Yi Sun-Shin", kills: 0, deaths: 3, assists: 1 },
+          { name: "Zayyy",  hero: "Lunox", kills: 1, deaths: 4, assists: 0 },
+          { name: "Der",  hero: "Uranus", kills: 0, deaths: 3, assists: 1 },
+          { name: "NovaXCobar",  hero: "Badang", kills: 0, deaths: 5, assists: 1},
+
+
+        ], objectives: {
+          lord: { "Selangor Red Giants":1 , "Team Rey":0  },
+          turtle: { "Selangor Red Giants":3 , "Team Rey":0  },
+          tower: { "Selangor Red Giants":8 , "Team Rey":2  }
+        }
+      },
+            { //game 2
+        winner: "Selangor Red Giants",
+        bans: ["Kalea","Chip","Wanwan","Pharsa","Lapu-Lapu","Uranus","Arlott", "Fanny","Angela", "Baxia"],
+        players: [
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Granger", kills: 8, deaths: 2, assists: 3 },
+          { name: "Sekys",  hero: "Lancelot", kills: 5, deaths: 0, assists: 3 },
+          { name: "Stormie",  hero: "Kagura", kills: 1, deaths: 1, assists: 10 },
+          { name: "Kramm",  hero: "Cici", kills: 0, deaths: 1, assists: 8 },
+          { name: "Yums",  hero: "Grock", kills: 1, deaths: 1, assists: 10},
+
+          // Team Rey Players
+          { name: "Jowm",  hero: "Harith", kills: 0, deaths: 1, assists: 3 },
+          { name: "Error404",  hero: "Hayabusa", kills: 2, deaths: 3, assists: 0 },
+          { name: "Zayyy",  hero: "Kimmy", kills: 2, deaths: 3, assists: 2 },
+          { name: "Der",  hero: "Esmeralda", kills: 1, deaths: 5, assists: 2 },
+          { name: "NovaXCobar",  hero: "Badang", kills: 0, deaths: 3, assists: 2},
+
+        ], objectives: {
+          lord: { "Selangor Red Giants":1 , "Team Rey":0  },
+          turtle: { "Selangor Red Giants":3 , "Team Rey":0  },
+          tower: { "Selangor Red Giants":8 , "Team Rey":0  }
+        }
+      },
+    ]},
+      //week 5 friday match 2 (unt 2-0 hb)
+  {
+        teamA: "Untitled",
+        teamB: "Homebois",
+        games: [
+            { //game 1
+        winner: "Untitled",
+        bans: ["Fanny","Chip","Cici","Hayabusa","Zhuxin","Lancelot","Gatotkaca", "Angela","Baxia", "Fredrinn"],
+        players: [
+          // Untitled Players
+          { name: "Skyzed",  hero: "Granger", kills: 6, deaths: 1, assists: 8 },
+          { name: "Keymin",  hero: "Yi Sun-Shin", kills: 7, deaths: 1, assists: 8 },
+          { name: "Stowm",  hero: "Kimmy", kills: 0, deaths: 3, assists: 15 },
+          { name: "Sizkaa",  hero: "Arlott", kills: 3, deaths: 4, assists: 8 },
+          { name: "Rasy",  hero: "Chou", kills: 2, deaths: 3, assists: 7},
+
+          //hb players
+          { name: "Melqt",  hero: "Obsidia", kills: 4, deaths: 3, assists: 2 },
+          { name: "Eyymal",  hero: "Joy", kills: 5, deaths: 3, assists: 2 },
+          { name: "Izanami",  hero: "Lunox", kills: 0, deaths: 4, assists: 3 },
+          { name: "Rezza",  hero: "Hilda", kills: 1, deaths: 5, assists: 8 },
+          { name: "Daniel",  hero: "Kalea", kills: 1, deaths: 3, assists: 6},
+
+        ], objectives: {
+          lord: { "Untitled":2 , "Homebois":0  },
+          turtle: { "Untitled": 2, "Homebois": 1 },
+          tower: { "Untitled": 7, "Homebois":2  }
+        }
+      },
+            { //game 2
+        winner: "Untitled",
+        bans: ["Fanny","Chip","Cici","Hilda","Phoveus","Guinevere","Yve", "Angela","Fredrinn", "Baxia"],
+        players: [
+          // Untitled Players
+          { name: "Skyzed",  hero: "Granger", kills: 7, deaths: 1, assists: 1 },
+          { name: "Keymin",  hero: "Lancelot", kills: 0, deaths: 0, assists: 4 },
+          { name: "Stowm",  hero: "Kimmy", kills: 1, deaths: 2, assists: 6 },
+          { name: "Sizkaa",  hero: "Arlott", kills: 1, deaths: 2, assists: 1 },
+          { name: "Rasy",  hero: "Gatotkaca", kills: 0, deaths: 1, assists: 4},
+
+          //hb players
+          { name: "Melqt",  hero: "Moskov", kills: 0, deaths: 1, assists: 4 },
+          { name: "Eyymal",  hero: "Yi Sun-Shin", kills: 3, deaths: 1, assists: 2 },
+          { name: "Izanami",  hero: "Zhuxin", kills: 3, deaths: 2, assists: 0 },
+          { name: "Rezza",  hero: "Hylos", kills: 0, deaths: 2, assists: 2 },
+          { name: "Daniel",  hero: "Chou", kills: 0, deaths: 3, assists: 5},
+
+        ], objectives: {
+          lord: { "Untitled":0 , "Homebois":1  },
+          turtle: { "Untitled": 2, "Homebois": 1 },
+          tower: { "Untitled": 5, "Homebois":5  }
+        }
+      },
+                
+          
+    ]},
+      //week 5 saturday match 1 (hb 2-1 cg)
+  {
+        teamA: "Homebois",
+        teamB: "CG Esports",
+        games: [
+            { //game 1
+        winner: "Homebois",
+        bans: ["Zhuxin","Yi Sun-Shin","Kalea","Benedetta","Angela","Chip","Kaja", "Lancelot","Fanny", "Cici"],
+        players: [
+          //hb players
+          { name: "Melqt",  hero: "Lunox", kills: 5, deaths: 5, assists: 5 },
+          { name: "Eyymal",  hero: "Hayabusa", kills: 9, deaths: 3, assists: 4 },
+          { name: "Izanami",  hero: "Yve", kills: 3, deaths: 3, assists: 8 },
+          { name: "Rezza",  hero: "Hilda", kills: 1, deaths: 7, assists: 2 },
+          { name: "Daniel",  hero: "Guinevere", kills: 1, deaths: 1, assists: 6},
+
+          // cg Players
+          { name: "Amzziq",  hero: "Granger", kills: 10, deaths: 6, assists: 5 },
+          { name: "Gary",  hero: "Baxia", kills: 2, deaths: 2, assists: 12 },
+          { name: "Ciku",  hero: "Kimmy", kills: 2, deaths: 5, assists: 12 },
+          { name: "Ye3",  hero: "Lapu-Lapu", kills: 4, deaths: 2, assists: 6 },
+          { name: "Valenz",  hero: "Chou", kills: 1, deaths: 4, assists: 11},
+
+        ], objectives: {
+          lord: { "Homebois":2 , "CG Esports":2  },
+          turtle: { "Homebois":0 , "CG Esports":3  },
+          tower: { "Homebois":2 , "CG Esports": 2 }
+        }
+      },
+            { //game 2
+        winner: "CG Esports",
+        bans: ["Yi Sun-Shin","Kalea","Zhuxin","Harith","Esmeralda","Yve","Pharsa", "Hayabusa","Fanny", "Cici"],
+        players: [
+           //hb players
+          { name: "Melqt",  hero: "Granger", kills: 1, deaths: 3, assists: 0 },
+          { name: "Eyymal",  hero: "Joy", kills: 1, deaths: 4, assists: 1 },
+          { name: "Izanami",  hero: "Angela", kills: 1, deaths: 1, assists: 2 },
+          { name: "Rezza",  hero: "Alice", kills: 0, deaths: 2, assists: 3 },
+          { name: "Daniel",  hero: "Chou", kills: 0, deaths: 6, assists: 3},
+
+
+                    // cg Players
+          { name: "Amzziq",  hero: "Wanwan", kills: 1, deaths: 0, assists: 4 },
+          { name: "Gary",  hero: "Lancelot", kills: 6, deaths: 0, assists: 6 },
+          { name: "Ciku",  hero: "Lunox", kills: 7, deaths: 0, assists: 8 },
+          { name: "Ye3",  hero: "Hilda", kills: 2, deaths: 2, assists: 5 },
+          { name: "Valenz",  hero: "Grock", kills: 0, deaths: 1, assists: 5},
+
+        ], objectives: {
+          lord: { "Homebois":0 , "CG Esports":1  },
+          turtle: { "Homebois":0 , "CG Esports":3  },
+          tower: { "Homebois":0 , "CG Esports": 8 }
+        }
+      },
+      { //game 3
+        winner: "Homebois",
+        bans: ["Yi Sun-Shin","Kalea","Zhuxin","Kimmy","Odette","Fredrinn","Joy", "Hayabusa","Fanny", "Cici"],
+        players: [
+          //hb players
+          { name: "Melqt",  hero: "Moskov", kills: 5, deaths: 0, assists: 3 },
+          { name: "Eyymal",  hero: "Benedetta", kills: 1, deaths: 0, assists: 10 },
+          { name: "Izanami",  hero: "Lunox", kills: 7, deaths: 1, assists: 7 },
+          { name: "Rezza",  hero: "Hilda", kills: 2, deaths: 1, assists: 5 },
+          { name: "Daniel",  hero: "Chou", kills: 1, deaths: 4, assists: 5},
+
+          // cg Players
+          { name: "Amzziq",  hero: "Harith", kills: 3, deaths: 0, assists: 0 },
+          { name: "Gary",  hero: "Lancelot", kills: 2, deaths: 3, assists: 2 },
+          { name: "Ciku",  hero: "Xavier", kills: 1, deaths: 4, assists: 4 },
+          { name: "Ye3",  hero: "Lapu-Lapu", kills: 0, deaths: 5, assists: 4 },
+          { name: "Valenz",  hero: "Grock", kills: 0, deaths: 4, assists: 3},
+
+        ], objectives: {
+          lord: { "Homebois":3 , "CG Esports":0  },
+          turtle: { "Homebois":1 , "CG Esports":1  },
+          tower: { "Homebois":9 , "CG Esports": 1 }
+        }
+      },
+    ]},
+      //week 5 sat match 2 (Aero 0-2 mv)
+  {
+        teamA: "AERO Esports",
+        teamB: "Monster Vicious",
+        games: [
+            { //game 1
+        winner: "Monster Vicious",
+        bans: ["Zhuxin","Kalea","Pharsa","Chou","Harith","Lunox","Kimmy", "Grock","Fanny", "Arlott"],
+        players: [
+
+          // AERO Esports Players
+          { name: "Kusey",  hero: "Irithel", kills: 4, deaths: 1, assists: 4 },
+          { name: "Hazle",  hero: "Joy", kills: 7, deaths: 2, assists: 5 },
+          { name: "Kyym",  hero: "Angela", kills: 0, deaths: 2, assists: 11 },
+          { name: "Smooth",  hero: "Phoveus", kills: 2, deaths: 4, assists: 3 },
+          { name: "Zqeef",  hero: "Gloo", kills: 1, deaths: 3, assists: 4},
+
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Granger", kills: 4, deaths: 4, assists: 3 },
+          { name: "Unii",  hero: "Baxia", kills: 2, deaths: 3, assists: 9 },
+          { name: "Bondolz",  hero: "Vexana", kills: 2, deaths: 3, assists: 8 },
+          { name: "Momo",  hero: "Cici", kills: 3, deaths: 1, assists: 8 },
+          { name: "Lyoni",  hero: "Franco", kills: 1, deaths: 3, assists: 11},
+
+        ], objectives: {
+          lord: { "AERO Esports": 1, "Monster Vicious":2  },
+          turtle: { "AERO Esports": 1, "Monster Vicious": 1 },
+          tower: { "AERO Esports":4 , "Monster Vicious":9  }
+        }
+      },
+            { //game 2
+        winner: "Monster Vicious",
+        bans: ["Arlott","Grock","Chip","Ruby","Phoveus","Granger","Esmeralda", "Fanny","Cici", "Zhuxin"],
+        players: [
+          // AERO Esports Players
+          { name: "Kusey",  hero: "Wanwan", kills: 2, deaths: 1, assists: 3 },
+          { name: "Hazle",  hero: "Lancelot", kills: 4, deaths: 2, assists: 2 },
+          { name: "Kyym",  hero: "Pharsa", kills: 2, deaths: 1, assists: 5 },
+          { name: "Smooth",  hero: "Edith", kills: 0, deaths: 6, assists: 6 },
+          { name: "Zqeef",  hero: "Kalea", kills: 0, deaths: 7, assists: 7},
+
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Harith", kills: 3, deaths: 1, assists: 10 },
+          { name: "Unii",  hero: "Yi Sun-Shin", kills: 5, deaths: 1, assists: 10 },
+          { name: "Bondolz",  hero: "Kimmy", kills: 5, deaths: 1, assists: 11 },
+          { name: "Momo",  hero: "Alice", kills: 2, deaths: 1, assists: 9 },
+          { name: "Lyoni",  hero: "Gatotkaca", kills: 2, deaths: 4, assists: 13},
+
+        ], objectives: {
+          lord: { "AERO Esports": 0, "Monster Vicious":2  },
+          turtle: { "AERO Esports": 0, "Monster Vicious": 3 },
+          tower: { "AERO Esports":1 , "Monster Vicious":8  }
+        }
+      },
+          
+    ]},
+      //week 5 SAT match 3 (VMS 1-2 TDK)
+  {
+        teamA: "Team Vamos",
+        teamB: "Todak",
+        games: [
+            { //game 1
+        winner: "Todak",
+        bans: ["Fanny","Arlott","Baxia","Pharsa","Selena","Grock","Chou", "Kimmy","Chip", "Kalea"],
+        players: [
+          // VMS Players
+          { name: "Natco",  hero: "Wanwan", kills: 1 , deaths:2 , assists:2  },
+          { name: "Chibi",  hero: "Hayabusa", kills: 2, deaths: 3, assists: 1 },
+          { name: "Clawkun",  hero: "Lunox", kills:1 , deaths:1 , assists:4 },
+          { name: "Gojes",  hero: "Alice", kills:1 , deaths:2 , assists: 3 },
+          { name: "Xorn",  hero: "Khaleed", kills:0 , deaths:4 , assists:2 },
+
+          //todak player
+          { name: "Loleal",  hero: "Cici", kills: 2, deaths: 1, assists: 4 },
+          { name: "Zahyed",  hero: "Yi Sun-Shin", kills: 3, deaths: 0, assists: 4 },
+          { name: "ZaimSempoi", hero: "Valentina", kills: 1, deaths: 0, assists: 10 },
+          { name: "Fawndeer",  hero: "Phoveus", kills: 5, deaths: 2, assists: 5 },
+          { name: "Dreams", hero: "Gatotkaca", kills: 1, deaths: 2, assists: 8},
+
+        ], objectives: {
+          lord: { "Team Vamos":0 , "Todak":2  },
+          turtle: { "Team Vamos":0 , "Todak":2  },
+          tower: { "Team Vamos":0 , "Todak":8  }
+        }
+      },
+            { //game 2
+        winner: "Team Vamos",
+        bans: ["Fanny","Arlott","Wanwan","Gatotkaca","Harith","Valentina","Pharsa", "Kimmy","Chip", "Kalea"],
+        players: [
+          // VMS Players
+          { name: "Natco",  hero: "Cici", kills: 5 , deaths:5 , assists:10  },
+          { name: "Chibi",  hero: "Lancelot", kills: 3, deaths: 1, assists: 9 },
+          { name: "Clawkun",  hero: "Yve", kills:5 , deaths:1 , assists:10 },
+          { name: "Gojes",  hero: "Alice", kills:4 , deaths:3 , assists: 6 },
+          { name: "Xorn",  hero: "Grock", kills:1 , deaths:0 , assists:11 },
+
+          //todak player
+          { name: "Loleal",  hero: "Esmeralda", kills: 1, deaths: 4, assists: 2 },
+          { name: "Zahyed",  hero: "Yi Sun-Shin", kills: 7, deaths: 3, assists: 2 },
+          { name: "ZaimSempoi", hero: "Lunox", kills: 1, deaths: 4, assists: 7 },
+          { name: "Fawndeer",  hero: "Uranus", kills: 1, deaths: 2, assists: 5 },
+          { name: "Dreams", hero: "Franco", kills: 0, deaths: 5, assists: 9},
+
+        ], objectives: {
+          lord: { "Team Vamos":1 , "Todak":1  },
+          turtle: { "Team Vamos":3 , "Todak":0  },
+          tower: { "Team Vamos":7 , "Todak":5  }
+        }
+      },
+       { //game 3
+        winner: "Todak",
+        bans: ["Fanny","Arlott","Wanwan","Grock","Franco","Gloo","Esmeralda", "Cici","Kimmy", "Kalea"],
+        players: [
+          // VMS Players
+          { name: "Natco",  hero: "Ruby", kills: 1 , deaths:3 , assists:3  },
+          { name: "Chibi",  hero: "Yi Sun-Shin", kills: 1, deaths: 3, assists: 2 },
+          { name: "Clawkun",  hero: "Pharsa", kills:2 , deaths:3 , assists:2 },
+          { name: "Gojes",  hero: "Uranus", kills:0 , deaths:5 , assists: 0 },
+          { name: "Xorn",  hero: "Chou", kills:0 , deaths:4 , assists:4 },
+
+          //todak player
+          { name: "Loleal",  hero: "Granger", kills: 10, deaths: 0, assists: 3 },
+          { name: "Zahyed",  hero: "Baxia", kills: 1, deaths: 2, assists: 8 },
+          { name: "ZaimSempoi", hero: "Kagura", kills: 3, deaths: 0, assists: 11 },
+          { name: "Fawndeer",  hero: "Lapu-Lapu", kills: 2, deaths: 0, assists: 7 },
+          { name: "Dreams", hero: "Hilda", kills: 2, deaths: 2, assists: 12},
+
+        ], objectives: {
+          lord: { "Team Vamos":0 , "Todak":2  },
+          turtle: { "Team Vamos":0 , "Todak":3  },
+          tower: { "Team Vamos":0 , "Todak":8  }
+        }
+      },
+    ]},
+      //week 5 sun match 1 (mv 0-2 SRG)
+  {
+        teamA: "Monster Vicious",
+        teamB: "Selangor Red Giants",
+        games: [
+            { //game 1
+        winner: "Selangor Red Giants",
+        bans: ["Kalea","Cici","Baxia","Chou","Gatotkaca","Ruby","Harith", "Zhuxin","Arlott", "Fanny"],
+        players: [
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Bane", kills: 1, deaths: 3, assists: 3 },
+          { name: "Unii",  hero: "Yi Sun-Shin", kills: 3, deaths: 4, assists: 3 },
+          { name: "Bondolz",  hero: "Lunox", kills: 3, deaths: 3, assists: 5 },
+          { name: "Momo",  hero: "Esmeralda", kills: 4, deaths: 4, assists: 5 },
+          { name: "Lyoni",  hero: "Grock", kills: 0, deaths: 6, assists: 6},
+
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Granger", kills: 7, deaths: 1, assists: 3 },
+          { name: "Sekys",  hero: "Lancelot", kills: 5, deaths: 2, assists: 5 },
+          { name: "Stormie",  hero: "Kimmy", kills: 2, deaths: 3, assists: 10 },
+          { name: "Kramm",  hero: "Alice", kills: 0, deaths: 2, assists: 12 },
+          { name: "Yums",  hero: "Hilda", kills: 6, deaths: 3, assists: 8},
+
+        ], objectives: {
+          lord: { "Monster Vicious": 0, "Selangor Red Giants": 2 },
+          turtle: { "Monster Vicious":0 , "Selangor Red Giants": 3 },
+          tower: { "Monster Vicious": 1, "Selangor Red Giants":9  }
+        }
+      },
+            { //game 2
+        winner: "Selangor Red Giants",
+        bans: ["Arlott","Fanny","Zhuxin","Harith","Uranus","Lunox","Claude", "Kalea","Cici", "Baxia"],
+        players: [
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Esmeralda", kills: 1, deaths: 1, assists: 3 },
+          { name: "Unii",  hero: "Yi Sun-Shin", kills: 3, deaths: 3, assists: 2 },
+          { name: "Bondolz",  hero: "Kimmy", kills: 3, deaths: 5, assists: 4 },
+          { name: "Momo",  hero: "Hilda", kills: 2, deaths: 4, assists: 0 },
+          { name: "Lyoni",  hero: "Grock", kills: 0, deaths: 3, assists: 6},
+
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Moskov", kills: 4, deaths: 1, assists: 8 },
+          { name: "Sekys",  hero: "Lancelot", kills: 4, deaths: 2, assists: 3 },
+          { name: "Stormie",  hero: "Selena", kills: 3, deaths: 2, assists: 9 },
+          { name: "Kramm",  hero: "Alice", kills: 0, deaths: 2, assists: 11 },
+          { name: "Yums",  hero: "Gatotkaca", kills: 5, deaths: 2, assists: 8},
+
+        ], objectives: {
+          lord: { "Monster Vicious": 0, "Selangor Red Giants": 1 },
+          turtle: { "Monster Vicious":1 , "Selangor Red Giants": 2 },
+          tower: { "Monster Vicious": 2, "Selangor Red Giants":6  }
+        }
+      },
+       
+    ]},
+
+          //week 5 sun match 2 (tr 1-2 vms)
+  {
+        teamA: "Team Rey",
+        teamB: "Team Vamos",
+        games: [
+            { //game 1
+        winner: "Team Vamos",
+        bans: ["Wanwan","Fanny","Angela","Moskov","Zhuxin","Faramis","Chip", "Kalea","Kimmy", "Pharsa"],
+        players: [
+
+          // Team Rey Players
+          { name: "Jowm",  hero: "Ruby", kills: 1, deaths: 2, assists: 3 },
+          { name: "Error404",  hero: "Joy", kills: 2, deaths: 2, assists: 1 },
+          { name: "Zayyy",  hero: "Lylia", kills: 0, deaths: 1, assists: 5 },
+          { name: "Der",  hero: "Uranus", kills: 3, deaths: 1, assists: 1 },
+          { name: "NovaXCobar",  hero: "Chou", kills: 0, deaths: 4, assists: 5},
+
+          // VMS Players
+          { name: "Natco",  hero: "Cici", kills: 4 , deaths:0 , assists:2  },
+          { name: "Chibi",  hero: "Baxia", kills: 1, deaths: 0, assists: 7 },
+          { name: "Clawkun",  hero: "Lunox", kills:2 ,deaths:1 , assists:6 },
+          { name: "Gojes",  hero: "Esmeralda", kills:1 , deaths:2 , assists: 7 },
+          { name: "Xorn",  hero: "Helcurt", kills:2 , deaths:3 , assists:3 },
+
+        ], objectives: {
+          lord: { "Team Rey":0 , "Team Vamos":2  },
+          turtle: { "Team Rey":2 , "Team Vamos":1  },
+          tower: { "Team Rey":1 , "Team Vamos":9  }
+        }
+      },
+            { //game 2
+        winner: "Team Rey",
+        bans: ["Kalea","Baxia","Wanwan","Harith","Alice","Hilda","Gatotkaca", "Angela","Cici", "Fanny"],
+        players: [
+          // Team Rey Players
+          { name: "Jowm",  hero: "Ruby", kills: 1, deaths: 2, assists: 12 },
+          { name: "Error404",  hero: "Yi Sun-Shin", kills: 7, deaths: 1, assists: 9 },
+          { name: "Zayyy",  hero: "Kimmy", kills: 5, deaths: 0, assists: 9 },
+          { name: "Der",  hero: "Esmeralda", kills: 4, deaths: 1, assists: 3 },
+          { name: "NovaXCobar",  hero: "Khaleed", kills: 2, deaths: 1, assists: 7},
+
+          // VMS Players
+          { name: "Natco",  hero: "Granger", kills: 1 , deaths:4 , assists:3  },
+          { name: "Chibi",  hero: "Hayabusa", kills: 3, deaths: 2, assists: 2 },
+          { name: "Clawkun",  hero: "Pharsa", kills:0 , deaths:3 , assists:3 },
+          { name: "Gojes",  hero: "Arlott", kills:0 , deaths:6 , assists: 1 },
+          { name: "Xorn",  hero: "Chip", kills:1 , deaths:4 , assists:4 },
+
+        ], objectives: {
+          lord: { "Team Rey":2 , "Team Vamos":0  },
+          turtle: { "Team Rey":2 , "Team Vamos":1  },
+          tower: { "Team Rey":9 , "Team Vamos":2  }
+        }
+      },
+       { //game 3
+        winner: "Team Vamos",
+        bans: ["Ruby","Fanny","Angela","Gatotkaca","Kimmy","Hayabusa","Lancelot", "Baxia","Cici", "Wanwan"],
+        players: [
+
+          // Team Rey Players
+          { name: "Jowm",  hero: "Harith", kills: 2, deaths: 1, assists: 5 },
+          { name: "Error404",  hero: "Yi Sun-Shin", kills: 3, deaths: 4, assists: 1 },
+          { name: "Zayyy",  hero: "Zhuxin", kills: 0, deaths: 3, assists: 6 },
+          { name: "Der",  hero: "Esmeralda", kills: 2, deaths: 2, assists: 4 },
+          { name: "NovaXCobar",  hero: "Badang", kills: 1, deaths: 4, assists: 4},
+
+          // VMS Players
+          { name: "Natco",  hero: "Granger", kills: 6 , deaths:1 , assists:3  },
+          { name: "Chibi",  hero: "Joy", kills: 4, deaths: 1, assists: 6 },
+          { name: "Clawkun",  hero: "Lunox", kills:0 , deaths:1 , assists:6 },
+          { name: "Gojes",  hero: "Alice", kills:2 , deaths:2 , assists: 7 },
+          { name: "Xorn",  hero: "Kalea", kills:2 , deaths:3 , assists:9 },
+
+        ], objectives: {
+          lord: { "Team Rey":0 , "Team Vamos":3  },
+          turtle: { "Team Rey":1 , "Team Vamos":2  },
+          tower: { "Team Rey":2 , "Team Vamos":9  }
+        }
+      },
+    ]},
+
+      //week 5 sun match 3 (aero 2-0 GMXK)
+  {
+        teamA: "AERO Esports",
+        teamB: "GAMESMY Kelantan",
+        games: [
+            { //game 1
+        winner: "AERO Esports",
+        bans: ["Angela","Gatotkaca","Zhuxin","Ruby","Bane","Harith","Chou", "Wanwan","Kalea", "Cici"],
+        players: [
+
+          //AERO
+          { name: "Kusey",  hero: "Granger", kills: 3, deaths: 0, assists: 4 },
+          { name: "Hazle",  hero: "Fanny", kills: 3, deaths: 1, assists: 1 },
+          { name: "Kyym",  hero: "Pharsa", kills: 1, deaths: 0, assists: 6 },
+          { name: "Smooth",  hero: "Esmeralda", kills: 3, deaths: 1, assists: 3 },
+          { name: "Zqeef",  hero: "Grock", kills: 1, deaths: 1, assists: 5},
+
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Bruno", kills: 0, deaths: 1, assists: 1 },
+          { name: "Jaja",  hero: "Lancelot", kills: 0, deaths: 3, assists: 2 },
+          { name: "Maima",  hero: "Valentina", kills: 1, deaths: 4, assists: 2 },
+          { name: "Munster",  hero: "Alice", kills: 1, deaths: 2, assists: 2 },
+          { name: "Matdinz",  hero: "Badang", kills: 1, deaths: 1, assists: 0},
+
+        ], objectives: {
+          lord: { "AERO Esports":1 , "GAMESMY Kelantan":0  },
+          turtle: { "AERO Esports":1 , "GAMESMY Kelantan":1  },
+          tower: { "AERO Esports":6 , "GAMESMY Kelantan":0  }
+        }
+      },
+            { //game 2
+        winner: "AERO Esports",
+        bans: ["Fanny","Kalea","Baxia","Esmeralda","Grock","Yve","Lunox", "Lancelot","Gatotkaca", "Angela"],
+        players: [
+
+          //AERO
+          { name: "Kusey",  hero: "Harith", kills: 1, deaths: 2, assists: 14 },
+          { name: "Hazle",  hero: "Yi Sun-Shin", kills: 7, deaths: 3, assists: 7 },
+          { name: "Kyym",  hero: "Zhuxin", kills: 2, deaths: 2, assists: 10 },
+          { name: "Smooth",  hero: "Lapu-Lapu", kills: 6, deaths: 2, assists: 6 },
+          { name: "Zqeef",  hero: "Chou", kills: 1, deaths: 4, assists: 6},
+
+
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Cici", kills: 5, deaths: 3, assists: 4 },
+          { name: "Jaja",  hero: "Joy", kills: 3, deaths: 5, assists: 4 },
+          { name: "Maima",  hero: "Kagura", kills: 2, deaths: 2, assists: 6 },
+          { name: "Munster",  hero: "Alice", kills: 2, deaths: 5, assists: 6 },
+          { name: "Matdinz",  hero: "Khaleed", kills: 1, deaths: 2, assists: 8},
+          
+        ], objectives: {
+          lord: { "AERO Esports":2 , "GAMESMY Kelantan":1  },
+          turtle: { "AERO Esports":2 , "GAMESMY Kelantan":1  },
+          tower: { "AERO Esports":9 , "GAMESMY Kelantan":5  }
+        }
+      },
+    ]},
+                  //week 6 friday match 1 (UNT 2-1 GMXK)
+  {
+        teamA: "Untitled",
+        teamB: "GAMESMY Kelantan",
+        games: [
+            { //game 1
+        winner: "GAMESMY Kelantan",
+        bans: ["Fredrinn","Wanwan","Arlott","Granger","Grock","Lunox","Lapu-Lapu", "Fanny","Cici", "Angela"],
+        players: [
+          // Untitled Players
+          { name: "Skyzed",  hero: "Harith", kills: 7, deaths: 3, assists: 2 },
+          { name: "Keymin",  hero: "Yi Sun-Shin", kills: 3, deaths: 4, assists: 9 },
+          { name: "Stowm",  hero: "Zhuxin", kills: 1, deaths: 3, assists: 8 },
+          { name: "Sizkaa",  hero: "Alice", kills: 2, deaths: 5, assists: 11 },
+          { name: "Rasy",  hero: "Hilda", kills: 1, deaths: 4, assists: 10},
+
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Karrie", kills: 3, deaths: 2, assists: 9 },
+          { name: "Jaja",  hero: "Lancelot", kills: 7, deaths: 2, assists: 6 },
+          { name: "Maima",  hero: "Kimmy", kills: 5, deaths: 2, assists: 8 },
+          { name: "Munster",  hero: "Uranus", kills: 3, deaths: 4, assists: 9 },
+          { name: "Matdinz",  hero: "Gatotkaca", kills: 1, deaths: 4, assists: 13},
+
+
+        ], objectives: {
+          lord: { "Untitled":0 , "GAMESMY Kelantan":3  },
+          turtle: { "Untitled":3 , "GAMESMY Kelantan":0  },
+          tower: { "Untitled":3 , "GAMESMY Kelantan":8  }
+        }
+      },
+            { //game 2
+        winner: "Untitled",
+        bans: ["Fredrinn","Wanwan","Arlott","Grock","Zhuxin","Ruby","Uranus", "Fanny","Cici", "Angela"],
+        players: [
+          // Untitled Players
+          { name: "Skyzed",  hero: "Granger", kills: 12, deaths: 0, assists: 4 },
+          { name: "Keymin",  hero: "Baxia", kills: 2, deaths: 1, assists: 15 },
+          { name: "Stowm",  hero: "Yve", kills: 1, deaths: 1, assists: 16 },
+          { name: "Sizkaa",  hero: "Lapu-Lapu", kills: 5, deaths: 1, assists: 12 },
+          { name: "Rasy",  hero: "Chou", kills: 1, deaths: 1, assists: 12},
+
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Natan", kills: 1, deaths: 3, assists: 1 },
+          { name: "Jaja",  hero: "Lancelot", kills: 1, deaths: 4, assists: 1 },
+          { name: "Maima",  hero: "Kimmy", kills: 1, deaths: 2, assists: 2 },
+          { name: "Munster",  hero: "Esmeralda", kills: 1, deaths: 5, assists: 0 },
+          { name: "Matdinz",  hero: "Gatotkaca", kills: 0, deaths: 7, assists: 3},
+
+        ], objectives: {
+          lord: { "Untitled":2 , "GAMESMY Kelantan":1  },
+          turtle: { "Untitled":0 , "GAMESMY Kelantan":3  },
+          tower: { "Untitled":8 , "GAMESMY Kelantan":3  }
+        }
+      },
+      { //game 3
+        winner: "Untitled",
+        bans: ["Fredrinn","Wanwan","Baxia","Harith","Grock","Uranus","Cici", "Phoveus","Fanny", "Angela"],
+        players: [
+          // Untitled Players
+          { name: "Skyzed",  hero: "Claude", kills: 0, deaths: 3, assists: 6 },
+          { name: "Keymin",  hero: "Lancelot", kills: 4, deaths: 4, assists: 5 },
+          { name: "Stowm",  hero: "Kimmy", kills: 6, deaths: 2, assists: 6 },
+          { name: "Sizkaa",  hero: "Arlott", kills: 3, deaths: 6, assists: 4 },
+          { name: "Rasy",  hero: "Chou", kills: 1, deaths: 4, assists: 9},
+
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Granger", kills: 5, deaths: 1, assists: 4 },
+          { name: "Jaja",  hero: "Yi Sun-Shin", kills: 3, deaths: 4, assists: 11 },
+          { name: "Maima",  hero: "Kadita", kills: 1, deaths: 3, assists: 12 },
+          { name: "Munster",  hero: "Lapu-Lapu", kills: 7, deaths: 2, assists: 6 },
+          { name: "Matdinz",  hero: "Gatotkaca", kills: 3, deaths: 4, assists: 9},
+
+        ], objectives: {
+          lord: { "Untitled":4 , "GAMESMY Kelantan":0  },
+          turtle: { "Untitled":0 , "GAMESMY Kelantan":3  },
+          tower: { "Untitled":9 , "GAMESMY Kelantan":5  }
+        }
+      },
+    ]},
+      //week 6 friday match 2 (AERO 2-0 hb)
+  {
+        teamA: "AERO Esports",
+        teamB: "Homebois",
+        games: [
+            { //game 1
+        winner: "AERO Esports",
+        bans: ["Yi Sun-Shin","Angela","Fanny","Joy","Guinevere","Khaleed","Grock", "Hayabusa","Lunox", "Chou"],
+        players: [
+          //AERO
+          { name: "Kusey",  hero: "Granger", kills: 12, deaths: 0, assists: 2 },
+          { name: "Hazle",  hero: "Baxia", kills: 0, deaths: 2, assists: 16 },
+          { name: "Kyym",  hero: "Zhuxin", kills: 2, deaths: 0, assists: 15 },
+          { name: "Smooth",  hero: "Esmeralda", kills: 4, deaths: 0, assists: 5 },
+          { name: "Zqeef",  hero: "Kalea", kills: 1, deaths: 3, assists: 15},
+
+          //hb players
+          { name: "Melqt",  hero: "Cici", kills: 0, deaths: 2, assists: 1 },
+          { name: "Eyymal",  hero: "Lancelot", kills: 2, deaths: 3, assists: 1 },
+          { name: "Izanami",  hero: "Yve", kills: 1, deaths: 3, assists: 1 },
+          { name: "Rezza",  hero: "Uranus", kills: 1, deaths: 3, assists: 4 },
+          { name: "Daniel",  hero: "Hilda", kills: 1, deaths: 8, assists: 4},
+
+        ], objectives: {
+          lord: { "AERO Esports":1 , "Homebois":0  },
+          turtle: { "AERO Esports": 2, "Homebois": 1 },
+          tower: { "AERO Esports": 8, "Homebois":2  }
+        }
+      },
+            { //game 2
+        winner: "AERO Esports",
+        bans: ["Chou","Lunox","Hayabusa","Alice","Joy","Grock","Uranus", "Fanny","Esmeralda", "Angela"],
+        players: [
+          //AERO
+          { name: "Kusey",  hero: "Harith", kills: 1, deaths: 2, assists: 12 },
+          { name: "Hazle",  hero: "Baxia", kills: 3, deaths: 2, assists: 12 },
+          { name: "Kyym",  hero: "Kimmy", kills: 11, deaths: 3, assists: 3 },
+          { name: "Smooth",  hero: "Cici", kills: 1, deaths: 4, assists: 12 },
+          { name: "Zqeef",  hero: "Hylos", kills: 1, deaths: 6, assists: 14},
+
+          //hb players
+          { name: "Melqt",  hero: "Granger", kills: 6, deaths: 1, assists: 5 },
+          { name: "Eyymal",  hero: "Benedetta", kills: 6, deaths: 3, assists: 8 },
+          { name: "Izanami",  hero: "Zhuxin", kills: 1, deaths: 3, assists: 9 },
+          { name: "Rezza",  hero: "Hilda", kills: 3, deaths: 3, assists: 8 },
+          { name: "Daniel",  hero: "Kalea", kills: 1, deaths: 7, assists: 8},
+
+        ], objectives: {
+          lord: { "AERO Esports":2 , "Homebois":2  },
+          turtle: { "AERO Esports": 0, "Homebois": 3 },
+          tower: { "AERO Esports": 7, "Homebois":7  }
+        }
+      },
+                
+          
+    ]},
+      //week 6 saturday match 1 (GMXK 0-2 MV)
+  {
+        teamA: "GAMESMY Kelantan",
+        teamB: "Monster Vicious",
+        games: [
+            { //game 1
+        winner: "Monster Vicious",
+        bans: ["Angela","Cici","Uranus","Lapu-Lapu","Granger","Wanwan","Harith", "Arlott","Chip", "Fanny"],
+        players: [
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Bruno", kills: 1, deaths: 2, assists: 0 },
+          { name: "Jaja",  hero: "Joy", kills: 1, deaths: 3, assists: 0 },
+          { name: "Maima",  hero: "Kimmy", kills: 0, deaths: 2, assists: 1 },
+          { name: "Munster",  hero: "Hilda", kills: 0, deaths: 3, assists: 1 },
+          { name: "Matdinz",  hero: "Gatotkaca", kills: 0, deaths: 2, assists: 2},
+
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Bane", kills: 6, deaths: 1, assists: 3 },
+          { name: "Unii",  hero: "Lancelot", kills: 2, deaths: 0, assists: 5 },
+          { name: "Bondolz",  hero: "Zhuxin", kills: 2, deaths: 0, assists: 9 },
+          { name: "Momo",  hero: "Alice", kills: 1, deaths: 0, assists: 8 },
+          { name: "Lyoni",  hero: "Grock", kills: 1, deaths: 1, assists: 10},
+
+
+        ], objectives: {
+          lord: { "GAMESMY Kelantan":0 , "Monster Vicious":2  },
+          turtle: { "GAMESMY Kelantan":1 , "Monster Vicious":2  },
+          tower: { "GAMESMY Kelantan":2 , "Monster Vicious": 8 }
+        }
+      },
+            { //game 2
+        winner: "Monster Vicious",
+        bans: ["Fanny","Chip","Zhuxin","Guinevere","Joy","Harith","Franco", "Cici","Lancelot", "Angela"],
+        players: [
+          // GAMESMY Kelantan Players
+          { name: "Skyzar",  hero: "Claude", kills: 0, deaths: 1, assists: 1 },
+          { name: "Jaja",  hero: "Baxia", kills: 1, deaths: 5, assists: 0 },
+          { name: "Maima",  hero: "Kimmy", kills: 0, deaths: 4, assists: 0 },
+          { name: "Munster",  hero: "Lapu-Lapu", kills: 0, deaths: 5, assists: 0 },
+          { name: "Matdinz",  hero: "Khaleed", kills: 0, deaths: 4, assists: 0},
+
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Granger", kills: 5, deaths: 0, assists: 2 },
+          { name: "Unii",  hero: "Akai", kills: 0, deaths: 0, assists: 12 },
+          { name: "Bondolz",  hero: "Yve", kills: 3, deaths: 1, assists: 9 },
+          { name: "Momo",  hero: "Arlott", kills: 10, deaths: 0, assists: 5 },
+          { name: "Lyoni",  hero: "Grock", kills: 1, deaths: 0, assists: 13},
+
+
+        ], objectives: {
+          lord: { "GAMESMY Kelantan":0 , "Monster Vicious":1  },
+          turtle: { "GAMESMY Kelantan":0 , "Monster Vicious":3  },
+          tower: { "GAMESMY Kelantan":0 , "Monster Vicious": 7 }
+        }
+      },
+      
+    ]},
+      //week 6 sat match 2 (CG 0-2 VMS)
+  {
+        teamA: "CG Esports",
+        teamB: "Team Vamos",
+        games: [
+            { //game 1
+        winner: "Team Vamos",
+        bans: ["Chip","Chou","Cici","Gloo","Harith","Phoveus","Esmeralda", "Lunox","Kalea", "Wanwan"],
+        players: [
+
+          // CG Esports Players
+          { name: "Ciku",  hero: "Claude", kills: 0, deaths: 3, assists: 2 },
+          { name: "Gary",  hero: "Baxia", kills: 2, deaths: 3, assists: 1 },
+          { name: "Aj",  hero: "Zhuxin", kills: 0, deaths: 3, assists: 3 },
+          { name: "Ye3",  hero: "Hilda", kills: 0, deaths: 1, assists: 1 },
+          { name: "Valenz",  hero: "Hylos", kills: 1, deaths: 1, assists: 1},
+
+          // VMS Players
+          { name: "Natco",  hero: "Bane", kills: 4 , deaths:2 , assists:6  },
+          { name: "Chibi",  hero: "Lancelot", kills: 3, deaths: 1, assists: 4 },
+          { name: "Clawkun",  hero: "Kimmy", kills:2 , deaths:0 , assists:6 },
+          { name: "Gojes",  hero: "Yuzhong", kills:2 , deaths:0 , assists: 4 },
+          { name: "Xorn",  hero: "Grock", kills:0 , deaths:0 , assists:7 },
+
+        ], objectives: {
+          lord: { "CG Esports": 0, "Team Vamos":1  },
+          turtle: { "CG Esports": 1, "Team Vamos": 2 },
+          tower: { "CG Esports":0 , "Team Vamos":9  }
+        }
+      },
+            { //game 2
+        winner: "Team Vamos",
+        bans: ["Lunox","Kimmy","Yi Sun-Shin","Alice","Lapu-Lapu","Chip","Franco", "Lancelot","Kalea", "Cici"],
+        players: [
+          // CG Esports Players
+          { name: "Trap",  hero: "Irithel", kills: 3, deaths: 2, assists: 11 },
+          { name: "Gary",  hero: "Baxia", kills: 0, deaths: 6, assists: 13 },
+          { name: "Ciku",  hero: "Zhuxin", kills: 11, deaths: 3, assists: 5 },
+          { name: "Ye3",  hero: "Esmeralda", kills: 4, deaths: 2, assists: 8 },
+          { name: "Valenz",  hero: "Grock", kills: 0, deaths: 6, assists: 11},
+
+          // VMS Players
+          { name: "Natco",  hero: "Wanwan", kills: 4 , deaths:1 , assists:12  },
+          { name: "Chibi",  hero: "Fredrinn", kills: 1, deaths: 4, assists: 14 },
+          { name: "Clawkun",  hero: "Yve", kills:7 , deaths:0 , assists:10 },
+          { name: "Gojes",  hero: "Yuzhong", kills:7 , deaths:7 , assists: 5 },
+          { name: "Xorn",  hero: "Chou", kills:0 , deaths:6 , assists:7 },
+
+        ], objectives: {
+          lord: { "CG Esports": 1, "Team Vamos":2  },
+          turtle: { "CG Esports": 1, "Team Vamos": 2 },
+          tower: { "CG Esports":8 , "Team Vamos":7  }
+        }
+      },
+          
+    ]},
+      //week 6 SAT match 3 (tr 2-1 aero)
+  {
+        teamA: "Team Rey",
+        teamB: "AERO Esports",
+        games: [
+            { //game 1
+        winner: "Team Rey",
+        bans: ["Harith","Wanwan","Granger","Beatrix","Karrie","Lancelot","Yi Sun-Shin", "Cici","Fanny", "Angela"],
+        players: [
+          // Team Rey Players
+          { name: "Jowm",  hero: "Claude", kills: 2, deaths: 0, assists: 4 },
+          { name: "Error404",  hero: "Baxia", kills: 0, deaths: 1, assists: 6 },
+          { name: "Zakqt",  hero: "Kimmy", kills: 4, deaths: 0, assists: 4 },
+          { name: "Der",  hero: "Esmeralda", kills: 2, deaths: 1, assists: 4 },
+          { name: "NovaXCobar",  hero: "Gatotkaca", kills: 0, deaths: 0, assists: 6},
+
+          //AERO
+          { name: "Kusey",  hero: "Bruno", kills: 0, deaths: 1, assists: 2 },
+          { name: "Hazle",  hero: "Hayabusa", kills: 2, deaths: 1, assists: 0 },
+          { name: "Kyym",  hero: "Zhuxin", kills: 0, deaths: 1, assists: 2 },
+          { name: "Smooth",  hero: "Lapu-Lapu", kills: 0, deaths: 2, assists: 0 },
+          { name: "Zqeef",  hero: "Kalea", kills: 0, deaths: 3, assists: 1},
+
+        ], objectives: {
+          lord: { "Team Rey":2 , "AERO Esports":1  },
+          turtle: { "Team Rey":3 , "AERO Esports":0  },
+          tower: { "Team Rey":7 , "AERO Esports":6  }
+        }
+      },
+            { //game 2
+        winner: "AERO Esports",
+        bans: ["Angela","Lunox","Fanny","Chou","Grock","Kalea","Franco", "Cici","Harith", "Wanwan"],
+        players: [
+          // Team Rey Players
+          { name: "Jowm",  hero: "Granger", kills: 2, deaths: 2, assists: 0 },
+          { name: "Error404",  hero: "Yi Sun-Shin", kills: 3, deaths: 3, assists: 1 },
+          { name: "Zakqt",  hero: "Zhuxin", kills: 0, deaths: 2, assists: 5 },
+          { name: "Der",  hero: "Gloo", kills: 0, deaths: 5, assists: 2 },
+          { name: "NovaXCobar",  hero: "Gatotkaca", kills: 0, deaths: 3, assists: 4},
+
+          //AERO
+          { name: "Kusey",  hero: "Irithel", kills: 4, deaths: 0, assists: 2 },
+          { name: "Hazle",  hero: "Hayabusa", kills: 5, deaths: 2, assists: 8 },
+          { name: "Kyym",  hero: "Kimmy", kills: 6, deaths: 0, assists: 4 },
+          { name: "Smooth",  hero: "Esmeralda", kills: 0, deaths: 1, assists: 9 },
+          { name: "Zqeef",  hero: "Baxia", kills: 0, deaths: 2, assists: 7},
+
+        ], objectives: {
+          lord: { "Team Rey":0 , "AERO Esports":2  },
+          turtle: { "Team Rey":1 , "AERO Esports":2  },
+          tower: { "Team Rey":0 , "AERO Esports":9  }
+        }
+      },
+       { //game 3
+        winner: "Team Rey",
+        bans: ["Harith","Wanwan","Granger","Kalea","Claude","Ruby","Gatotkaca", "Baxia","Fanny", "Angela"],
+        players: [
+          // Team Rey Players
+          { name: "Jowm",  hero: "Cici", kills: 1, deaths: 1, assists: 7 },
+          { name: "Error404",  hero: "Yi Sun-Shin", kills: 8, deaths: 0, assists: 6 },
+          { name: "Zakqt",  hero: "Zhuxin", kills: 4, deaths: 1, assists: 7 },
+          { name: "Der",  hero: "Uranus", kills: 0, deaths: 1, assists: 9 },
+          { name: "NovaXCobar",  hero: "Khaleed", kills: 1, deaths: 0, assists: 7},
+
+          //AERO
+          { name: "Kusey",  hero: "Bane", kills: 1, deaths: 2, assists: 1 },
+          { name: "Hazle",  hero: "Hayabusa", kills: 2, deaths: 2, assists: 0 },
+          { name: "Kyym",  hero: "Lunox", kills: 0, deaths: 3, assists: 2 },
+          { name: "Smooth",  hero: "Esmeralda", kills: 0, deaths: 4, assists: 1 },
+          { name: "Zqeef",  hero: "Grock", kills: 0, deaths: 3, assists: 0},
+
+        ], objectives: {
+          lord: { "Team Rey":1 , "AERO Esports":0  },
+          turtle: { "Team Rey":3 , "AERO Esports":0  },
+          tower: { "Team Rey":8 , "AERO Esports":1  }
+        }
+      },
+    ]},
+      //week 6 sun match 1 (mv 0-2 tdk)
+  {
+        teamA: "Monster Vicious",
+        teamB: "Todak",
+        games: [
+            { //game 1
+        winner: "Todak",
+        bans: ["Cici","Baxia","Uranus","Franco","Kaja","Alice","Phoveus", "Grock","Kimmy", "Zhuxin"],
+        players: [
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Esmeralda", kills: 1, deaths: 5, assists: 2 },
+          { name: "Unii",  hero: "Fanny", kills: 1, deaths: 2, assists: 3 },
+          { name: "Bondolz",  hero: "Lunox", kills: 1, deaths: 3, assists: 2 },
+          { name: "Momo",  hero: "Thamuz", kills: 2, deaths: 5, assists: 1 },
+          { name: "Lyoni",  hero: "Gatotkaca", kills: 0, deaths: 7, assists: 3},
+
+          // Todak Players
+          { name: "Loleal",  hero: "Chou", kills: 10, deaths: 1, assists: 4 },
+          { name: "Zahyed",  hero: "Yi Sun-Shin", kills: 5, deaths: 0, assists: 9 },
+          { name: "ZaimSempoi", hero: "Valentina", kills: 4, deaths: 0, assists: 15 },
+          { name: "Fawndeer",  hero: "Arlott", kills: 2, deaths: 3, assists: 12 },
+          { name: "Dreams", hero: "Badang", kills: 1, deaths: 1, assists: 17}
+
+        ], objectives: {
+          lord: { "Monster Vicious": 0, "Todak": 1 },
+          turtle: { "Monster Vicious":1 , "Todak": 2 },
+          tower: { "Monster Vicious": 0, "Todak":9  }
+        }
+      },
+            { //game 2
+        winner: "Todak",
+        bans: ["Cici","Yi Sun-Shin","Baxia","Kaja","Franco","Selena","Valentina", "Grock","Kimmy", "Zhuxin"],
+        players: [
+          // Monster Vicious Players
+          { name: "Rough",  hero: "Harith", kills: 1, deaths: 4, assists: 5 },
+          { name: "Unii",  hero: "Fanny", kills: 4, deaths: 3, assists: 2 },
+          { name: "Bondolz",  hero: "Yve", kills: 1, deaths: 4, assists: 7 },
+          { name: "Momo",  hero: "Alice", kills: 3, deaths: 2, assists: 6 },
+          { name: "Lyoni",  hero: "Gatotkaca", kills: 1, deaths: 5, assists: 3},
+
+          // Todak Players
+          { name: "Loleal",  hero: "Bane", kills: 4, deaths: 2, assists: 7 },
+          { name: "Zahyed",  hero: "Lancelot", kills: 6, deaths: 3, assists: 6 },
+          { name: "ZaimSempoi", hero: "Lunox", kills: 7, deaths: 2, assists: 8 },
+          { name: "Fawndeer",  hero: "Ruby", kills: 1, deaths: 2, assists: 10 },
+          { name: "Dreams", hero: "Chou", kills: 0, deaths: 1, assists: 14}
+
+        ], objectives: {
+          lord: { "Monster Vicious": 0, "Todak": 2 },
+          turtle: { "Monster Vicious":1 , "Todak": 2 },
+          tower: { "Monster Vicious": 3, "Todak":8  }
+        }
+      },
+       
+    ]},
+
+          //week 6 sun match 2 (srg 2-0 unt)
+  {
+        teamA: "Selangor Red Giants",
+        teamB: "Untitled",
+        games: [
+            { //game 1
+        winner: "Selangor Red Giants",
+        bans: ["Fredrinn","Arlott","Zhuxin","Guinevere","Chou","Yuzhong","Esmeralda", "Lancelot","Cici", "Fanny"],
+        players: [
+
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Claude", kills: 4, deaths: 0, assists: 4 },
+          { name: "Sekys",  hero: "Baxia", kills: 3, deaths: 0, assists: 5 },
+          { name: "Stormie",  hero: "Kimmy", kills: 2, deaths: 2, assists: 8 },
+          { name: "Kramm",  hero: "Alice", kills: 2, deaths: 0, assists: 9 },
+          { name: "Yums",  hero: "Gatotkaca", kills: 2, deaths: 0, assists: 6},
+
+          // Untitled Players
+          { name: "Skyzed",  hero: "Granger", kills: 0, deaths: 2, assists: 1 },
+          { name: "Keymin",  hero: "Joy", kills: 1, deaths: 2, assists: 0 },
+          { name: "Stowm",  hero: "Yve", kills: 0, deaths: 3, assists: 0 },
+          { name: "Sizkaa",  hero: "Lapu-Lapu", kills: 1, deaths: 3, assists: 0 },
+          { name: "Rasy",  hero: "Grock", kills: 0, deaths: 3, assists: 1}
+
+        ], objectives: {
+          lord: { "Selangor Red Giants":1 , "Untitled":0  },
+          turtle: { "Selangor Red Giants":3 , "Untitled":0  },
+          tower: { "Selangor Red Giants":7 , "Untitled":0  }
+        }
+      },
+            { //game 2
+        winner: "Selangor Red Giants",
+        bans: ["Cici","Lancelot","Yi Sun-Shin","Joy","Claude","Mathilda","Benedetta", "Fredrinn","Arlott", "Baxia"],
+        players: [
+          // Selangor Red Giants Players
+          { name: "Innocent",  hero: "Granger", kills: 5, deaths: 3, assists: 3 },
+          { name: "Sekys",  hero: "Xborg", kills: 5, deaths: 1, assists: 8 },
+          { name: "Stormie",  hero: "Kimmy", kills: 1, deaths: 2, assists: 9 },
+          { name: "Kramm",  hero: "Lapu-Lapu", kills: 1, deaths: 2, assists: 10 },
+          { name: "Yums",  hero: "Kalea", kills: 1, deaths: 2, assists: 7},
+
+          // Untitled Players
+          { name: "Skyzed",  hero: "Harith", kills: 2, deaths: 3, assists: 5 },
+          { name: "Keymin",  hero: "Akai", kills: 2, deaths: 3, assists: 4 },
+          { name: "Stowm",  hero: "Zhuxin", kills: 1, deaths: 0, assists: 3 },
+          { name: "Sizkaa",  hero: "Masha", kills: 5, deaths: 3, assists: 0 },
+          { name: "Rasy",  hero: "Chip", kills: 0, deaths: 4, assists: 6},
+
+        ], objectives: {
+          lord: { "Selangor Red Giants":1 , "Untitled":1  },
+          turtle: { "Selangor Red Giants":2 , "Untitled":1  },
+          tower: { "Selangor Red Giants":7 , "Untitled":4  }
+        }
+      },
+       
+    ]},
 ]
     
 
