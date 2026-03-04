@@ -3,7 +3,7 @@
 A web-based statistics dashboard for MPL MY Season 16, featuring comprehensive analytics for teams, players, heroes, hero pools, and player pools.
 
 ## 🌐 Live Demo
-(https://izzat2712.github.io/mpl-my-s16-stats/)
+(https://mpl-my-s16-stats.vercel.app/)
 
 ---
 
