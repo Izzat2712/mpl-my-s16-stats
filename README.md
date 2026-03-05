@@ -53,12 +53,19 @@ A web-based statistics dashboard for MPL MY Season 16, featuring comprehensive a
 ---
 
 ## 📁 Project Structure
-/index.html
-/script.js
-/style.css
-/assets
-/README.md
-/LICENSE
+index.html
+style.css
+README.md
+LICENSE
+js/
+  app.js
+  data-store.js
+  stats.js
+  views.js
+data/
+  heroes.json
+  season16/
+  season17/
 
 
 ---
