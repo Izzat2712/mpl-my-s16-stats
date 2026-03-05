@@ -1,19 +1,19 @@
 const SEASON_DATA_FILES = {
   season16: {
     label: "MPL MY SEASON 16",
-    roster: "data/season16/roster.json",
-    heroes: "data/heroes.json",
-    matches: "data/season16/matches.json",
-    teamLogos: "data/season16/teamLogos.json",
-    teamNames: "data/season16/teamNames.json"
+    roster: "/data/season16/roster.json",
+    heroes: "/data/heroes.json",
+    matches: "/data/season16/matches.json",
+    teamLogos: "/data/season16/teamLogos.json",
+    teamNames: "/data/season16/teamNames.json"
   },
   season17: {
     label: "MPL MY SEASON 17",
-    roster: "data/season17/roster.json",
-    heroes: "data/heroes.json",
-    matches: "data/season17/matches.json",
-    teamLogos: "data/season17/teamLogos.json",
-    teamNames: "data/season17/teamNames.json"
+    roster: "/data/season17/roster.json",
+    heroes: "/data/heroes.json",
+    matches: "/data/season17/matches.json",
+    teamLogos: "/data/season17/teamLogos.json",
+    teamNames: "/data/season17/teamNames.json"
   }
 };
 
