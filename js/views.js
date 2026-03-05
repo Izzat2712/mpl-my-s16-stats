@@ -1074,7 +1074,14 @@ function setH2hSubTab(tab) {
   if (next !== "team" && next !== "player" && next !== "hero") return;
   h2hSubTab = next;
   h2hPopupState = { kind: "", side: "" };
+  if (typeof window.syncH2hRoute === "function") {
+    window.syncH2hRoute(next);
+  }
   showH2H();
+}
+
+function getH2hSubTab() {
+  return h2hSubTab;
 }
 
 function renderTeamH2HCompare() {
@@ -1570,14 +1577,21 @@ function showH2H(focus = null) {
 
     <div class="nav" style="margin: 0 auto 22px; max-width: 540px;">
       ${tabs.map(tab => `
-        <button
-          type="button"
+        ${(() => {
+          const href = typeof window.getRouteHref === "function"
+            ? window.getRouteHref("h2h", tab.key)
+            : `/h2h/${tab.key}`;
+          return `
+        <a
+          href="${href}"
+          data-h2h-tab="${tab.key}"
           class="${h2hSubTab === tab.key ? "is-active" : ""}"
-          aria-pressed="${h2hSubTab === tab.key ? "true" : "false"}"
-          onclick="setH2hSubTab('${tab.key}')"
+          ${h2hSubTab === tab.key ? 'aria-current="page"' : ""}
         >
           ${tab.label}
-        </button>
+        </a>
+      `;
+        })()}
       `).join("")}
     </div>
 
@@ -1676,6 +1690,7 @@ export {
   sortPlayerPools,
   showH2H,
   setH2hSubTab,
+  getH2hSubTab,
   setSupportPos
 };
 

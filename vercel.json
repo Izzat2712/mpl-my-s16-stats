@@ -19,6 +19,18 @@
     {
       "source": "/h2h",
       "destination": "/index.html"
+    },
+    {
+      "source": "/h2h/team",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/h2h/player",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/h2h/hero",
+      "destination": "/index.html"
     }
   ]
 }

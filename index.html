@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260304-5" />
+  <link rel="stylesheet" href="style.css?v=20260306-1" />
 </head>
 <body>
 
@@ -27,12 +27,12 @@
   </div>
 
   <div class="nav">
-    <button type="button" data-route="teams" onclick="showTeams()">Teams</button>
-    <button type="button" data-route="players" onclick="showPlayers()">Players</button>
-    <button type="button" data-route="heroes" onclick="showHeroes()">Heroes</button>
-    <button type="button" data-route="hero pool" onclick="showHeroPool()">Hero Pool</button>
-    <button type="button" data-route="player pool" onclick="showPlayerPools()">Player Pool</button>
-    <button id="tabH2H" type="button" data-route="h2h" onclick="showH2H()">H2H</button>
+    <a href="/" data-route="teams">Teams</a>
+    <a href="/players" data-route="players">Players</a>
+    <a href="/heroes" data-route="heroes">Heroes</a>
+    <a href="/hero-pool" data-route="hero pool">Hero Pool</a>
+    <a href="/player-pool" data-route="player pool">Player Pool</a>
+    <a id="tabH2H" href="/h2h/team" data-route="h2h">H2H</a>
   </div>
 
   <div id="output" class="panel">Loading data...</div>

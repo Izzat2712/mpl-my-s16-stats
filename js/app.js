@@ -24,6 +24,7 @@ import {
   sortPlayerPools,
   showH2H,
   setH2hSubTab,
+  getH2hSubTab,
   setSupportPos
 } from "./views.js";
 
@@ -55,15 +56,26 @@ const VIEW_ROUTES = {
   players: "/players",
   heroes: "/heroes",
   "hero pool": "/hero-pool",
-  "player pool": "/player-pool",
-  h2h: "/h2h"
+  "player pool": "/player-pool"
 };
 
 const ROUTE_VIEWS = Object.fromEntries(
   Object.entries(VIEW_ROUTES).map(([view, route]) => [route, view])
 );
+const H2H_SUBTAB_ROUTES = {
+  team: "/h2h/team",
+  player: "/h2h/player",
+  hero: "/h2h/hero"
+};
+const LOCAL_ROUTE_VIEWS = Object.fromEntries(
+  Object.entries(VIEW_ROUTES).map(([view, route]) => [`#${route}`, view])
+);
+const LOCAL_H2H_SUBTAB_ROUTES = Object.fromEntries(
+  Object.entries(H2H_SUBTAB_ROUTES).map(([tab, route]) => [`#${route}`, tab])
+);
 
 let navLinksBound = false;
+let suppressRouteSync = false;
 
 function normalizePathname(pathname) {
   if (!pathname) return "/";
@@ -73,20 +85,87 @@ function normalizePathname(pathname) {
   return trimmed || "/";
 }
 
+function useHashRoutes() {
+  const host = window.location.hostname;
+  return window.location.protocol === "file:" || host === "localhost" || host === "127.0.0.1";
+}
+
 function getViewFromPathname(pathname) {
   return ROUTE_VIEWS[normalizePathname(pathname)] || "teams";
 }
 
-function updateUrlForView(view, { replace = false } = {}) {
-  const nextPath = VIEW_ROUTES[view] || VIEW_ROUTES.teams;
-  const currentPath = normalizePathname(window.location.pathname);
+function getRoutePath(view, h2hSubTab = null) {
+  if (view === "h2h") {
+    const path = H2H_SUBTAB_ROUTES[h2hSubTab] || H2H_SUBTAB_ROUTES.team;
+    return useHashRoutes() ? `#${path}` : path;
+  }
+  const path = VIEW_ROUTES[view] || VIEW_ROUTES.teams;
+  return useHashRoutes() ? `#${path}` : path;
+}
+
+function getRouteHref(view, h2hSubTab = null) {
+  const routePath = getRoutePath(view, h2hSubTab);
+  return useHashRoutes() ? `/${routePath}` : routePath;
+}
+
+function parseRoute(pathname, hash = window.location.hash) {
+  if (useHashRoutes()) {
+    const normalizedHash = String(hash || "").trim();
+    if (!normalizedHash || normalizedHash === "#/" || normalizedHash === "#") {
+      return { view: "teams", h2hSubTab: null };
+    }
+    if (LOCAL_H2H_SUBTAB_ROUTES[normalizedHash]) {
+      return { view: "h2h", h2hSubTab: LOCAL_H2H_SUBTAB_ROUTES[normalizedHash] };
+    }
+    return { view: LOCAL_ROUTE_VIEWS[normalizedHash] || "teams", h2hSubTab: null };
+  }
+  const normalized = normalizePathname(pathname);
+  if (normalized === "/h2h") {
+    return { view: "h2h", h2hSubTab: "team" };
+  }
+  if (normalized.startsWith("/h2h/")) {
+    const subTab = normalized.slice("/h2h/".length).toLowerCase();
+    if (H2H_SUBTAB_ROUTES[subTab]) {
+      return { view: "h2h", h2hSubTab: subTab };
+    }
+    return { view: "h2h", h2hSubTab: "team" };
+  }
+  return { view: getViewFromPathname(normalized), h2hSubTab: null };
+}
+
+function updateUrl(nextPath, { replace = false } = {}) {
+  if (suppressRouteSync) return;
+  const currentPath = useHashRoutes()
+    ? (window.location.hash || "#/")
+    : normalizePathname(window.location.pathname);
   if (currentPath === nextPath) return;
+  if (useHashRoutes()) {
+    if (replace) {
+      const nextUrl = `${window.location.pathname}${window.location.search}${nextPath}`;
+      window.history.replaceState({}, "", nextUrl);
+    } else {
+      window.location.hash = nextPath.slice(1);
+    }
+    return;
+  }
   const method = replace ? "replaceState" : "pushState";
-  window.history[method]({ view }, "", nextPath);
+  window.history[method]({}, "", nextPath);
+}
+
+function updateUrlForView(view, options = {}) {
+  if (view === "h2h") {
+    updateUrl(getRoutePath("h2h", getH2hSubTab()), options);
+    return;
+  }
+  updateUrl(getRoutePath(view), options);
 }
 
 function navigateToView(view, options = {}) {
-  const nextView = VIEW_ROUTES[view] ? view : "teams";
+  const nextView = view === "h2h" || VIEW_ROUTES[view] ? view : "teams";
+  if (nextView === "h2h" && options.h2hSubTab) {
+    setH2hSubTab(options.h2hSubTab);
+    return;
+  }
   if (options.updateUrl !== false) {
     updateUrlForView(nextView, { replace: options.replace === true });
   }
@@ -96,10 +175,56 @@ function navigateToView(view, options = {}) {
 
 function bindNavLinks() {
   if (navLinksBound) return;
+  syncNavHrefs();
+  document.addEventListener("click", (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const routeLink = e.target.closest("a[data-route]");
+    if (routeLink) {
+      e.preventDefault();
+      navigateToView(routeLink.dataset.route);
+      return;
+    }
+    const h2hLink = e.target.closest("a[data-h2h-tab]");
+    if (h2hLink) {
+      e.preventDefault();
+      setH2hSubTab(h2hLink.dataset.h2hTab);
+    }
+  });
   window.addEventListener("popstate", () => {
-    navigateToView(getViewFromPathname(window.location.pathname), { updateUrl: false });
+    applyRoute(window.location.pathname, window.location.hash);
+  });
+  window.addEventListener("hashchange", () => {
+    if (!useHashRoutes()) return;
+    applyRoute(window.location.pathname, window.location.hash);
   });
   navLinksBound = true;
+}
+
+function syncNavHrefs() {
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
+  for (const link of nav.querySelectorAll("a[data-route]")) {
+    const route = link.getAttribute("data-route");
+    link.setAttribute("href", getRouteHref(route === "h2h" ? "h2h" : route, route === "h2h" ? getH2hSubTab() : null));
+  }
+}
+
+function applyRoute(pathname, hash = window.location.hash) {
+  const route = parseRoute(pathname, hash);
+  suppressRouteSync = true;
+  try {
+    if (route.view === "h2h") {
+      setH2hSubTab(route.h2hSubTab || "team");
+      appState.view = "h2h";
+      renderCurrentView();
+      return;
+    }
+    appState.view = route.view;
+    renderCurrentView();
+    syncNavHrefs();
+  } finally {
+    suppressRouteSync = false;
+  }
 }
 
 function setLoading(message) {
@@ -218,8 +343,7 @@ export async function initApp() {
     refreshDataRefs();
     updateSeasonMeta();
     appState.loaded = true;
-    appState.view = getViewFromPathname(window.location.pathname);
-    renderCurrentView();
+    applyRoute(window.location.pathname, window.location.hash);
 
     const selector = document.getElementById("seasonSelect");
     if (selector) selector.value = appState.season;
@@ -266,6 +390,11 @@ window.sortHeroPool = sortHeroPool;
 window.showPlayerPools = showPlayerPoolsView;
 window.sortPlayerPools = sortPlayerPools;
 window.showH2H = showH2HView;
+window.syncH2hRoute = (tab) => {
+  updateUrl(getRoutePath("h2h", String(tab || "").toLowerCase()));
+  syncNavHrefs();
+};
+window.getRouteHref = getRouteHref;
 window.setH2hSubTab = setH2hSubTab;
 window.onPlayerSearchInput = onPlayerSearchInput;
 window.onTeamCompareChange = onTeamCompareChange;
