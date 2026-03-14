@@ -31,7 +31,21 @@ const SCHEDULE_DAYS = [
   { key: "saturday", label: "Saturday", slots: 3 },
   { key: "sunday", label: "Sunday", slots: 2 }
 ];
+const SCHEDULE_STAGES = [
+  { key: "regular", label: "Regular Season" },
+  { key: "playoff", label: "Playoff" }
+];
 const MATCH_SOURCE_UTC_OFFSET_HOURS = 8;
+
+function normalizeScheduleStage(stageValue) {
+  const normalized = String(stageValue || "").trim().toLowerCase();
+  return normalized === "playoff" || normalized === "playoffs" ? "playoff" : "regular";
+}
+
+function getMatchStage(match) {
+  const schedule = match?.schedule && typeof match.schedule === "object" ? match.schedule : {};
+  return normalizeScheduleStage(schedule.stage || match?.stage);
+}
 
 function getDefaultScheduleMeta(index) {
   const week = Math.floor(index / 7) + 1;
@@ -84,6 +98,76 @@ function parseScheduleMatchDateTime(dateValue, startTimeValue) {
   const utcMs = Date.UTC(year, monthIndex, day, hours - MATCH_SOURCE_UTC_OFFSET_HOURS, minutes, 0, 0);
   const parsed = new Date(utcMs);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function compareScheduleEntries(a, b) {
+  const aStart = parseScheduleMatchDateTime(a.meta.date, a.meta.startTime)?.getTime() ?? Number.POSITIVE_INFINITY;
+  const bStart = parseScheduleMatchDateTime(b.meta.date, b.meta.startTime)?.getTime() ?? Number.POSITIVE_INFINITY;
+  if (aStart !== bStart) return aStart - bStart;
+  if (a.meta.date !== b.meta.date) return String(a.meta.date || "").localeCompare(String(b.meta.date || ""));
+  if (a.meta.dayMatch !== b.meta.dayMatch) return a.meta.dayMatch - b.meta.dayMatch;
+  return a.index - b.index;
+}
+
+function getStageSegmentData(matchEntries, stage = "regular") {
+  const normalizedStage = normalizeScheduleStage(stage);
+  const filteredEntries = matchEntries
+    .filter((entry) => getMatchStage(entry.match) === normalizedStage)
+    .map((entry) => ({ ...entry, meta: getMatchScheduleMeta(entry.match, entry.index) }));
+
+  if (normalizedStage === "playoff") {
+    const orderedEntries = [...filteredEntries].sort(compareScheduleEntries);
+    const orderedKeys = [];
+    const keyToIndex = new Map();
+
+    for (const entry of orderedEntries) {
+      const key = entry.meta.date || `undated-${entry.index}`;
+      if (!keyToIndex.has(key)) {
+        keyToIndex.set(key, orderedKeys.length + 1);
+        orderedKeys.push(key);
+      }
+    }
+
+    return {
+      entries: filteredEntries.map((entry) => {
+        const segmentKey = entry.meta.date || `undated-${entry.index}`;
+        const segmentNumber = keyToIndex.get(segmentKey) || 1;
+        return {
+          ...entry,
+          segmentKey,
+          segmentNumber,
+          segmentLabel: `Day ${segmentNumber}`
+        };
+      }),
+      segmentTabs: orderedKeys.map((key, index) => ({
+        key,
+        value: index + 1,
+        label: `Day ${index + 1}`
+      })),
+      segmentKind: "day"
+    };
+  }
+
+  const segmentTabs = Array.from(
+    new Set(filteredEntries.map((entry) => Number(entry.meta.week) || 1))
+  )
+    .sort((a, b) => a - b)
+    .map((week) => ({
+      key: week,
+      value: week,
+      label: `Week ${week}`
+    }));
+
+  return {
+    entries: filteredEntries.map((entry) => ({
+      ...entry,
+      segmentKey: Number(entry.meta.week) || 1,
+      segmentNumber: Number(entry.meta.week) || 1,
+      segmentLabel: `Week ${Number(entry.meta.week) || 1}`
+    })),
+    segmentTabs,
+    segmentKind: "week"
+  };
 }
 
 function formatScheduleCountdown(diffMs) {
@@ -262,11 +346,18 @@ function getScheduleTeams(matches) {
   )).sort((a, b) => teamLabel(a).localeCompare(teamLabel(b)));
 }
 
-function renderScheduleTeamSelector(matches, selectedTeam = "") {
+function renderScheduleFilters(matches, selectedTeam = "", selectedStage = "regular") {
   const teams = getScheduleTeams(matches);
+  const normalizedStage = normalizeScheduleStage(selectedStage);
 
   return `
     <div class="scheduleFilterBar">
+      <label for="scheduleStageFilter">Stage</label>
+      <select id="scheduleStageFilter" onchange="onScheduleStageChange(this.value)">
+        ${SCHEDULE_STAGES.map((stage) => `
+          <option value="${stage.key}" ${stage.key === normalizedStage ? "selected" : ""}>${stage.label}</option>
+        `).join("")}
+      </select>
       <label for="scheduleTeamFilter">Team</label>
       <select id="scheduleTeamFilter" onchange="onScheduleTeamChange(this.value)">
         <option value="" ${selectedTeam ? "" : "selected"}>All teams</option>
@@ -278,10 +369,10 @@ function renderScheduleTeamSelector(matches, selectedTeam = "") {
   `;
 }
 
-function renderScheduleTeamWeekSection(week, entries, selectedTeam = "") {
+function renderScheduleTeamSegmentSection(segmentLabel, entries, selectedTeam = "") {
   return `
     <section class="scheduleTeamWeekSection">
-      <h3 class="scheduleTeamWeekTitle">Week ${week}</h3>
+      <h3 class="scheduleTeamWeekTitle">${segmentLabel}</h3>
       <div class="scheduleTeamWeekList">
         ${entries.map(({ match, index, meta }) => {
           const score = getMatchScore(match);
@@ -344,67 +435,93 @@ function renderScheduleTeamWeekSection(week, entries, selectedTeam = "") {
   `;
 }
 
-function renderScheduleTeamView(matchEntries, selectedTeam = "", activeWeek = 1, weekTabs = []) {
-  const groupedByWeek = new Map();
-
-  for (const entry of matchEntries) {
-    const weekEntries = groupedByWeek.get(entry.meta.week) || [];
-    weekEntries.push(entry);
-    groupedByWeek.set(entry.meta.week, weekEntries);
+function renderScheduleTabs(segmentTabs, activeValue, emptyLabel = "") {
+  if (!segmentTabs.length) {
+    return emptyLabel ? `<div class="scheduleEmpty">${emptyLabel}</div>` : "";
   }
-
-  const orderedWeeks = Array.from(groupedByWeek.keys()).sort((a, b) => a - b);
-
-  if (!orderedWeeks.length) {
-    return `<div class="scheduleEmpty">No matches set for this team.</div>`;
-  }
-
-  const availableWeekSet = new Set(orderedWeeks);
-  const visibleWeek = availableWeekSet.has(activeWeek) ? activeWeek : orderedWeeks[0];
-  const visibleEntries = (groupedByWeek.get(visibleWeek) || []).sort((a, b) => {
-    if (a.meta.day !== b.meta.day) {
-      return SCHEDULE_DAYS.findIndex((day) => day.key === a.meta.day)
-        - SCHEDULE_DAYS.findIndex((day) => day.key === b.meta.day);
-    }
-    return a.meta.dayMatch - b.meta.dayMatch;
-  });
 
   return `
     <div class="nav scheduleWeekNav">
-      ${weekTabs.map((tabWeek) => `
+      ${segmentTabs.map((tab) => `
         <button
           type="button"
-          class="${tabWeek === visibleWeek ? "is-active" : ""} ${availableWeekSet.has(tabWeek) ? "" : "is-disabled"}"
-          onclick="showSchedule(${tabWeek})"
+          class="${tab.value === activeValue ? "is-active" : ""}"
+          onclick="showSchedule(${tab.value})"
         >
-          Week ${tabWeek}
+          ${tab.label}
         </button>
       `).join("")}
     </div>
+  `;
+}
+
+function renderPlayoffBoard(entries) {
+  if (!entries.length) {
+    return `<div class="scheduleEmpty">No matches set.</div>`;
+  }
+
+  const orderedEntries = [...entries].sort(compareScheduleEntries);
+  return `
+    <div class="scheduleDayBody">
+      ${orderedEntries.map((entry) => renderScheduleMatchCard(entry.match, entry.index)).join("")}
+    </div>
+  `;
+}
+
+function renderScheduleTeamView(matchEntries, selectedTeam = "", activeSegment = 1, segmentTabs = []) {
+  const groupedBySegment = new Map();
+
+  for (const entry of matchEntries) {
+    const segmentEntries = groupedBySegment.get(entry.segmentKey) || [];
+    segmentEntries.push(entry);
+    groupedBySegment.set(entry.segmentKey, segmentEntries);
+  }
+
+  const orderedSegments = segmentTabs
+    .filter((tab) => groupedBySegment.has(tab.key))
+    .map((tab) => ({
+      ...tab,
+      entries: groupedBySegment.get(tab.key) || []
+    }));
+
+  if (!orderedSegments.length) {
+    return `<div class="scheduleEmpty">No matches set for this team.</div>`;
+  }
+
+  const availableValues = new Set(orderedSegments.map((segment) => segment.value));
+  const visibleValue = availableValues.has(activeSegment) ? activeSegment : orderedSegments[0].value;
+  const visibleSegment = orderedSegments.find((segment) => segment.value === visibleValue) || orderedSegments[0];
+  const visibleEntries = [...visibleSegment.entries].sort(compareScheduleEntries);
+
+  return `
+    ${renderScheduleTabs(orderedSegments, visibleValue)}
     <div class="scheduleTeamView">
-      ${renderScheduleTeamWeekSection(visibleWeek, visibleEntries, selectedTeam)}
+      ${renderScheduleTeamSegmentSection(visibleSegment.label, visibleEntries, selectedTeam)}
     </div>
   `;
 }
 
 function showSchedule(week = null) {
   const matches = getMatches();
-  const availableTeams = getScheduleTeams(matches);
-  const maxWeek = Math.max(1, ...matches.map((match, index) => getMatchScheduleMeta(match, index).week));
-  const weekTabs = Array.from({ length: maxWeek }, (_, i) => i + 1);
-  const activeWeek = Math.min(Math.max(Number(week ?? window.appState?.scheduleWeek ?? 1), 1), maxWeek);
+  const selectedStage = normalizeScheduleStage(window.appState?.scheduleStage || "regular");
+  const matchEntries = matches.map((match, index) => ({ match, index }));
+  const stageData = getStageSegmentData(matchEntries, selectedStage);
+  const stageMatches = stageData.entries.map((entry) => entry.match);
+  const availableTeams = getScheduleTeams(stageMatches);
+  const fallbackValue = stageData.segmentTabs[0]?.value || 1;
+  const activeSegment = Number(week ?? window.appState?.scheduleWeek ?? fallbackValue) || fallbackValue;
   const requestedTeam = normalizeScheduleTeamCode(window.appState?.scheduleTeam || "");
   const selectedTeam = availableTeams.includes(requestedTeam) ? requestedTeam : "";
 
   if (window.appState) {
-    window.appState.scheduleWeek = activeWeek;
+    window.appState.scheduleWeek = stageData.segmentTabs.some((tab) => tab.value === activeSegment) ? activeSegment : fallbackValue;
     window.appState.scheduleTeam = selectedTeam;
+    window.appState.scheduleStage = selectedStage;
   }
 
-  const matchEntries = matches.map((match, index) => ({ match, index, meta: getMatchScheduleMeta(match, index) }));
-  const matchesForWeek = matchEntries.filter((entry) => entry.meta.week === activeWeek);
+  const matchesForSegment = stageData.entries.filter((entry) => entry.segmentNumber === (window.appState?.scheduleWeek ?? fallbackValue));
   const matchesForTeam = selectedTeam
-    ? matchEntries.filter((entry) => {
+    ? stageData.entries.filter((entry) => {
         const teamA = normalizeScheduleTeamCode(entry.match.teamA);
         const teamB = normalizeScheduleTeamCode(entry.match.teamB);
         return teamA === selectedTeam || teamB === selectedTeam;
@@ -414,42 +531,38 @@ function showSchedule(week = null) {
   const html = `
     <h2 class="panel-title">Schedule ${seasonLabel()}</h2>
 
-    ${renderScheduleTeamSelector(matches, selectedTeam)}
+    ${renderScheduleFilters(stageMatches, selectedTeam, selectedStage)}
 
-    ${selectedTeam ? renderScheduleTeamView(matchesForTeam, selectedTeam, activeWeek, weekTabs) : `
-      <div class="nav scheduleWeekNav">
-        ${weekTabs.map((tabWeek) => `
-          <button
-            type="button"
-            class="${tabWeek === activeWeek ? "is-active" : ""}"
-            onclick="showSchedule(${tabWeek})"
-          >
-            Week ${tabWeek}
-          </button>
-        `).join("")}
-      </div>
+    ${selectedTeam ? renderScheduleTeamView(matchesForTeam, selectedTeam, window.appState?.scheduleWeek ?? fallbackValue, stageData.segmentTabs) : `
+      ${stageData.segmentTabs.length ? `
+        ${renderScheduleTabs(stageData.segmentTabs, window.appState?.scheduleWeek ?? fallbackValue)}
 
-      <div class="scheduleBoard">
-        ${SCHEDULE_DAYS.map((day) => {
-          const dayMatches = matchesForWeek
-            .filter((entry) => entry.meta.day === day.key)
-            .sort((a, b) => a.meta.dayMatch - b.meta.dayMatch);
+        ${selectedStage === "playoff" ? renderPlayoffBoard(matchesForSegment) : `
+          <div class="scheduleBoard">
+            ${SCHEDULE_DAYS.map((day) => {
+              const dayMatches = matchesForSegment
+                .filter((entry) => entry.meta.day === day.key)
+                .sort((a, b) => a.meta.dayMatch - b.meta.dayMatch);
 
-          return `
-            <section class="scheduleDayColumn">
-              <div class="scheduleDayHeader">
-                <h3>${day.label}</h3>
-              </div>
-              <div class="scheduleDayBody">
-                ${dayMatches.length
-                  ? dayMatches.map((entry) => renderScheduleMatchCard(entry.match, entry.index)).join("")
-                  : `<div class="scheduleEmpty">No matches set.</div>`
-                }
-              </div>
-            </section>
-          `;
-        }).join("")}
-      </div>
+              return `
+                <section class="scheduleDayColumn">
+                  <div class="scheduleDayHeader">
+                    <h3>${day.label}</h3>
+                  </div>
+                  <div class="scheduleDayBody">
+                    ${dayMatches.length
+                      ? dayMatches.map((entry) => renderScheduleMatchCard(entry.match, entry.index)).join("")
+                      : `<div class="scheduleEmpty">No matches set.</div>`
+                    }
+                  </div>
+                </section>
+              `;
+            }).join("")}
+          </div>
+        `}
+      ` : `
+        <div class="scheduleEmpty">${selectedStage === "playoff" ? "No playoff yet." : "No matches set."}</div>
+      `}
     `}
 
   `;
@@ -491,6 +604,14 @@ function onScheduleTeamChange(teamCode) {
     window.appState.scheduleTeam = normalizeScheduleTeamCode(teamCode);
   }
   showSchedule(window.appState?.scheduleWeek ?? null);
+}
+
+function onScheduleStageChange(stage) {
+  if (window.appState) {
+    window.appState.scheduleStage = normalizeScheduleStage(stage);
+    window.appState.scheduleWeek = 1;
+  }
+  showSchedule(1);
 }
 
 function getEmptyTeamSummary(teamCode) {
@@ -3161,6 +3282,7 @@ function setSupportPos(mode) {
 export {
   showSchedule,
   refreshScheduleCountdowns,
+  onScheduleStageChange,
   onScheduleTeamChange,
   openScheduleTeamModal,
   closeScheduleTeamModal,

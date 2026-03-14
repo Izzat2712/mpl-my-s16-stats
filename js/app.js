@@ -4,6 +4,7 @@ import {
   refreshDataRefs,
   refreshScheduleCountdowns,
   onScheduleTeamChange,
+  onScheduleStageChange,
   openScheduleTeamModal,
   closeScheduleTeamModal,
   openScheduleScorecard,
@@ -66,6 +67,7 @@ const appState = {
   filters: {
     ppExcludeUnused: false
   },
+  scheduleStage: "regular",
   scheduleTeam: "",
   scheduleWeek: 1
 };
@@ -517,7 +519,8 @@ function updateSeasonMeta() {
   if (heading) heading.textContent = `${seasonLabel} STATISTICS`;
   const seasonNote = document.getElementById("seasonNote");
   if (seasonNote) {
-    seasonNote.hidden = appState.season !== "season16";
+    seasonNote.hidden = false;
+    seasonNote.textContent = "Stats combine regular season and playoffs when available.";
   }
   syncNavHrefs();
   renderNextMatchCountdown();
@@ -686,6 +689,7 @@ window.appState = appState;
 window.initApp = initApp;
 window.onSeasonChange = onSeasonChange;
 window.showSchedule = showScheduleView;
+window.onScheduleStageChange = onScheduleStageChange;
 window.onScheduleTeamChange = onScheduleTeamChange;
 window.openScheduleTeamModal = openScheduleTeamModal;
 window.closeScheduleTeamModal = closeScheduleTeamModal;

@@ -10896,5 +10896,3672 @@
     "dayMatch": 2,
     "date": "2025-10-19",
     "startTime": "3:00 PM"
-  }
+  },
+
+  {
+  "stage": "playoff",
+  "teamA": "HB",
+  "teamB": "MV",
+  "day": "thursday",
+  "dayMatch": 1,
+  "date": "2025-11-13",
+  "startTime": "3:00 PM",
+  "games": [
+    {
+      "winner": "MV",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Cici",
+        "Gloo",
+        "Akai",
+        "Khaleed",
+        "Chou",
+        "Hilda",
+        "Hayabusa",
+        "Yi Sun-Shin"
+      ],
+      "players": [
+        {
+          "name": "Melqt",
+          "hero": "Lapu-Lapu",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 5
+        },
+        {
+          "name": "Eyymal",
+          "hero": "Baxia",
+          "kills": 1,
+          "deaths": 6,
+          "assists": 6
+        },
+        {
+          "name": "Izanami",
+          "hero": "Kimmy",
+          "kills": 4,
+          "deaths": 2,
+          "assists": 4
+        },
+        {
+          "name": "Rezza",
+          "hero": "Phoveus",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Daniel",
+          "hero": "Helcurt",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Rough",
+          "hero": "Granger",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 4
+        },
+        {
+          "name": "Unii",
+          "hero": "Fredrinn",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 13
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Momo",
+          "hero": "Arlott",
+          "kills": 5,
+          "deaths": 2,
+          "assists": 11
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 12
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "HB": 0,
+          "MV": 1
+        },
+        "turtle": {
+          "HB": 2,
+          "MV": 1
+        },
+        "tower": {
+          "HB": 4,
+          "MV": 6
+        }
+      }
+    },
+    {
+      "winner": "HB",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Arlott",
+        "Esmeralda",
+        "Baxia",
+        "Alice",
+        "Ruby",
+        "Cici",
+        "Hayabusa",
+        "Yi Sun-Shin"
+      ],
+      "players": [
+        {
+          "name": "Melqt",
+          "hero": "Harith",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 4
+        },
+        {
+          "name": "Eyymal",
+          "hero": "Lancelot",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Izanami",
+          "hero": "Kimmy",
+          "kills": 0,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Rezza",
+          "hero": "Hilda",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Daniel",
+          "hero": "Hylos",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 10
+        },
+        {
+          "name": "Rough",
+          "hero": "Granger",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Unii",
+          "hero": "Fredrinn",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 4
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 3
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 5
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "HB": 2,
+          "MV": 0
+        },
+        "turtle": {
+          "HB": 2,
+          "MV": 1
+        },
+        "tower": {
+          "HB": 7,
+          "MV": 1
+        }
+      }
+    },
+    {
+      "winner": "MV",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Arlott",
+        "Esmeralda",
+        "Franco",
+        "Lancelot",
+        "Benedetta",
+        "Cici",
+        "Hayabusa",
+        "Yi Sun-Shin"
+      ],
+      "players": [
+        {
+          "name": "Melqt",
+          "hero": "Moskov",
+          "kills": 0,
+          "deaths": 1,
+          "assists": 0
+        },
+        {
+          "name": "Eyymal",
+          "hero": "Joy",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Izanami",
+          "hero": "Selena",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Rezza",
+          "hero": "Hilda",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 1
+        },
+        {
+          "name": "Daniel",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 1
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 6
+        },
+        {
+          "name": "Unii",
+          "hero": "Fredrinn",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Kimmy",
+          "kills": 4,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Estes",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 10
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "HB": 0,
+          "MV": 2
+        },
+        "turtle": {
+          "HB": 1,
+          "MV": 2
+        },
+        "tower": {
+          "HB": 3,
+          "MV": 7
+        }
+      }
+    },
+    {
+      "winner": "MV",
+      "bans": [
+        "Hayabusa",
+        "Fanny",
+        "Cici",
+        "Phoveus",
+        "Alice",
+        "Esmeralda",
+        "Gatotkaca",
+        "Arlott",
+        "Hilda",
+        "Yi Sun-Shin"
+      ],
+      "players": [
+        {
+          "name": "Melqt",
+          "hero": "Granger",
+          "kills": 6,
+          "deaths": 5,
+          "assists": 3
+        },
+        {
+          "name": "Eyymal",
+          "hero": "Benedetta",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 6
+        },
+        {
+          "name": "Izanami",
+          "hero": "Kimmy",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 7
+        },
+        {
+          "name": "Rezza",
+          "hero": "Lapu-Lapu",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 5
+        },
+        {
+          "name": "Daniel",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 10
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 10
+        },
+        {
+          "name": "Unii",
+          "hero": "Lancelot",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 10
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 7,
+          "deaths": 1,
+          "assists": 13
+        },
+        {
+          "name": "Momo",
+          "hero": "Terizla",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 15
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Chou",
+          "kills": 7,
+          "deaths": 2,
+          "assists": 2
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "HB": 3,
+          "MV": 1
+        },
+        "turtle": {
+          "HB": 3,
+          "MV": 0
+        },
+        "tower": {
+          "HB": 5,
+          "MV": 9
+        }
+      }
+      
+    }
+  ]
+  
+},
+
+  {
+  "stage": "playoff",
+  "teamA": "VMS",
+  "teamB": "AERO",
+  "day": "thursday",
+  "dayMatch": 2,
+  "date": "2025-11-13",
+  "startTime": "7:00 PM",
+  "games": [
+    {
+      "winner": "AERO",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Harith",
+        "Kalea",
+        "Xborg",
+        "Atlas",
+        "Sun",
+        "Lancelot",
+        "Yuzhong",
+        "Helcurt"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Cici",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Chibi",
+          "hero": "Hayabusa",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Yve",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 1
+        },
+        {
+          "name": "Gojes",
+          "hero": "Hilda",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 1
+        },
+        {
+          "name": "Xorn",
+          "hero": "Khaleed",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Kusey",
+          "hero": "Ruby",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 7
+        },
+        {
+          "name": "Hazle",
+          "hero": "Yi Sun-Shin",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Kyym",
+          "hero": "Pharsa",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Smooth",
+          "hero": "Uranus",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 6
+        },
+        {
+          "name": "Zqeef",
+          "hero": "Gatotkaca",
+          "kills": 3,
+          "deaths": 1,
+          "assists": 6
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "AERO": 1
+        },
+        "turtle": {
+          "VMS": 2,
+          "AERO": 1
+        },
+        "tower": {
+          "VMS": 1,
+          "AERO": 8
+        }
+      }
+    },
+    {
+      "winner": "VMS",
+      "bans": [
+        "Helcurt",
+        "Yuzhong",
+        "Hayabusa",
+        "Pharsa",
+        "Cici",
+        "Uranus",
+        "Hilda",
+        "Baxia",
+        "Grock",
+        "Fanny"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Harith",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 5
+        },
+        {
+          "name": "Chibi",
+          "hero": "Yi Sun-Shin",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 12
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Valentina",
+          "kills": 8,
+          "deaths": 0,
+          "assists": 9
+        },
+        {
+          "name": "Gojes",
+          "hero": "Ruby",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 12
+        },
+        {
+          "name": "Kusey",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 1
+        },
+        {
+          "name": "Hazle",
+          "hero": "Lancelot",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Kyym",
+          "hero": "Kimmy",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Smooth",
+          "hero": "Xborg",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Zqeef",
+          "hero": "Atlas",
+          "kills": 1,
+          "deaths": 7,
+          "assists": 4
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 1,
+          "AERO": 0
+        },
+        "turtle": {
+          "VMS": 2,
+          "AERO": 1
+        },
+        "tower": {
+          "VMS": 7,
+          "AERO": 1
+        }
+      }
+    },
+    {
+      "winner": "VMS",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Harith",
+        "Khaleed",
+        "Sun",
+        "Uranus",
+        "Lancelot",
+        "Pharsa",
+        "Yuzhong",
+        "Helcurt"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Xborg",
+          "kills": 7,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Chibi",
+          "hero": "Yi Sun-Shin",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Yve",
+          "kills": 3,
+          "deaths": 1,
+          "assists": 14
+        },
+        {
+          "name": "Gojes",
+          "hero": "Ruby",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 15
+        },
+        {
+          "name": "Xorn",
+          "hero": "Kalea",
+          "kills": 3,
+          "deaths": 5,
+          "assists": 9
+        },
+        {
+          "name": "Kusey",
+          "hero": "Lapu-Lapu",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 4
+        },
+        {
+          "name": "Hazle",
+          "hero": "Hayabusa",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Kyym",
+          "hero": "Kimmy",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 4
+        },
+        {
+          "name": "Smooth",
+          "hero": "Cici",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Zqeef",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 7,
+          "assists": 8
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 3,
+          "AERO": 2
+        },
+        "turtle": {
+          "VMS": 0,
+          "AERO": 3
+        },
+        "tower": {
+          "VMS": 9,
+          "AERO": 6
+        }
+      }
+    },
+    {
+      "winner": "AERO",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Harith",
+        "Kalea",
+        "Khaleed",
+        "Hilda",
+        "Sun",
+        "Ruby",
+        "Yuzhong",
+        "Helcurt"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 1
+        },
+        {
+          "name": "Chibi",
+          "hero": "Yi Sun-Shin",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Lunox",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Gojes",
+          "hero": "Alice",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 5
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Kusey",
+          "hero": "Cici",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Hazle",
+          "hero": "Lancelot",
+          "kills": 6,
+          "deaths": 0,
+          "assists": 5
+        },
+        {
+          "name": "Kyym",
+          "hero": "Pharsa",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Smooth",
+          "hero": "Uranus",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 11
+        },
+        {
+          "name": "Zqeef",
+          "hero": "Hylos",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 11
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "AERO": 2
+        },
+        "turtle": {
+          "VMS": 2,
+          "AERO": 1
+        },
+        "tower": {
+          "VMS": 4,
+          "AERO": 7
+        }
+      }
+    },
+    {
+      "winner": "VMS",
+      "bans": [
+        "Grock",
+        "Fanny",
+        "Harith",
+        "Kalea",
+        "Xborg",
+        "Khaleed",
+        "Sun",
+        "Ruby",
+        "Yuzhong",
+        "Helcurt"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Cici",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Chibi",
+          "hero": "Yi Sun-Shin",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Yve",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 12
+        },
+        {
+          "name": "Gojes",
+          "hero": "Hilda",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 0,
+          "deaths": 0,
+          "assists": 12
+        },
+        {
+          "name": "Kusey",
+          "hero": "Granger",
+          "kills": 0,
+          "deaths": 0,
+          "assists": 0
+        },
+        {
+          "name": "Hazle",
+          "hero": "Lancelot",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 0
+        },
+        {
+          "name": "Kyym",
+          "hero": "Pharsa",
+          "kills": 0,
+          "deaths": 0,
+          "assists": 2
+        },
+        {
+          "name": "Smooth",
+          "hero": "Uranus",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 0 
+        },
+        {
+          "name": "Zqeef",
+          "hero": "Hylos",
+          "kills": 0,
+          "deaths": 7,
+          "assists": 2
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 2,
+          "AERO": 0
+        },
+        "turtle": {
+          "VMS": 3,
+          "AERO": 0
+        },
+        "tower": {
+          "VMS": 9,
+          "AERO": 0
+        }
+      }
+    }
+  ]
+  
+},
+
+  {
+  "stage": "playoff",
+  "teamA": "SRG",
+  "teamB": "MV",
+  "day": "friday",
+  "dayMatch": 1,
+  "date": "2025-11-14",
+  "startTime": "3:00 PM",
+  "games": [
+    {
+      "winner": "SRG",
+      "bans": [
+        "Hilda",
+        "Hayabusa",
+        "Lancelot",
+        "Baxia",
+        "Yuzhong",
+        "Zhuxin",
+        "Yve",
+        "Fredrinn",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Cici",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Sekys",
+          "hero": "Guinevere",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 7
+        },
+        {
+          "name": "Stormie",
+          "hero": "Kimmy",
+          "kills": 6,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Kramm",
+          "hero": "Lapu-Lapu",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 13
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 2
+        },
+        {
+          "name": "Unii",
+          "hero": "Yi Sun-Shin",
+          "kills": 4,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Pharsa",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Momo",
+          "hero": "Alice",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 7
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 0,
+          "MV": 1
+        },
+        "turtle": {
+          "SRG": 3,
+          "MV": 0
+        },
+        "tower": {
+          "SRG": 9,
+          "MV": 0
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Yi Sun-Shin",
+        "Fredrinn",
+        "Lancelot",
+        "Baxia",
+        "Guinevere",
+        "Grock",
+        "Yve",
+        "Pharsa",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Xborg",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Sekys",
+          "hero": "Hayabusa",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 5
+        },
+        {
+          "name": "Stormie",
+          "hero": "Zhuxin",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 6
+        },
+        {
+          "name": "Kramm",
+          "hero": "Yuzhong",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 9
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 4
+        },
+        {
+          "name": "Unii",
+          "hero": "Barats",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Kimmy",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 1
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 2
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Estes",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 3
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 1,
+          "MV": 0
+        },
+        "turtle": {
+          "SRG": 2,
+          "MV": 1
+        },
+        "tower": {
+          "SRG": 7,
+          "MV": 0
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Hilda",
+        "Hayabusa",
+        "Lancelot",
+        "Grock",
+        "Lapu-Lapu",
+        "Harith",
+        "Ruby",
+        "Fredrinn",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Cici",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 6
+        },
+        {
+          "name": "Sekys",
+          "hero": "Joy",
+          "kills": 7,
+          "deaths": 2,
+          "assists": 7
+        },
+        {
+          "name": "Stormie",
+          "hero": "Kimmy",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 13
+        },
+        {
+          "name": "Kramm",
+          "hero": "Yuzhong",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Yums",
+          "hero": "Guinevere",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 13
+        },
+        {
+          "name": "Rough",
+          "hero": "Chou",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Unii",
+          "hero": "Yi Sun-Shin",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Momo",
+          "hero": "Alice",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 6,
+          "assists": 4
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 2,
+          "MV": 0
+        },
+        "turtle": {
+          "SRG": 3,
+          "MV": 0
+        },
+        "tower": {
+          "SRG": 9,
+          "MV": 1
+        }
+      }
+    }
+  ]
+},
+
+{
+  "stage": "playoff",
+  "teamA": "VMS",
+  "teamB": "CG",
+  "day": "friday",
+  "dayMatch": 2,
+  "date": "2025-11-14",
+  "startTime": "7:00 PM",
+  "games": [
+    {
+      "winner": "VMS",
+      "bans": [
+        "Hayabusa",
+        "Cici",
+        "Yi Sun-Shin",
+        "Hilda",
+        "Yuzhong",
+        "Lapu-Lapu",
+        "Ruby",
+        "Lunox",
+        "Grock",
+        "Harith"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Sun",
+          "kills": 3,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Chibi",
+          "hero": "Baxia",
+          "kills": 0,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Kimmy",
+          "kills": 7,
+          "deaths": 0,
+          "assists": 2
+        },
+        {
+          "name": "Gojes",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Xorn",
+          "hero": "Helcurt",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Granger",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 1
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 0
+        },
+        {
+          "name": "Ciku",
+          "hero": "Yve",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Ye3",
+          "hero": "Gloo",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Valenz",
+          "hero": "Gatotkaca",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 2
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 1,
+          "CG": 0
+        },
+        "turtle": {
+          "VMS": 2,
+          "CG": 1
+        },
+        "tower": {
+          "VMS": 7,
+          "CG": 2
+        }
+      }
+    },
+
+    {
+      "winner": "CG",
+      "bans": [
+        "Hayabusa",
+        "Helcurt",
+        "Cici",
+        "Sun",
+        "Kalea",
+        "Joy",
+        "Baxia",
+        "Lunox",
+        "Grock",
+        "Harith"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Chou",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 4
+        },
+        {
+          "name": "Chibi",
+          "hero": "Lancelot",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Yve",
+          "kills": 4,
+          "deaths": 2,
+          "assists": 8
+        },
+        {
+          "name": "Gojes",
+          "hero": "Esmeralda",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 4
+        },
+        {
+          "name": "Xorn",
+          "hero": "Atlas",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 6,
+          "assists": 9
+        },
+        {
+          "name": "Gary",
+          "hero": "Fanny",
+          "kills": 6,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 5,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Ye3",
+          "hero": "Yuzhong",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 7
+        },
+        {
+          "name": "Valenz",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 12
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "CG": 2
+        },
+        "turtle": {
+          "VMS": 1,
+          "CG": 2
+        },
+        "tower": {
+          "VMS": 2,
+          "CG": 7
+        }
+      }
+    },
+
+        {
+      "winner": "CG",
+      "bans": [
+        "Lunox",
+        "Fanny",
+        "Ruby",
+        "Granger",
+        "Khaleed",
+        "Kalea",
+        "Cici",
+        "Hayabusa",
+        "Helcurt",
+        "Grock"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Harith",
+          "kills": 8,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Chibi",
+          "hero": "Lancelot",
+          "kills": 8,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Zhuxin",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 12
+        },
+        {
+          "name": "Gojes",
+          "hero": "Alice",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 8
+        },
+        {
+          "name": "Xorn",
+          "hero": "Atlas",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 13
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Natan",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Gary",
+          "hero": "Baxia",
+          "kills": 5,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 5,
+          "deaths": 5,
+          "assists": 10
+        },
+        {
+          "name": "Ye3",
+          "hero": "Yuzhong",
+          "kills": 5,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Valenz",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 12
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 2,
+          "CG": 1
+        },
+        "turtle": {
+          "VMS": 2,
+          "CG": 1
+        },
+        "tower": {
+          "VMS": 6,
+          "CG": 8
+        }
+      }
+    },
+
+        {
+      "winner": "CG",
+      "bans": [
+        "Hayabusa",
+        "Cici",
+        "Helcurt",
+        "Harith",
+        "Natan",
+        "Granger",
+        "Ruby",
+        "Sun",
+        "Fanny",
+        "Yuzhong"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 4
+        },
+        {
+          "name": "Chibi",
+          "hero": "Yi Sun-Shin",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 9
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Yve",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 6
+        },
+        {
+          "name": "Gojes",
+          "hero": "Hilda",
+          "kills": 2,
+          "deaths": 5,
+          "assists": 5
+        },
+        {
+          "name": "Xorn",
+          "hero": "Grock",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Lunox",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 6
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 7
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 7,
+          "deaths": 2,
+          "assists": 3
+        },
+        {
+          "name": "Ye3",
+          "hero": "Uranus",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Valenz",
+          "hero": "Kalea",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 9
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "CG": 2
+        },
+        "turtle": {
+          "VMS": 2,
+          "CG": 0
+        },
+        "tower": {
+          "VMS": 2,
+          "CG": 9
+        }
+      }
+    }
+
+]
+},
+
+{
+  "stage": "playoff",
+  "teamA": "SRG",
+  "teamB": "CG",
+  "day": "saturday",
+  "dayMatch": 1,
+  "date": "2025-11-15",
+  "startTime": "9:00 AM",
+  "games": [
+    {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Lapu-Lapu",
+        "Fanny",
+        "Lunox",
+        "Yuzhong",
+        "Hayabusa",
+        "Yve",
+        "Baxia",
+        "Kalea",
+        "Ruby"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Granger",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 3
+        },
+        {
+          "name": "Sekys",
+          "hero": "Lancelot",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 3
+        },
+        {
+          "name": "Stormie",
+          "hero": "Pharsa",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 7
+        },
+        {
+          "name": "Kramm",
+          "hero": "Alice",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 10
+        },
+        {
+          "name": "Yums",
+          "hero": "Grock",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 11
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 0
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 0
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 0
+        },
+        {
+          "name": "Ye3",
+          "hero": "Uranus",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 0
+        },
+        {
+          "name": "Valenz",
+          "hero": "Kalea",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 0
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 1,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 3,
+          "CG": 0
+        },
+        "tower": {
+          "SRG": 7,
+          "CG": 2
+        }
+      }
+    },
+        {
+      "winner": "CG",
+      "bans": [
+        "Cici",
+        "Lapu-Lapu",
+        "Grock",
+        "Lunox",
+        "Gatotkaca",
+        "Zhuxin",
+        "Odette",
+        "Baxia",
+        "Sun",
+        "Ruby"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Xborg",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 1
+        },
+        {
+          "name": "Sekys",
+          "hero": "Joy",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Stormie",
+          "hero": "Kimmy",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 5
+        },
+        {
+          "name": "Kramm",
+          "hero": "Yuzhong",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Yums",
+          "hero": "Hylos",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 6
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 5
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 5
+        },
+        {
+          "name": "Ciku",
+          "hero": "Valentina",
+          "kills": 5,
+          "deaths": 2,
+          "assists": 7
+        },
+        {
+          "name": "Ye3",
+          "hero": "Martis",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 8
+        },
+        {
+          "name": "Valenz",
+          "hero": "Kalea",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 11
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 2,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 1,
+          "CG": 2
+        },
+        "tower": {
+          "SRG": 3,
+          "CG": 6
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Lapu-Lapu",
+        "Grock",
+        "Phoveus",
+        "Yuzhong",
+        "Alice",
+        "Hilda",
+        "Baxia",
+        "Kalea",
+        "Ruby"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Granger",
+          "kills": 7,
+          "deaths": 1,
+          "assists": 5
+        },
+        {
+          "name": "Sekys",
+          "hero": "Yi Sun-Shin",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 10
+        },
+        {
+          "name": "Stormie",
+          "hero": "Kimmy",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 14
+        },
+        {
+          "name": "Kramm",
+          "hero": "Arlott",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 12
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 11
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Lunox",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 2
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 1
+        },
+        {
+          "name": "Ciku",
+          "hero": "Yve",
+          "kills": 2,
+          "deaths": 5,
+          "assists": 2
+        },
+        {
+          "name": "Ye3",
+          "hero": "Uranus",
+          "kills": 0,
+          "deaths": 7,
+          "assists": 1
+        },
+        {
+          "name": "Valenz",
+          "hero": "Chou",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 4
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 2,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 3,
+          "CG": 0
+        },
+        "tower": {
+          "SRG": 7,
+          "CG": 3
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Lapu-Lapu",
+        "Gatotkaca",
+        "Sun",
+        "Granger",
+        "Kalea",
+        "Lunox",
+        "Harith",
+        "Claude",
+        "Alice"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Esmeralda",
+          "kills": 7,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Sekys",
+          "hero": "Hayabusa",
+          "kills": 3,
+          "deaths": 0,
+          "assists": 12
+        },
+        {
+          "name": "Stormie",
+          "hero": "Kimmy",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 11
+        },
+        {
+          "name": "Kramm",
+          "hero": "Yuzhong",
+          "kills": 8,
+          "deaths": 0,
+          "assists": 6
+        },
+        {
+          "name": "Yums",
+          "hero": "Hilda",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 6
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Ruby",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 1
+        },
+        {
+          "name": "Ciku",
+          "hero": "Valentina",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 1
+        },
+        {
+          "name": "Ye3",
+          "hero": "Martis",
+          "kills": 2,
+          "deaths": 6,
+          "assists": 0
+        },
+        {
+          "name": "Valenz",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 1
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 2,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 2,
+          "CG": 0
+        },
+        "tower": {
+          "SRG": 9,
+          "CG": 0
+        }
+      }
+    }
+
+
+]
+},
+
+
+
+
+
+{
+  "stage": "playoff",
+  "teamA": "VMS",
+  "teamB": "MV",
+  "day": "saturday",
+  "dayMatch": 2,
+  "date": "2025-11-15",
+  "startTime": "1:00 PM",
+  "games": [ 
+    {
+      "winner": "VMS",
+      "bans": [
+        "Hayabusa",
+        "Yi Sun-Shin",
+        "Helcurt",
+        "Yuzhong",
+        "Cici",
+        "Pharsa",
+        "Harith",
+        "Fredrinn",
+        "Arlott",
+        "Fanny"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Xborg",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 11
+        },
+        {
+          "name": "Chibi",
+          "hero": "Joy",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 10
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Kimmy",
+          "kills": 9,
+          "deaths": 2,
+          "assists": 9
+        },
+        {
+          "name": "Gojes",
+          "hero": "Ruby",
+          "kills": 4,
+          "deaths": 3,
+          "assists": 11
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 15
+        },
+        {
+          "name": "Rough",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 6
+        },
+        {
+          "name": "Unii",
+          "hero": "Lancelot",
+          "kills": 6,
+          "deaths": 5,
+          "assists": 3
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 11
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 5
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Grock",
+          "kills": 2,
+          "deaths": 5,
+          "assists": 7
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 2,
+          "MV": 0
+        },
+        "turtle": {
+          "VMS": 1,
+          "MV": 2
+        },
+        "tower": {
+          "VMS": 8,
+          "MV": 2
+        }
+      }
+    },
+        {
+      "winner": "MV",
+      "bans": [
+        "Joy",
+        "Yi Sun-Shin",
+        "Helcurt",
+        "Yuzhong",
+        "Cici",
+        "Pharsa",
+        "Harith",
+        "Fredrinn",
+        "Arlott",
+        "Fanny"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Kimmy",
+          "kills": 6,
+          "deaths": 4,
+          "assists": 6
+        },
+        {
+          "name": "Chibi",
+          "hero": "Hayabusa",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 7
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Valentina",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 10
+        },
+        {
+          "name": "Gojes",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 10
+        },
+        {
+          "name": "Rough",
+          "hero": "Xborg",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Unii",
+          "hero": "Lancelot",
+          "kills": 6,
+          "deaths": 2,
+          "assists": 4
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Lunox",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 6
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 8
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "MV": 2
+        },
+        "turtle": {
+          "VMS": 1,
+          "MV": 2
+        },
+        "tower": {
+          "VMS": 1,
+          "MV": 8
+        }
+      }
+    },
+        {
+      "winner": "MV",
+      "bans": [
+        "Atlas",
+        "Hilda",
+        "Helcurt",
+        "Yuzhong",
+        "Lunox",
+        "Esmeralda",
+        "Gatotkaca",
+        "Fredrinn",
+        "Arlott",
+        "Fanny"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Harith",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 1
+        },
+        {
+          "name": "Chibi",
+          "hero": "Lancelot",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 0
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Kimmy",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 1
+        },
+        {
+          "name": "Gojes",
+          "hero": "Lapu-Lapu",
+          "kills": 2,
+          "deaths": 5,
+          "assists": 1
+        },
+        {
+          "name": "Xorn",
+          "hero": "Kalea",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 3,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Unii",
+          "hero": "Yi Sun-Shin",
+          "kills": 6,
+          "deaths": 0,
+          "assists": 8
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Pharsa",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 6
+        },
+        {
+          "name": "Momo",
+          "hero": "Phoveus",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 5
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 1,
+          "assists": 8
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 0,
+          "MV": 1
+        },
+        "turtle": {
+          "VMS": 0,
+          "MV": 3
+        },
+        "tower": {
+          "VMS": 0,
+          "MV": 8
+        }
+      }
+    },
+        {
+      "winner": "MV",
+      "bans": [
+        "Lancelot",
+        "Yi Sun-Shin",
+        "Helcurt",
+        "Yuzhong",
+        "Grock",
+        "Xborg",
+        "Yve",
+        "Fredrinn",
+        "Arlott",
+        "Fanny"
+      ],
+      "players": [
+        {
+          "name": "Natco",
+          "hero": "Cici",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Chibi",
+          "hero": "Hayabusa",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Clawkun",
+          "hero": "Pharsa",
+          "kills": 4,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Gojes",
+          "hero": "Esmeralda",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 1
+        },
+        {
+          "name": "Xorn",
+          "hero": "Gatotkaca",
+          "kills": 0,
+          "deaths": 7,
+          "assists": 4
+        },
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Unii",
+          "hero": "Guinevere",
+          "kills": 1,
+          "deaths": 1,
+          "assists": 12
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Kimmy",
+          "kills": 8,
+          "deaths": 0,
+          "assists": 7
+        },
+        {
+          "name": "Momo",
+          "hero": "Thamuz",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 11
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Hilda",
+          "kills": 5,
+          "deaths": 6,
+          "assists": 4
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "VMS": 1,
+          "MV": 1
+        },
+        "turtle": {
+          "VMS": 0,
+          "MV": 3
+        },
+        "tower": {
+          "VMS": 4,
+          "MV": 7
+        }
+      }
+    }
+]
+
+},
+
+{
+  "stage": "playoff",
+  "teamA": "MV",
+  "teamB": "CG",
+  "day": "saturday",
+  "dayMatch": 3,
+  "date": "2025-11-15",
+  "startTime": "6:00 PM",
+  "games": [
+        {
+      "winner": "MV",
+      "bans": [
+        "Kalea",
+        "Lunox",
+        "Chou",
+        "Granger",
+        "Ruby",
+        "Valentina",
+        "Yve",
+        "Lancelot",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Harith",
+          "kills": 4,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Unii",
+          "hero": "Hayabusa",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 6
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Pharsa",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Momo",
+          "hero": "Baxia",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 12
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Grock",
+          "kills": 2,
+          "deaths": 0,
+          "assists": 10
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Natan",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Gary",
+          "hero": "Joy",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 2
+        },
+        {
+          "name": "Ye3",
+          "hero": "Yuzhong",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Valenz",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 3
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 2,
+          "CG": 1
+        },
+        "turtle": {
+          "MV": 2,
+          "CG": 1
+        },
+        "tower": {
+          "MV": 7,
+          "CG": 3
+        }
+      }
+    },
+    {
+      "winner": "MV",
+      "bans": [
+        "Kalea",
+        "Lunox",
+        "Chou",
+        "Yuzhong",
+        "Lapu-Lapu",
+        "Xborg",
+        "Yve",
+        "Grock",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 9
+        },
+        {
+          "name": "Unii",
+          "hero": "Yi Sun-Shin",
+          "kills": 10,
+          "deaths": 1,
+          "assists": 7
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Pharsa",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 11
+        },
+        {
+          "name": "Momo",
+          "hero": "Terizla",
+          "kills": 5,
+          "deaths": 3,
+          "assists": 9
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 9
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Granger",
+          "kills": 3,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Gary",
+          "hero": "Baxia",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 7
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 6,
+          "deaths": 4,
+          "assists": 4
+        },
+        {
+          "name": "Ye3",
+          "hero": "Cici",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 5
+        },
+        {
+          "name": "Valenz",
+          "hero": "Guinevere",
+          "kills": 1,
+          "deaths": 4,
+          "assists": 10
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 2,
+          "CG": 0
+        },
+        "turtle": {
+          "MV": 2,
+          "CG": 1
+        },
+        "tower": {
+          "MV": 9,
+          "CG": 4
+        }
+      }
+    },
+    {
+      "winner": "CG",
+      "bans": [
+        "Kimmy",
+        "Lunox",
+        "Chou",
+        "Odette",
+        "Kalea",
+        "Hayabusa",
+        "Lancelot",
+        "Grock",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Claude",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Unii",
+          "hero": "Guinevere",
+          "kills": 3,
+          "deaths": 5,
+          "assists": 7
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Yve",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 3
+        },
+        {
+          "name": "Momo",
+          "hero": "Esmeralda",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 3
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 5,
+          "assists": 6
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 5,
+          "deaths": 3,
+          "assists": 11
+        },
+        {
+          "name": "Gary",
+          "hero": "Yi Sun-Shin",
+          "kills": 7,
+          "deaths": 0,
+          "assists": 9
+        },
+        {
+          "name": "Ciku",
+          "hero": "Gord",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Ye3",
+          "hero": "Lapu-Lapu",
+          "kills": 3,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Valenz",
+          "hero": "Badang",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 12
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 0,
+          "CG": 2
+        },
+        "turtle": {
+          "MV": 0,
+          "CG": 3
+        },
+        "tower": {
+          "MV": 2,
+          "CG": 9
+        }
+      }
+    },
+    {
+      "winner": "CG",
+      "bans": [
+        "Kalea",
+        "Lunox",
+        "Chou",
+        "Badang",
+        "Guinevere",
+        "Hilda",
+        "Ruby",
+        "Grock",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Cici",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Unii",
+          "hero": "Hayabusa",
+          "kills": 4,
+          "deaths": 4,
+          "assists": 10
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Kimmy",
+          "kills": 5,
+          "deaths": 1,
+          "assists": 8
+        },
+        {
+          "name": "Momo",
+          "hero": "Terizla",
+          "kills": 5,
+          "deaths": 4,
+          "assists": 4
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 7,
+          "assists": 9
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 4,
+          "deaths": 2,
+          "assists": 8
+        },
+        {
+          "name": "Gary",
+          "hero": "Yi Sun-Shin",
+          "kills": 7,
+          "deaths": 2,
+          "assists": 8
+        },
+        {
+          "name": "Ciku",
+          "hero": "Odette",
+          "kills": 4,
+          "deaths": 4,
+          "assists": 7
+        },
+        {
+          "name": "Ye3",
+          "hero": "Lapu-Lapu",
+          "kills": 4,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Valenz",
+          "hero": "Jawhead",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 11
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 0,
+          "CG": 3
+        },
+        "turtle": {
+          "MV": 3,
+          "CG": 0
+        },
+        "tower": {
+          "MV": 3,
+          "CG": 9
+        }
+      }
+    },
+
+    {
+      "winner": "MV",
+      "bans": [
+        "Kalea",
+        "Yi Sun-Shin",
+        "Chou",
+        "Badang",
+        "Guinevere",
+        "Hilda",
+        "Phoveus",
+        "Grock",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 1,
+          "deaths": 0,
+          "assists": 10
+        },
+        {
+          "name": "Unii",
+          "hero": "Hayabusa",
+          "kills": 4,
+          "deaths": 0,
+          "assists": 6
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Kimmy",
+          "kills": 10,
+          "deaths": 3,
+          "assists": 5
+        },
+        {
+          "name": "Momo",
+          "hero": "Terizla",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 10
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 10
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 0,
+          "deaths": 3,
+          "assists": 1
+        },
+        {
+          "name": "Ciku",
+          "hero": "Odette",
+          "kills": 3,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Ye3",
+          "hero": "Lapu-Lapu",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Valenz",
+          "hero": "Atlas",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 2
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 1,
+          "CG": 1
+        },
+        "turtle": {
+          "MV": 2,
+          "CG": 1
+        },
+        "tower": {
+          "MV": 7,
+          "CG": 5
+        }
+      }
+    },
+
+    {
+      "winner": "CG",
+      "bans": [
+        "Kalea",
+        "Yuzhong",
+        "Chou",
+        "Fredrinn",
+        "Baxia",
+        "Cici",
+        "Alice",
+        "Hilda",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Ruby",
+          "kills": 6,
+          "deaths": 4,
+          "assists": 5
+        },
+        {
+          "name": "Unii",
+          "hero": "Yi Sun-Shin",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Pharsa",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Momo",
+          "hero": "Phoveus",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 2
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Granger",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 5,
+          "deaths": 0,
+          "assists": 84
+        },
+        {
+          "name": "Ye3",
+          "hero": "Lapu-Lapu",
+          "kills": 3,
+          "deaths": 5,
+          "assists": 4
+        },
+        {
+          "name": "Valenz",
+          "hero": "Grock",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 8
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 1,
+          "CG": 3
+        },
+        "turtle": {
+          "MV": 0,
+          "CG": 3
+        },
+        "tower": {
+          "MV": 7,
+          "CG": 8
+        }
+      }
+    },
+    {
+      "winner": "CG",
+      "bans": [
+        "Yi Sun-Shin",
+        "Gatotkaca",
+        "Grock",
+        "Yuzhong",
+        "Alice",
+        "Hilda",
+        "Estes",
+        "Minotaur",
+        "Fanny",
+        "Arlott"
+      ],
+      "players": [
+        {
+          "name": "Rough",
+          "hero": "Harith",
+          "kills": 7,
+          "deaths": 4,
+          "assists": 5
+        },
+        {
+          "name": "Unii",
+          "hero": "Fredrinn",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Bondolz",
+          "hero": "Lunox",
+          "kills": 7,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Momo",
+          "hero": "Lapu-Lapu",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 9
+        },
+        {
+          "name": "Lyoni",
+          "hero": "Chip",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 12
+        },
+        {
+          "name": "Amzziq",
+          "hero": "Ruby",
+          "kills": 2,
+          "deaths": 3,
+          "assists": 9
+        },
+        {
+          "name": "Gary",
+          "hero": "Lancelot",
+          "kills": 6,
+          "deaths": 2,
+          "assists": 6
+        },
+        {
+          "name": "Ciku",
+          "hero": "Kimmy",
+          "kills": 6,
+          "deaths": 4,
+          "assists": 7
+        },
+        {
+          "name": "Ye3",
+          "hero": "Benedetta",
+          "kills": 0,
+          "deaths": 5,
+          "assists": 3
+        },
+        {
+          "name": "Valenz",
+          "hero": "Kalea",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 5
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "MV": 0,
+          "CG": 2
+        },
+        "turtle": {
+          "MV": 2,
+          "CG": 1
+        },
+        "tower": {
+          "MV": 5,
+          "CG": 9
+        }
+      }
+    }
+]
+
+},
+
+{
+  "stage": "playoff",
+  "teamA": "SRG",
+  "teamB": "CG",
+  "day": "sunday",
+  "dayMatch": 1,
+  "date": "2025-11-16",
+  "startTime": "5:30 PM",
+  "games": [    {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Kimmy",
+        "Fanny",
+        "Valentina",
+        "Selena",
+        "Lunox",
+        "Alice",
+        "Harith",
+        "Yuzhong",
+        "Kalea"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Xborg",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Sekys",
+          "hero": "Lancelot",
+          "kills": 7,
+          "deaths": 2,
+          "assists": 5
+        },
+        {
+          "name": "Stormie",
+          "hero": "Novaria",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 11
+        },
+        {
+          "name": "Kramm",
+          "hero": "Lapu-Lapu",
+          "kills": 7,
+          "deaths": 5,
+          "assists": 8
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 9
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Natan",
+          "kills": 3,
+          "deaths": 6,
+          "assists": 4
+        },
+        {
+          "name": "Gary",
+          "hero": "Yi Sun-Shin",
+          "kills": 5,
+          "deaths": 6,
+          "assists": 5
+        },
+        {
+          "name": "Ciku",
+          "hero": "Pharsa",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 6
+        },
+        {
+          "name": "Ye3",
+          "hero": "Ruby",
+          "kills": 3,
+          "deaths": 6,
+          "assists": 6
+        },
+        {
+          "name": "Valenz",
+          "hero": "Grock",
+          "kills": 2,
+          "deaths": 2,
+          "assists": 7
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 4,
+          "CG": 1
+        },
+        "turtle": {
+          "SRG": 2,
+          "CG": 1
+        },
+        "tower": {
+          "SRG": 8,
+          "CG": 9
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Kimmy",
+        "Fanny",
+        "Pharsa",
+        "Granger",
+        "Chou",
+        "Gatotkaca",
+        "Ruby",
+        "Yuzhong",
+        "Kalea"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Lunox",
+          "kills": 5,
+          "deaths": 2,
+          "assists": 2
+        },
+        {
+          "name": "Sekys",
+          "hero": "Hayabusa",
+          "kills": 6,
+          "deaths": 1,
+          "assists": 10
+        },
+        {
+          "name": "Stormie",
+          "hero": "Selena",
+          "kills": 5,
+          "deaths": 2,
+          "assists": 10
+        },
+        {
+          "name": "Kramm",
+          "hero": "Lapu-Lapu",
+          "kills": 9,
+          "deaths": 0,
+          "assists": 10
+        },
+        {
+          "name": "Yums",
+          "hero": "Grock",
+          "kills": 0,
+          "deaths": 1,
+          "assists": 19
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Gary",
+          "hero": "Yi Sun-Shin",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 3
+        },
+        {
+          "name": "Ciku",
+          "hero": "Valentina",
+          "kills": 0,
+          "deaths": 6,
+          "assists": 3
+        },
+        {
+          "name": "Ye3",
+          "hero": "Hilda",
+          "kills": 1,
+          "deaths": 7,
+          "assists": 0
+        },
+        {
+          "name": "Valenz",
+          "hero": "Badang",
+          "kills": 3,
+          "deaths": 6,
+          "assists": 1
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 2,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 2,
+          "CG": 1
+        },
+        "tower": {
+          "SRG": 9,
+          "CG": 0
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Kimmy",
+        "Hayabusa",
+        "Hilda",
+        "Chou",
+        "Harith",
+        "Zhuxin",
+        "Ruby",
+        "Yuzhong",
+        "Kalea"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Xborg",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 3
+        },
+        {
+          "name": "Sekys",
+          "hero": "Lancelot",
+          "kills": 8,
+          "deaths": 0,
+          "assists": 4
+        },
+        {
+          "name": "Stormie",
+          "hero": "Selena",
+          "kills": 2,
+          "deaths": 1,
+          "assists": 4
+        },
+        {
+          "name": "Kramm",
+          "hero": "Lapu-Lapu",
+          "kills": 4,
+          "deaths": 1,
+          "assists": 9
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 9
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Granger",
+          "kills": 0,
+          "deaths": 4,
+          "assists": 2
+        },
+        {
+          "name": "Gary",
+          "hero": "Yi Sun-Shin",
+          "kills": 0,
+          "deaths": 6,
+          "assists": 1
+        },
+        {
+          "name": "Ciku",
+          "hero": "Lunox",
+          "kills": 4,
+          "deaths": 3,
+          "assists": 0
+        },
+        {
+          "name": "Ye3",
+          "hero": "Esmeralda",
+          "kills": 0,
+          "deaths": 2,
+          "assists": 0
+        },
+        {
+          "name": "Valenz",
+          "hero": "Grock",
+          "kills": 1,
+          "deaths": 2,
+          "assists": 3
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 1,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 3,
+          "CG": 0
+        },
+        "tower": {
+          "SRG": 7,
+          "CG": 1
+        }
+      }
+    },
+        {
+      "winner": "SRG",
+      "bans": [
+        "Cici",
+        "Kimmy",
+        "Hayabusa",
+        "Moskov",
+        "Selena",
+        "Kalea",
+        "Zhuxin",
+        "Hilda",
+        "Ruby",
+        "Yuzhong"
+      ],
+      "players": [
+        {
+          "name": "Innocent",
+          "hero": "Chou",
+          "kills": 2,
+          "deaths": 4,
+          "assists": 3
+        },
+        {
+          "name": "Sekys",
+          "hero": "Lancelot",
+          "kills": 7,
+          "deaths": 3,
+          "assists": 4
+        },
+        {
+          "name": "Stormie",
+          "hero": "Pharsa",
+          "kills": 3,
+          "deaths": 7,
+          "assists": 4
+        },
+        {
+          "name": "Kramm",
+          "hero": "Lapu-Lapu",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 7
+        },
+        {
+          "name": "Yums",
+          "hero": "Gatotkaca",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 10
+        },
+        
+        {
+          "name": "Amzziq",
+          "hero": "Harith",
+          "kills": 6,
+          "deaths": 2,
+          "assists": 4
+        },
+        {
+          "name": "Gary",
+          "hero": "Fanny",
+          "kills": 8,
+          "deaths": 3,
+          "assists": 6
+        },
+        {
+          "name": "Ciku",
+          "hero": "Lunox",
+          "kills": 3,
+          "deaths": 3,
+          "assists": 8
+        },
+        {
+          "name": "Ye3",
+          "hero": "Phoveus",
+          "kills": 2,
+          "deaths": 5,
+          "assists": 1
+        },
+        {
+          "name": "Valenz",
+          "hero": "Grock",
+          "kills": 1,
+          "deaths": 3,
+          "assists": 8
+        }
+      ],
+      "objectives": {
+        "lord": {
+          "SRG": 3,
+          "CG": 0
+        },
+        "turtle": {
+          "SRG": 3,
+          "CG": 0
+        },
+        "tower": {
+          "SRG": 9,
+          "CG": 2
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+   ]
+
+}
+
 ]
